@@ -3,6 +3,8 @@
  */
 package ac.soton.xumlb.validation
 
+import org.eclipse.xtext.validation.Check
+import ac.soton.eventb.statemachines.Statemachine
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +13,11 @@ package ac.soton.xumlb.validation
  */
 class StatemachineValidator extends AbstractStatemachineValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					StatemachinePackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	public static val INVALID_NAME = 'invalidName'
+
+	@Check
+	def checkGreetingStartsWithCapital(Statemachine stm) {
+		System.out.println("Here")
+	}
 	
 }

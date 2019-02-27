@@ -26,9 +26,14 @@ AbstractNode returns AbstractNode:
 EString returns ecore::EString:
 	STRING | ID;
 
+QualifiedName:
+	ID('.'ID)?
+;
+
 Transition returns Transition:
 	'transition'
-		('elaborates' elaborates+=[emachine::Event|EString] (elaborates+=[emachine::Event|EString])*)?
+//		('elaborates' elaborates+=[emachine::Event|QualifiedName]+)?
+		('elaborates' elaborates+=[emachine::Event|EString]+)?
 		(extended?='extended')?
 //		('refines' refines=[coreextension::EventBEventGroup|EString])?
 		'target' target=[AbstractNode|EString]

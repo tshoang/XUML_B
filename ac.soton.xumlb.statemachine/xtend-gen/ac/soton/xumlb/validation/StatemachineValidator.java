@@ -3,7 +3,9 @@
  */
 package ac.soton.xumlb.validation;
 
+import ac.soton.eventb.statemachines.Statemachine;
 import ac.soton.xumlb.validation.AbstractStatemachineValidator;
+import org.eclipse.xtext.validation.Check;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +14,10 @@ import ac.soton.xumlb.validation.AbstractStatemachineValidator;
  */
 @SuppressWarnings("all")
 public class StatemachineValidator extends AbstractStatemachineValidator {
+  public static final String INVALID_NAME = "invalidName";
+  
+  @Check
+  public void checkGreetingStartsWithCapital(final Statemachine stm) {
+    System.out.println("Here");
+  }
 }

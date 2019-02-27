@@ -976,47 +976,47 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // InternalStatemachine.g:351:1: ruleTransition returns [EObject current=null] : (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) ) ( ( ruleEString ) )* )? ( (lv_extended_4_0= 'extended' ) )? otherlv_5= 'target' ( ( ruleEString ) ) otherlv_7= 'source' ( ( ruleEString ) ) (otherlv_9= 'any' ( (lv_parameters_10_0= ruleTypedParameter ) ) (otherlv_11= ',' ( (lv_parameters_12_0= ruleTypedParameter ) ) )* )? (otherlv_13= 'where' ( (lv_guards_14_0= ruleGuard ) )+ )? (otherlv_15= 'then' ( (lv_actions_16_0= ruleAction ) )+ )? (otherlv_17= 'with' ( (lv_witnesses_18_0= ruleWitness ) )+ )? otherlv_19= 'end' ) ;
+    // InternalStatemachine.g:351:1: ruleTransition returns [EObject current=null] : (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_extended_4_0=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token otherlv_11=null;
-        Token otherlv_13=null;
-        Token otherlv_15=null;
-        Token otherlv_17=null;
-        Token otherlv_19=null;
-        EObject lv_parameters_10_0 = null;
+        Token lv_extended_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token otherlv_8=null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        Token otherlv_14=null;
+        Token otherlv_16=null;
+        Token otherlv_18=null;
+        EObject lv_parameters_9_0 = null;
 
-        EObject lv_parameters_12_0 = null;
+        EObject lv_parameters_11_0 = null;
 
-        EObject lv_guards_14_0 = null;
+        EObject lv_guards_13_0 = null;
 
-        EObject lv_actions_16_0 = null;
+        EObject lv_actions_15_0 = null;
 
-        EObject lv_witnesses_18_0 = null;
+        EObject lv_witnesses_17_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalStatemachine.g:357:2: ( (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) ) ( ( ruleEString ) )* )? ( (lv_extended_4_0= 'extended' ) )? otherlv_5= 'target' ( ( ruleEString ) ) otherlv_7= 'source' ( ( ruleEString ) ) (otherlv_9= 'any' ( (lv_parameters_10_0= ruleTypedParameter ) ) (otherlv_11= ',' ( (lv_parameters_12_0= ruleTypedParameter ) ) )* )? (otherlv_13= 'where' ( (lv_guards_14_0= ruleGuard ) )+ )? (otherlv_15= 'then' ( (lv_actions_16_0= ruleAction ) )+ )? (otherlv_17= 'with' ( (lv_witnesses_18_0= ruleWitness ) )+ )? otherlv_19= 'end' ) )
-            // InternalStatemachine.g:358:2: (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) ) ( ( ruleEString ) )* )? ( (lv_extended_4_0= 'extended' ) )? otherlv_5= 'target' ( ( ruleEString ) ) otherlv_7= 'source' ( ( ruleEString ) ) (otherlv_9= 'any' ( (lv_parameters_10_0= ruleTypedParameter ) ) (otherlv_11= ',' ( (lv_parameters_12_0= ruleTypedParameter ) ) )* )? (otherlv_13= 'where' ( (lv_guards_14_0= ruleGuard ) )+ )? (otherlv_15= 'then' ( (lv_actions_16_0= ruleAction ) )+ )? (otherlv_17= 'with' ( (lv_witnesses_18_0= ruleWitness ) )+ )? otherlv_19= 'end' )
+            // InternalStatemachine.g:357:2: ( (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' ) )
+            // InternalStatemachine.g:358:2: (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' )
             {
-            // InternalStatemachine.g:358:2: (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) ) ( ( ruleEString ) )* )? ( (lv_extended_4_0= 'extended' ) )? otherlv_5= 'target' ( ( ruleEString ) ) otherlv_7= 'source' ( ( ruleEString ) ) (otherlv_9= 'any' ( (lv_parameters_10_0= ruleTypedParameter ) ) (otherlv_11= ',' ( (lv_parameters_12_0= ruleTypedParameter ) ) )* )? (otherlv_13= 'where' ( (lv_guards_14_0= ruleGuard ) )+ )? (otherlv_15= 'then' ( (lv_actions_16_0= ruleAction ) )+ )? (otherlv_17= 'with' ( (lv_witnesses_18_0= ruleWitness ) )+ )? otherlv_19= 'end' )
-            // InternalStatemachine.g:359:3: otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) ) ( ( ruleEString ) )* )? ( (lv_extended_4_0= 'extended' ) )? otherlv_5= 'target' ( ( ruleEString ) ) otherlv_7= 'source' ( ( ruleEString ) ) (otherlv_9= 'any' ( (lv_parameters_10_0= ruleTypedParameter ) ) (otherlv_11= ',' ( (lv_parameters_12_0= ruleTypedParameter ) ) )* )? (otherlv_13= 'where' ( (lv_guards_14_0= ruleGuard ) )+ )? (otherlv_15= 'then' ( (lv_actions_16_0= ruleAction ) )+ )? (otherlv_17= 'with' ( (lv_witnesses_18_0= ruleWitness ) )+ )? otherlv_19= 'end'
+            // InternalStatemachine.g:358:2: (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' )
+            // InternalStatemachine.g:359:3: otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end'
             {
             otherlv_0=(Token)match(input,18,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getTransitionKeyword_0());
             		
-            // InternalStatemachine.g:363:3: (otherlv_1= 'elaborates' ( ( ruleEString ) ) ( ( ruleEString ) )* )?
+            // InternalStatemachine.g:363:3: (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1025,41 +1025,14 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalStatemachine.g:364:4: otherlv_1= 'elaborates' ( ( ruleEString ) ) ( ( ruleEString ) )*
+                    // InternalStatemachine.g:364:4: otherlv_1= 'elaborates' ( ( ruleEString ) )+
                     {
                     otherlv_1=(Token)match(input,19,FOLLOW_8); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getTransitionAccess().getElaboratesKeyword_1_0());
                     			
-                    // InternalStatemachine.g:368:4: ( ( ruleEString ) )
-                    // InternalStatemachine.g:369:5: ( ruleEString )
-                    {
-                    // InternalStatemachine.g:369:5: ( ruleEString )
-                    // InternalStatemachine.g:370:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getTransitionRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getTransitionAccess().getElaboratesEventCrossReference_1_1_0());
-                    					
-                    pushFollow(FOLLOW_14);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalStatemachine.g:384:4: ( ( ruleEString ) )*
+                    // InternalStatemachine.g:368:4: ( ( ruleEString ) )+
+                    int cnt7=0;
                     loop7:
                     do {
                         int alt7=2;
@@ -1072,10 +1045,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // InternalStatemachine.g:385:5: ( ruleEString )
+                    	    // InternalStatemachine.g:369:5: ( ruleEString )
                     	    {
-                    	    // InternalStatemachine.g:385:5: ( ruleEString )
-                    	    // InternalStatemachine.g:386:6: ruleEString
+                    	    // InternalStatemachine.g:369:5: ( ruleEString )
+                    	    // InternalStatemachine.g:370:6: ruleEString
                     	    {
 
                     	    						if (current==null) {
@@ -1083,7 +1056,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     	    						}
                     	    					
 
-                    	    						newCompositeNode(grammarAccess.getTransitionAccess().getElaboratesEventCrossReference_1_2_0());
+                    	    						newCompositeNode(grammarAccess.getTransitionAccess().getElaboratesEventCrossReference_1_1_0());
                     	    					
                     	    pushFollow(FOLLOW_14);
                     	    ruleEString();
@@ -1101,8 +1074,12 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop7;
+                    	    if ( cnt7 >= 1 ) break loop7;
+                                EarlyExitException eee =
+                                    new EarlyExitException(7, input);
+                                throw eee;
                         }
+                        cnt7++;
                     } while (true);
 
 
@@ -1111,7 +1088,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:401:3: ( (lv_extended_4_0= 'extended' ) )?
+            // InternalStatemachine.g:385:3: ( (lv_extended_3_0= 'extended' ) )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1120,14 +1097,14 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalStatemachine.g:402:4: (lv_extended_4_0= 'extended' )
+                    // InternalStatemachine.g:386:4: (lv_extended_3_0= 'extended' )
                     {
-                    // InternalStatemachine.g:402:4: (lv_extended_4_0= 'extended' )
-                    // InternalStatemachine.g:403:5: lv_extended_4_0= 'extended'
+                    // InternalStatemachine.g:386:4: (lv_extended_3_0= 'extended' )
+                    // InternalStatemachine.g:387:5: lv_extended_3_0= 'extended'
                     {
-                    lv_extended_4_0=(Token)match(input,20,FOLLOW_15); 
+                    lv_extended_3_0=(Token)match(input,20,FOLLOW_15); 
 
-                    					newLeafNode(lv_extended_4_0, grammarAccess.getTransitionAccess().getExtendedExtendedKeyword_2_0());
+                    					newLeafNode(lv_extended_3_0, grammarAccess.getTransitionAccess().getExtendedExtendedKeyword_2_0());
                     				
 
                     					if (current==null) {
@@ -1144,15 +1121,15 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,21,FOLLOW_8); 
+            otherlv_4=(Token)match(input,21,FOLLOW_8); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getTargetKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getTransitionAccess().getTargetKeyword_3());
             		
-            // InternalStatemachine.g:419:3: ( ( ruleEString ) )
-            // InternalStatemachine.g:420:4: ( ruleEString )
+            // InternalStatemachine.g:403:3: ( ( ruleEString ) )
+            // InternalStatemachine.g:404:4: ( ruleEString )
             {
-            // InternalStatemachine.g:420:4: ( ruleEString )
-            // InternalStatemachine.g:421:5: ruleEString
+            // InternalStatemachine.g:404:4: ( ruleEString )
+            // InternalStatemachine.g:405:5: ruleEString
             {
 
             					if (current==null) {
@@ -1176,15 +1153,15 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,22,FOLLOW_8); 
+            otherlv_6=(Token)match(input,22,FOLLOW_8); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getTransitionAccess().getSourceKeyword_5());
+            			newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getSourceKeyword_5());
             		
-            // InternalStatemachine.g:439:3: ( ( ruleEString ) )
-            // InternalStatemachine.g:440:4: ( ruleEString )
+            // InternalStatemachine.g:423:3: ( ( ruleEString ) )
+            // InternalStatemachine.g:424:4: ( ruleEString )
             {
-            // InternalStatemachine.g:440:4: ( ruleEString )
-            // InternalStatemachine.g:441:5: ruleEString
+            // InternalStatemachine.g:424:4: ( ruleEString )
+            // InternalStatemachine.g:425:5: ruleEString
             {
 
             					if (current==null) {
@@ -1208,7 +1185,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:455:3: (otherlv_9= 'any' ( (lv_parameters_10_0= ruleTypedParameter ) ) (otherlv_11= ',' ( (lv_parameters_12_0= ruleTypedParameter ) ) )* )?
+            // InternalStatemachine.g:439:3: (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1217,23 +1194,23 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalStatemachine.g:456:4: otherlv_9= 'any' ( (lv_parameters_10_0= ruleTypedParameter ) ) (otherlv_11= ',' ( (lv_parameters_12_0= ruleTypedParameter ) ) )*
+                    // InternalStatemachine.g:440:4: otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )*
                     {
-                    otherlv_9=(Token)match(input,23,FOLLOW_3); 
+                    otherlv_8=(Token)match(input,23,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getAnyKeyword_7_0());
+                    				newLeafNode(otherlv_8, grammarAccess.getTransitionAccess().getAnyKeyword_7_0());
                     			
-                    // InternalStatemachine.g:460:4: ( (lv_parameters_10_0= ruleTypedParameter ) )
-                    // InternalStatemachine.g:461:5: (lv_parameters_10_0= ruleTypedParameter )
+                    // InternalStatemachine.g:444:4: ( (lv_parameters_9_0= ruleTypedParameter ) )
+                    // InternalStatemachine.g:445:5: (lv_parameters_9_0= ruleTypedParameter )
                     {
-                    // InternalStatemachine.g:461:5: (lv_parameters_10_0= ruleTypedParameter )
-                    // InternalStatemachine.g:462:6: lv_parameters_10_0= ruleTypedParameter
+                    // InternalStatemachine.g:445:5: (lv_parameters_9_0= ruleTypedParameter )
+                    // InternalStatemachine.g:446:6: lv_parameters_9_0= ruleTypedParameter
                     {
 
                     						newCompositeNode(grammarAccess.getTransitionAccess().getParametersTypedParameterParserRuleCall_7_1_0());
                     					
                     pushFollow(FOLLOW_18);
-                    lv_parameters_10_0=ruleTypedParameter();
+                    lv_parameters_9_0=ruleTypedParameter();
 
                     state._fsp--;
 
@@ -1244,7 +1221,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"parameters",
-                    							lv_parameters_10_0,
+                    							lv_parameters_9_0,
                     							"ac.soton.xumlb.Statemachine.TypedParameter");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1254,7 +1231,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalStatemachine.g:479:4: (otherlv_11= ',' ( (lv_parameters_12_0= ruleTypedParameter ) ) )*
+                    // InternalStatemachine.g:463:4: (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )*
                     loop10:
                     do {
                         int alt10=2;
@@ -1267,23 +1244,23 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // InternalStatemachine.g:480:5: otherlv_11= ',' ( (lv_parameters_12_0= ruleTypedParameter ) )
+                    	    // InternalStatemachine.g:464:5: otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) )
                     	    {
-                    	    otherlv_11=(Token)match(input,24,FOLLOW_3); 
+                    	    otherlv_10=(Token)match(input,24,FOLLOW_3); 
 
-                    	    					newLeafNode(otherlv_11, grammarAccess.getTransitionAccess().getCommaKeyword_7_2_0());
+                    	    					newLeafNode(otherlv_10, grammarAccess.getTransitionAccess().getCommaKeyword_7_2_0());
                     	    				
-                    	    // InternalStatemachine.g:484:5: ( (lv_parameters_12_0= ruleTypedParameter ) )
-                    	    // InternalStatemachine.g:485:6: (lv_parameters_12_0= ruleTypedParameter )
+                    	    // InternalStatemachine.g:468:5: ( (lv_parameters_11_0= ruleTypedParameter ) )
+                    	    // InternalStatemachine.g:469:6: (lv_parameters_11_0= ruleTypedParameter )
                     	    {
-                    	    // InternalStatemachine.g:485:6: (lv_parameters_12_0= ruleTypedParameter )
-                    	    // InternalStatemachine.g:486:7: lv_parameters_12_0= ruleTypedParameter
+                    	    // InternalStatemachine.g:469:6: (lv_parameters_11_0= ruleTypedParameter )
+                    	    // InternalStatemachine.g:470:7: lv_parameters_11_0= ruleTypedParameter
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getTransitionAccess().getParametersTypedParameterParserRuleCall_7_2_1_0());
                     	    						
                     	    pushFollow(FOLLOW_18);
-                    	    lv_parameters_12_0=ruleTypedParameter();
+                    	    lv_parameters_11_0=ruleTypedParameter();
 
                     	    state._fsp--;
 
@@ -1294,7 +1271,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     	    							add(
                     	    								current,
                     	    								"parameters",
-                    	    								lv_parameters_12_0,
+                    	    								lv_parameters_11_0,
                     	    								"ac.soton.xumlb.Statemachine.TypedParameter");
                     	    							afterParserOrEnumRuleCall();
                     	    						
@@ -1319,7 +1296,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:505:3: (otherlv_13= 'where' ( (lv_guards_14_0= ruleGuard ) )+ )?
+            // InternalStatemachine.g:489:3: (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1328,13 +1305,13 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalStatemachine.g:506:4: otherlv_13= 'where' ( (lv_guards_14_0= ruleGuard ) )+
+                    // InternalStatemachine.g:490:4: otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+
                     {
-                    otherlv_13=(Token)match(input,25,FOLLOW_19); 
+                    otherlv_12=(Token)match(input,25,FOLLOW_19); 
 
-                    				newLeafNode(otherlv_13, grammarAccess.getTransitionAccess().getWhereKeyword_8_0());
+                    				newLeafNode(otherlv_12, grammarAccess.getTransitionAccess().getWhereKeyword_8_0());
                     			
-                    // InternalStatemachine.g:510:4: ( (lv_guards_14_0= ruleGuard ) )+
+                    // InternalStatemachine.g:494:4: ( (lv_guards_13_0= ruleGuard ) )+
                     int cnt12=0;
                     loop12:
                     do {
@@ -1348,16 +1325,16 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // InternalStatemachine.g:511:5: (lv_guards_14_0= ruleGuard )
+                    	    // InternalStatemachine.g:495:5: (lv_guards_13_0= ruleGuard )
                     	    {
-                    	    // InternalStatemachine.g:511:5: (lv_guards_14_0= ruleGuard )
-                    	    // InternalStatemachine.g:512:6: lv_guards_14_0= ruleGuard
+                    	    // InternalStatemachine.g:495:5: (lv_guards_13_0= ruleGuard )
+                    	    // InternalStatemachine.g:496:6: lv_guards_13_0= ruleGuard
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getTransitionAccess().getGuardsGuardParserRuleCall_8_1_0());
                     	    					
                     	    pushFollow(FOLLOW_20);
-                    	    lv_guards_14_0=ruleGuard();
+                    	    lv_guards_13_0=ruleGuard();
 
                     	    state._fsp--;
 
@@ -1368,7 +1345,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     	    						add(
                     	    							current,
                     	    							"guards",
-                    	    							lv_guards_14_0,
+                    	    							lv_guards_13_0,
                     	    							"ac.soton.xumlb.Statemachine.Guard");
                     	    						afterParserOrEnumRuleCall();
                     	    					
@@ -1394,7 +1371,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:530:3: (otherlv_15= 'then' ( (lv_actions_16_0= ruleAction ) )+ )?
+            // InternalStatemachine.g:514:3: (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1403,13 +1380,13 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalStatemachine.g:531:4: otherlv_15= 'then' ( (lv_actions_16_0= ruleAction ) )+
+                    // InternalStatemachine.g:515:4: otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+
                     {
-                    otherlv_15=(Token)match(input,26,FOLLOW_21); 
+                    otherlv_14=(Token)match(input,26,FOLLOW_21); 
 
-                    				newLeafNode(otherlv_15, grammarAccess.getTransitionAccess().getThenKeyword_9_0());
+                    				newLeafNode(otherlv_14, grammarAccess.getTransitionAccess().getThenKeyword_9_0());
                     			
-                    // InternalStatemachine.g:535:4: ( (lv_actions_16_0= ruleAction ) )+
+                    // InternalStatemachine.g:519:4: ( (lv_actions_15_0= ruleAction ) )+
                     int cnt14=0;
                     loop14:
                     do {
@@ -1423,16 +1400,16 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // InternalStatemachine.g:536:5: (lv_actions_16_0= ruleAction )
+                    	    // InternalStatemachine.g:520:5: (lv_actions_15_0= ruleAction )
                     	    {
-                    	    // InternalStatemachine.g:536:5: (lv_actions_16_0= ruleAction )
-                    	    // InternalStatemachine.g:537:6: lv_actions_16_0= ruleAction
+                    	    // InternalStatemachine.g:520:5: (lv_actions_15_0= ruleAction )
+                    	    // InternalStatemachine.g:521:6: lv_actions_15_0= ruleAction
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getTransitionAccess().getActionsActionParserRuleCall_9_1_0());
                     	    					
                     	    pushFollow(FOLLOW_22);
-                    	    lv_actions_16_0=ruleAction();
+                    	    lv_actions_15_0=ruleAction();
 
                     	    state._fsp--;
 
@@ -1443,7 +1420,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     	    						add(
                     	    							current,
                     	    							"actions",
-                    	    							lv_actions_16_0,
+                    	    							lv_actions_15_0,
                     	    							"ac.soton.xumlb.Statemachine.Action");
                     	    						afterParserOrEnumRuleCall();
                     	    					
@@ -1469,7 +1446,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:555:3: (otherlv_17= 'with' ( (lv_witnesses_18_0= ruleWitness ) )+ )?
+            // InternalStatemachine.g:539:3: (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -1478,13 +1455,13 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalStatemachine.g:556:4: otherlv_17= 'with' ( (lv_witnesses_18_0= ruleWitness ) )+
+                    // InternalStatemachine.g:540:4: otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+
                     {
-                    otherlv_17=(Token)match(input,27,FOLLOW_21); 
+                    otherlv_16=(Token)match(input,27,FOLLOW_21); 
 
-                    				newLeafNode(otherlv_17, grammarAccess.getTransitionAccess().getWithKeyword_10_0());
+                    				newLeafNode(otherlv_16, grammarAccess.getTransitionAccess().getWithKeyword_10_0());
                     			
-                    // InternalStatemachine.g:560:4: ( (lv_witnesses_18_0= ruleWitness ) )+
+                    // InternalStatemachine.g:544:4: ( (lv_witnesses_17_0= ruleWitness ) )+
                     int cnt16=0;
                     loop16:
                     do {
@@ -1498,16 +1475,16 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                         switch (alt16) {
                     	case 1 :
-                    	    // InternalStatemachine.g:561:5: (lv_witnesses_18_0= ruleWitness )
+                    	    // InternalStatemachine.g:545:5: (lv_witnesses_17_0= ruleWitness )
                     	    {
-                    	    // InternalStatemachine.g:561:5: (lv_witnesses_18_0= ruleWitness )
-                    	    // InternalStatemachine.g:562:6: lv_witnesses_18_0= ruleWitness
+                    	    // InternalStatemachine.g:545:5: (lv_witnesses_17_0= ruleWitness )
+                    	    // InternalStatemachine.g:546:6: lv_witnesses_17_0= ruleWitness
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getTransitionAccess().getWitnessesWitnessParserRuleCall_10_1_0());
                     	    					
                     	    pushFollow(FOLLOW_23);
-                    	    lv_witnesses_18_0=ruleWitness();
+                    	    lv_witnesses_17_0=ruleWitness();
 
                     	    state._fsp--;
 
@@ -1518,7 +1495,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     	    						add(
                     	    							current,
                     	    							"witnesses",
-                    	    							lv_witnesses_18_0,
+                    	    							lv_witnesses_17_0,
                     	    							"ac.soton.xumlb.Statemachine.Witness");
                     	    						afterParserOrEnumRuleCall();
                     	    					
@@ -1544,9 +1521,9 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_19=(Token)match(input,28,FOLLOW_2); 
+            otherlv_18=(Token)match(input,28,FOLLOW_2); 
 
-            			newLeafNode(otherlv_19, grammarAccess.getTransitionAccess().getEndKeyword_11());
+            			newLeafNode(otherlv_18, grammarAccess.getTransitionAccess().getEndKeyword_11());
             		
 
             }
@@ -1571,7 +1548,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypedParameter"
-    // InternalStatemachine.g:588:1: entryRuleTypedParameter returns [EObject current=null] : iv_ruleTypedParameter= ruleTypedParameter EOF ;
+    // InternalStatemachine.g:572:1: entryRuleTypedParameter returns [EObject current=null] : iv_ruleTypedParameter= ruleTypedParameter EOF ;
     public final EObject entryRuleTypedParameter() throws RecognitionException {
         EObject current = null;
 
@@ -1579,8 +1556,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:588:55: (iv_ruleTypedParameter= ruleTypedParameter EOF )
-            // InternalStatemachine.g:589:2: iv_ruleTypedParameter= ruleTypedParameter EOF
+            // InternalStatemachine.g:572:55: (iv_ruleTypedParameter= ruleTypedParameter EOF )
+            // InternalStatemachine.g:573:2: iv_ruleTypedParameter= ruleTypedParameter EOF
             {
              newCompositeNode(grammarAccess.getTypedParameterRule()); 
             pushFollow(FOLLOW_1);
@@ -1607,7 +1584,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypedParameter"
-    // InternalStatemachine.g:595:1: ruleTypedParameter returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) ) ) ;
+    // InternalStatemachine.g:579:1: ruleTypedParameter returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) ) ) ;
     public final EObject ruleTypedParameter() throws RecognitionException {
         EObject current = null;
 
@@ -1620,17 +1597,17 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:601:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) ) ) )
-            // InternalStatemachine.g:602:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) ) )
+            // InternalStatemachine.g:585:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) ) ) )
+            // InternalStatemachine.g:586:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) ) )
             {
-            // InternalStatemachine.g:602:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) ) )
-            // InternalStatemachine.g:603:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) )
+            // InternalStatemachine.g:586:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) ) )
+            // InternalStatemachine.g:587:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleXType ) )
             {
-            // InternalStatemachine.g:603:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalStatemachine.g:604:4: (lv_name_0_0= RULE_ID )
+            // InternalStatemachine.g:587:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalStatemachine.g:588:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalStatemachine.g:604:4: (lv_name_0_0= RULE_ID )
-            // InternalStatemachine.g:605:5: lv_name_0_0= RULE_ID
+            // InternalStatemachine.g:588:4: (lv_name_0_0= RULE_ID )
+            // InternalStatemachine.g:589:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_24); 
 
@@ -1656,11 +1633,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTypedParameterAccess().getColonKeyword_1());
             		
-            // InternalStatemachine.g:625:3: ( (lv_type_2_0= ruleXType ) )
-            // InternalStatemachine.g:626:4: (lv_type_2_0= ruleXType )
+            // InternalStatemachine.g:609:3: ( (lv_type_2_0= ruleXType ) )
+            // InternalStatemachine.g:610:4: (lv_type_2_0= ruleXType )
             {
-            // InternalStatemachine.g:626:4: (lv_type_2_0= ruleXType )
-            // InternalStatemachine.g:627:5: lv_type_2_0= ruleXType
+            // InternalStatemachine.g:610:4: (lv_type_2_0= ruleXType )
+            // InternalStatemachine.g:611:5: lv_type_2_0= ruleXType
             {
 
             					newCompositeNode(grammarAccess.getTypedParameterAccess().getTypeXTypeParserRuleCall_2_0());
@@ -1710,7 +1687,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXType"
-    // InternalStatemachine.g:648:1: entryRuleXType returns [String current=null] : iv_ruleXType= ruleXType EOF ;
+    // InternalStatemachine.g:632:1: entryRuleXType returns [String current=null] : iv_ruleXType= ruleXType EOF ;
     public final String entryRuleXType() throws RecognitionException {
         String current = null;
 
@@ -1718,8 +1695,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:648:45: (iv_ruleXType= ruleXType EOF )
-            // InternalStatemachine.g:649:2: iv_ruleXType= ruleXType EOF
+            // InternalStatemachine.g:632:45: (iv_ruleXType= ruleXType EOF )
+            // InternalStatemachine.g:633:2: iv_ruleXType= ruleXType EOF
             {
              newCompositeNode(grammarAccess.getXTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -1746,7 +1723,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXType"
-    // InternalStatemachine.g:655:1: ruleXType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )* ) ;
+    // InternalStatemachine.g:639:1: ruleXType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )* ) ;
     public final AntlrDatatypeRuleToken ruleXType() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1760,11 +1737,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:661:2: ( (this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )* ) )
-            // InternalStatemachine.g:662:2: (this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )* )
+            // InternalStatemachine.g:645:2: ( (this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )* ) )
+            // InternalStatemachine.g:646:2: (this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )* )
             {
-            // InternalStatemachine.g:662:2: (this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )* )
-            // InternalStatemachine.g:663:3: this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )*
+            // InternalStatemachine.g:646:2: (this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )* )
+            // InternalStatemachine.g:647:3: this_XComplexType_0= ruleXComplexType (kw= '\\u00D7' this_XType_2= ruleXType )*
             {
 
             			newCompositeNode(grammarAccess.getXTypeAccess().getXComplexTypeParserRuleCall_0());
@@ -1780,7 +1757,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             			afterParserOrEnumRuleCall();
             		
-            // InternalStatemachine.g:673:3: (kw= '\\u00D7' this_XType_2= ruleXType )*
+            // InternalStatemachine.g:657:3: (kw= '\\u00D7' this_XType_2= ruleXType )*
             loop18:
             do {
                 int alt18=2;
@@ -1793,7 +1770,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalStatemachine.g:674:4: kw= '\\u00D7' this_XType_2= ruleXType
+            	    // InternalStatemachine.g:658:4: kw= '\\u00D7' this_XType_2= ruleXType
             	    {
             	    kw=(Token)match(input,30,FOLLOW_25); 
 
@@ -1846,7 +1823,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXComplexType"
-    // InternalStatemachine.g:694:1: entryRuleXComplexType returns [String current=null] : iv_ruleXComplexType= ruleXComplexType EOF ;
+    // InternalStatemachine.g:678:1: entryRuleXComplexType returns [String current=null] : iv_ruleXComplexType= ruleXComplexType EOF ;
     public final String entryRuleXComplexType() throws RecognitionException {
         String current = null;
 
@@ -1854,8 +1831,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:694:52: (iv_ruleXComplexType= ruleXComplexType EOF )
-            // InternalStatemachine.g:695:2: iv_ruleXComplexType= ruleXComplexType EOF
+            // InternalStatemachine.g:678:52: (iv_ruleXComplexType= ruleXComplexType EOF )
+            // InternalStatemachine.g:679:2: iv_ruleXComplexType= ruleXComplexType EOF
             {
              newCompositeNode(grammarAccess.getXComplexTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -1882,7 +1859,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXComplexType"
-    // InternalStatemachine.g:701:1: ruleXComplexType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' ) | this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE | this_ID_5= RULE_ID ) ;
+    // InternalStatemachine.g:685:1: ruleXComplexType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' ) | this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE | this_ID_5= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleXComplexType() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1897,10 +1874,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:707:2: ( ( (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' ) | this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE | this_ID_5= RULE_ID ) )
-            // InternalStatemachine.g:708:2: ( (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' ) | this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE | this_ID_5= RULE_ID )
+            // InternalStatemachine.g:691:2: ( ( (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' ) | this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE | this_ID_5= RULE_ID ) )
+            // InternalStatemachine.g:692:2: ( (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' ) | this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE | this_ID_5= RULE_ID )
             {
-            // InternalStatemachine.g:708:2: ( (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' ) | this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE | this_ID_5= RULE_ID )
+            // InternalStatemachine.g:692:2: ( (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' ) | this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE | this_ID_5= RULE_ID )
             int alt19=3;
             switch ( input.LA(1) ) {
             case 31:
@@ -1928,10 +1905,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             switch (alt19) {
                 case 1 :
-                    // InternalStatemachine.g:709:3: (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' )
+                    // InternalStatemachine.g:693:3: (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' )
                     {
-                    // InternalStatemachine.g:709:3: (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' )
-                    // InternalStatemachine.g:710:4: kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')'
+                    // InternalStatemachine.g:693:3: (kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')' )
+                    // InternalStatemachine.g:694:4: kw= '\\u2119' kw= '(' this_XType_2= ruleXType kw= ')'
                     {
                     kw=(Token)match(input,31,FOLLOW_4); 
 
@@ -1969,7 +1946,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalStatemachine.g:737:3: this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE
+                    // InternalStatemachine.g:721:3: this_EVENT_B_BUILDIN_TYPE_4= ruleEVENT_B_BUILDIN_TYPE
                     {
 
                     			newCompositeNode(grammarAccess.getXComplexTypeAccess().getEVENT_B_BUILDIN_TYPEParserRuleCall_1());
@@ -1989,7 +1966,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalStatemachine.g:748:3: this_ID_5= RULE_ID
+                    // InternalStatemachine.g:732:3: this_ID_5= RULE_ID
                     {
                     this_ID_5=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2024,7 +2001,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEVENT_B_BUILDIN_TYPE"
-    // InternalStatemachine.g:759:1: entryRuleEVENT_B_BUILDIN_TYPE returns [String current=null] : iv_ruleEVENT_B_BUILDIN_TYPE= ruleEVENT_B_BUILDIN_TYPE EOF ;
+    // InternalStatemachine.g:743:1: entryRuleEVENT_B_BUILDIN_TYPE returns [String current=null] : iv_ruleEVENT_B_BUILDIN_TYPE= ruleEVENT_B_BUILDIN_TYPE EOF ;
     public final String entryRuleEVENT_B_BUILDIN_TYPE() throws RecognitionException {
         String current = null;
 
@@ -2032,8 +2009,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:759:60: (iv_ruleEVENT_B_BUILDIN_TYPE= ruleEVENT_B_BUILDIN_TYPE EOF )
-            // InternalStatemachine.g:760:2: iv_ruleEVENT_B_BUILDIN_TYPE= ruleEVENT_B_BUILDIN_TYPE EOF
+            // InternalStatemachine.g:743:60: (iv_ruleEVENT_B_BUILDIN_TYPE= ruleEVENT_B_BUILDIN_TYPE EOF )
+            // InternalStatemachine.g:744:2: iv_ruleEVENT_B_BUILDIN_TYPE= ruleEVENT_B_BUILDIN_TYPE EOF
             {
              newCompositeNode(grammarAccess.getEVENT_B_BUILDIN_TYPERule()); 
             pushFollow(FOLLOW_1);
@@ -2060,7 +2037,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEVENT_B_BUILDIN_TYPE"
-    // InternalStatemachine.g:766:1: ruleEVENT_B_BUILDIN_TYPE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'BOOL' | kw= '\\u2124' ) ;
+    // InternalStatemachine.g:750:1: ruleEVENT_B_BUILDIN_TYPE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'BOOL' | kw= '\\u2124' ) ;
     public final AntlrDatatypeRuleToken ruleEVENT_B_BUILDIN_TYPE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2070,10 +2047,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:772:2: ( (kw= 'BOOL' | kw= '\\u2124' ) )
-            // InternalStatemachine.g:773:2: (kw= 'BOOL' | kw= '\\u2124' )
+            // InternalStatemachine.g:756:2: ( (kw= 'BOOL' | kw= '\\u2124' ) )
+            // InternalStatemachine.g:757:2: (kw= 'BOOL' | kw= '\\u2124' )
             {
-            // InternalStatemachine.g:773:2: (kw= 'BOOL' | kw= '\\u2124' )
+            // InternalStatemachine.g:757:2: (kw= 'BOOL' | kw= '\\u2124' )
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2091,7 +2068,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // InternalStatemachine.g:774:3: kw= 'BOOL'
+                    // InternalStatemachine.g:758:3: kw= 'BOOL'
                     {
                     kw=(Token)match(input,32,FOLLOW_2); 
 
@@ -2102,7 +2079,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalStatemachine.g:780:3: kw= '\\u2124'
+                    // InternalStatemachine.g:764:3: kw= '\\u2124'
                     {
                     kw=(Token)match(input,33,FOLLOW_2); 
 
@@ -2135,7 +2112,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGuard"
-    // InternalStatemachine.g:789:1: entryRuleGuard returns [EObject current=null] : iv_ruleGuard= ruleGuard EOF ;
+    // InternalStatemachine.g:773:1: entryRuleGuard returns [EObject current=null] : iv_ruleGuard= ruleGuard EOF ;
     public final EObject entryRuleGuard() throws RecognitionException {
         EObject current = null;
 
@@ -2143,8 +2120,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:789:46: (iv_ruleGuard= ruleGuard EOF )
-            // InternalStatemachine.g:790:2: iv_ruleGuard= ruleGuard EOF
+            // InternalStatemachine.g:773:46: (iv_ruleGuard= ruleGuard EOF )
+            // InternalStatemachine.g:774:2: iv_ruleGuard= ruleGuard EOF
             {
              newCompositeNode(grammarAccess.getGuardRule()); 
             pushFollow(FOLLOW_1);
@@ -2171,7 +2148,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGuard"
-    // InternalStatemachine.g:796:1: ruleGuard returns [EObject current=null] : ( ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) ) ;
+    // InternalStatemachine.g:780:1: ruleGuard returns [EObject current=null] : ( ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) ) ;
     public final EObject ruleGuard() throws RecognitionException {
         EObject current = null;
 
@@ -2184,13 +2161,13 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:802:2: ( ( ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) ) )
-            // InternalStatemachine.g:803:2: ( ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) )
+            // InternalStatemachine.g:786:2: ( ( ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) ) )
+            // InternalStatemachine.g:787:2: ( ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) )
             {
-            // InternalStatemachine.g:803:2: ( ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) )
-            // InternalStatemachine.g:804:3: ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) )
+            // InternalStatemachine.g:787:2: ( ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) )
+            // InternalStatemachine.g:788:3: ( (lv_theorem_0_0= 'theorem' ) )? ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) )
             {
-            // InternalStatemachine.g:804:3: ( (lv_theorem_0_0= 'theorem' ) )?
+            // InternalStatemachine.g:788:3: ( (lv_theorem_0_0= 'theorem' ) )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -2199,10 +2176,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt21) {
                 case 1 :
-                    // InternalStatemachine.g:805:4: (lv_theorem_0_0= 'theorem' )
+                    // InternalStatemachine.g:789:4: (lv_theorem_0_0= 'theorem' )
                     {
-                    // InternalStatemachine.g:805:4: (lv_theorem_0_0= 'theorem' )
-                    // InternalStatemachine.g:806:5: lv_theorem_0_0= 'theorem'
+                    // InternalStatemachine.g:789:4: (lv_theorem_0_0= 'theorem' )
+                    // InternalStatemachine.g:790:5: lv_theorem_0_0= 'theorem'
                     {
                     lv_theorem_0_0=(Token)match(input,34,FOLLOW_21); 
 
@@ -2223,11 +2200,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:818:3: ( (lv_name_1_0= RULE_XLABEL ) )
-            // InternalStatemachine.g:819:4: (lv_name_1_0= RULE_XLABEL )
+            // InternalStatemachine.g:802:3: ( (lv_name_1_0= RULE_XLABEL ) )
+            // InternalStatemachine.g:803:4: (lv_name_1_0= RULE_XLABEL )
             {
-            // InternalStatemachine.g:819:4: (lv_name_1_0= RULE_XLABEL )
-            // InternalStatemachine.g:820:5: lv_name_1_0= RULE_XLABEL
+            // InternalStatemachine.g:803:4: (lv_name_1_0= RULE_XLABEL )
+            // InternalStatemachine.g:804:5: lv_name_1_0= RULE_XLABEL
             {
             lv_name_1_0=(Token)match(input,RULE_XLABEL,FOLLOW_27); 
 
@@ -2249,11 +2226,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:836:3: ( (lv_predicate_2_0= ruleXFormula ) )
-            // InternalStatemachine.g:837:4: (lv_predicate_2_0= ruleXFormula )
+            // InternalStatemachine.g:820:3: ( (lv_predicate_2_0= ruleXFormula ) )
+            // InternalStatemachine.g:821:4: (lv_predicate_2_0= ruleXFormula )
             {
-            // InternalStatemachine.g:837:4: (lv_predicate_2_0= ruleXFormula )
-            // InternalStatemachine.g:838:5: lv_predicate_2_0= ruleXFormula
+            // InternalStatemachine.g:821:4: (lv_predicate_2_0= ruleXFormula )
+            // InternalStatemachine.g:822:5: lv_predicate_2_0= ruleXFormula
             {
 
             					newCompositeNode(grammarAccess.getGuardAccess().getPredicateXFormulaParserRuleCall_2_0());
@@ -2303,7 +2280,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAction"
-    // InternalStatemachine.g:859:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
+    // InternalStatemachine.g:843:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
     public final EObject entryRuleAction() throws RecognitionException {
         EObject current = null;
 
@@ -2311,8 +2288,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:859:47: (iv_ruleAction= ruleAction EOF )
-            // InternalStatemachine.g:860:2: iv_ruleAction= ruleAction EOF
+            // InternalStatemachine.g:843:47: (iv_ruleAction= ruleAction EOF )
+            // InternalStatemachine.g:844:2: iv_ruleAction= ruleAction EOF
             {
              newCompositeNode(grammarAccess.getActionRule()); 
             pushFollow(FOLLOW_1);
@@ -2339,7 +2316,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAction"
-    // InternalStatemachine.g:866:1: ruleAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) ) ) ;
+    // InternalStatemachine.g:850:1: ruleAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) ) ) ;
     public final EObject ruleAction() throws RecognitionException {
         EObject current = null;
 
@@ -2351,17 +2328,17 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:872:2: ( ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) ) ) )
-            // InternalStatemachine.g:873:2: ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) ) )
+            // InternalStatemachine.g:856:2: ( ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) ) ) )
+            // InternalStatemachine.g:857:2: ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) ) )
             {
-            // InternalStatemachine.g:873:2: ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) ) )
-            // InternalStatemachine.g:874:3: ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) )
+            // InternalStatemachine.g:857:2: ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) ) )
+            // InternalStatemachine.g:858:3: ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_action_1_0= ruleXFormula ) )
             {
-            // InternalStatemachine.g:874:3: ( (lv_name_0_0= RULE_XLABEL ) )
-            // InternalStatemachine.g:875:4: (lv_name_0_0= RULE_XLABEL )
+            // InternalStatemachine.g:858:3: ( (lv_name_0_0= RULE_XLABEL ) )
+            // InternalStatemachine.g:859:4: (lv_name_0_0= RULE_XLABEL )
             {
-            // InternalStatemachine.g:875:4: (lv_name_0_0= RULE_XLABEL )
-            // InternalStatemachine.g:876:5: lv_name_0_0= RULE_XLABEL
+            // InternalStatemachine.g:859:4: (lv_name_0_0= RULE_XLABEL )
+            // InternalStatemachine.g:860:5: lv_name_0_0= RULE_XLABEL
             {
             lv_name_0_0=(Token)match(input,RULE_XLABEL,FOLLOW_27); 
 
@@ -2383,11 +2360,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:892:3: ( (lv_action_1_0= ruleXFormula ) )
-            // InternalStatemachine.g:893:4: (lv_action_1_0= ruleXFormula )
+            // InternalStatemachine.g:876:3: ( (lv_action_1_0= ruleXFormula ) )
+            // InternalStatemachine.g:877:4: (lv_action_1_0= ruleXFormula )
             {
-            // InternalStatemachine.g:893:4: (lv_action_1_0= ruleXFormula )
-            // InternalStatemachine.g:894:5: lv_action_1_0= ruleXFormula
+            // InternalStatemachine.g:877:4: (lv_action_1_0= ruleXFormula )
+            // InternalStatemachine.g:878:5: lv_action_1_0= ruleXFormula
             {
 
             					newCompositeNode(grammarAccess.getActionAccess().getActionXFormulaParserRuleCall_1_0());
@@ -2437,7 +2414,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWitness"
-    // InternalStatemachine.g:915:1: entryRuleWitness returns [EObject current=null] : iv_ruleWitness= ruleWitness EOF ;
+    // InternalStatemachine.g:899:1: entryRuleWitness returns [EObject current=null] : iv_ruleWitness= ruleWitness EOF ;
     public final EObject entryRuleWitness() throws RecognitionException {
         EObject current = null;
 
@@ -2445,8 +2422,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:915:48: (iv_ruleWitness= ruleWitness EOF )
-            // InternalStatemachine.g:916:2: iv_ruleWitness= ruleWitness EOF
+            // InternalStatemachine.g:899:48: (iv_ruleWitness= ruleWitness EOF )
+            // InternalStatemachine.g:900:2: iv_ruleWitness= ruleWitness EOF
             {
              newCompositeNode(grammarAccess.getWitnessRule()); 
             pushFollow(FOLLOW_1);
@@ -2473,7 +2450,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWitness"
-    // InternalStatemachine.g:922:1: ruleWitness returns [EObject current=null] : ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) ) ) ;
+    // InternalStatemachine.g:906:1: ruleWitness returns [EObject current=null] : ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) ) ) ;
     public final EObject ruleWitness() throws RecognitionException {
         EObject current = null;
 
@@ -2485,17 +2462,17 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:928:2: ( ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) ) ) )
-            // InternalStatemachine.g:929:2: ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) ) )
+            // InternalStatemachine.g:912:2: ( ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) ) ) )
+            // InternalStatemachine.g:913:2: ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) ) )
             {
-            // InternalStatemachine.g:929:2: ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) ) )
-            // InternalStatemachine.g:930:3: ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) )
+            // InternalStatemachine.g:913:2: ( ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) ) )
+            // InternalStatemachine.g:914:3: ( (lv_name_0_0= RULE_XLABEL ) ) ( (lv_predicate_1_0= ruleXFormula ) )
             {
-            // InternalStatemachine.g:930:3: ( (lv_name_0_0= RULE_XLABEL ) )
-            // InternalStatemachine.g:931:4: (lv_name_0_0= RULE_XLABEL )
+            // InternalStatemachine.g:914:3: ( (lv_name_0_0= RULE_XLABEL ) )
+            // InternalStatemachine.g:915:4: (lv_name_0_0= RULE_XLABEL )
             {
-            // InternalStatemachine.g:931:4: (lv_name_0_0= RULE_XLABEL )
-            // InternalStatemachine.g:932:5: lv_name_0_0= RULE_XLABEL
+            // InternalStatemachine.g:915:4: (lv_name_0_0= RULE_XLABEL )
+            // InternalStatemachine.g:916:5: lv_name_0_0= RULE_XLABEL
             {
             lv_name_0_0=(Token)match(input,RULE_XLABEL,FOLLOW_27); 
 
@@ -2517,11 +2494,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:948:3: ( (lv_predicate_1_0= ruleXFormula ) )
-            // InternalStatemachine.g:949:4: (lv_predicate_1_0= ruleXFormula )
+            // InternalStatemachine.g:932:3: ( (lv_predicate_1_0= ruleXFormula ) )
+            // InternalStatemachine.g:933:4: (lv_predicate_1_0= ruleXFormula )
             {
-            // InternalStatemachine.g:949:4: (lv_predicate_1_0= ruleXFormula )
-            // InternalStatemachine.g:950:5: lv_predicate_1_0= ruleXFormula
+            // InternalStatemachine.g:933:4: (lv_predicate_1_0= ruleXFormula )
+            // InternalStatemachine.g:934:5: lv_predicate_1_0= ruleXFormula
             {
 
             					newCompositeNode(grammarAccess.getWitnessAccess().getPredicateXFormulaParserRuleCall_1_0());
@@ -2571,7 +2548,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleState"
-    // InternalStatemachine.g:971:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
+    // InternalStatemachine.g:955:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
     public final EObject entryRuleState() throws RecognitionException {
         EObject current = null;
 
@@ -2579,8 +2556,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:971:46: (iv_ruleState= ruleState EOF )
-            // InternalStatemachine.g:972:2: iv_ruleState= ruleState EOF
+            // InternalStatemachine.g:955:46: (iv_ruleState= ruleState EOF )
+            // InternalStatemachine.g:956:2: iv_ruleState= ruleState EOF
             {
              newCompositeNode(grammarAccess.getStateRule()); 
             pushFollow(FOLLOW_1);
@@ -2607,7 +2584,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // InternalStatemachine.g:978:1: ruleState returns [EObject current=null] : (otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )? ) ;
+    // InternalStatemachine.g:962:1: ruleState returns [EObject current=null] : (otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )? ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
@@ -2636,21 +2613,21 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:984:2: ( (otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )? ) )
-            // InternalStatemachine.g:985:2: (otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )? )
+            // InternalStatemachine.g:968:2: ( (otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )? ) )
+            // InternalStatemachine.g:969:2: (otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )? )
             {
-            // InternalStatemachine.g:985:2: (otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )? )
-            // InternalStatemachine.g:986:3: otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )?
+            // InternalStatemachine.g:969:2: (otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )? )
+            // InternalStatemachine.g:970:3: otherlv_0= 'State' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'refines' ( ( ruleEString ) ) )? (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )? (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )? (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )? (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )?
             {
             otherlv_0=(Token)match(input,35,FOLLOW_8); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStateAccess().getStateKeyword_0());
             		
-            // InternalStatemachine.g:990:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalStatemachine.g:991:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:974:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:975:4: (lv_name_1_0= ruleEString )
             {
-            // InternalStatemachine.g:991:4: (lv_name_1_0= ruleEString )
-            // InternalStatemachine.g:992:5: lv_name_1_0= ruleEString
+            // InternalStatemachine.g:975:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:976:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getStateAccess().getNameEStringParserRuleCall_1_0());
@@ -2677,7 +2654,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:1009:3: (otherlv_2= 'refines' ( ( ruleEString ) ) )?
+            // InternalStatemachine.g:993:3: (otherlv_2= 'refines' ( ( ruleEString ) ) )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -2686,17 +2663,17 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt22) {
                 case 1 :
-                    // InternalStatemachine.g:1010:4: otherlv_2= 'refines' ( ( ruleEString ) )
+                    // InternalStatemachine.g:994:4: otherlv_2= 'refines' ( ( ruleEString ) )
                     {
                     otherlv_2=(Token)match(input,15,FOLLOW_8); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getStateAccess().getRefinesKeyword_2_0());
                     			
-                    // InternalStatemachine.g:1014:4: ( ( ruleEString ) )
-                    // InternalStatemachine.g:1015:5: ( ruleEString )
+                    // InternalStatemachine.g:998:4: ( ( ruleEString ) )
+                    // InternalStatemachine.g:999:5: ( ruleEString )
                     {
-                    // InternalStatemachine.g:1015:5: ( ruleEString )
-                    // InternalStatemachine.g:1016:6: ruleEString
+                    // InternalStatemachine.g:999:5: ( ruleEString )
+                    // InternalStatemachine.g:1000:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -2726,7 +2703,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:1031:3: (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )?
+            // InternalStatemachine.g:1015:3: (otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end' )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -2735,7 +2712,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt24) {
                 case 1 :
-                    // InternalStatemachine.g:1032:4: otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end'
+                    // InternalStatemachine.g:1016:4: otherlv_4= 'statemachines' otherlv_5= 'begin' ( (lv_statemachines_6_0= ruleStatemachine ) ) ( (lv_statemachines_7_0= ruleStatemachine ) )* otherlv_8= 'end'
                     {
                     otherlv_4=(Token)match(input,36,FOLLOW_30); 
 
@@ -2745,11 +2722,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_5, grammarAccess.getStateAccess().getBeginKeyword_3_1());
                     			
-                    // InternalStatemachine.g:1040:4: ( (lv_statemachines_6_0= ruleStatemachine ) )
-                    // InternalStatemachine.g:1041:5: (lv_statemachines_6_0= ruleStatemachine )
+                    // InternalStatemachine.g:1024:4: ( (lv_statemachines_6_0= ruleStatemachine ) )
+                    // InternalStatemachine.g:1025:5: (lv_statemachines_6_0= ruleStatemachine )
                     {
-                    // InternalStatemachine.g:1041:5: (lv_statemachines_6_0= ruleStatemachine )
-                    // InternalStatemachine.g:1042:6: lv_statemachines_6_0= ruleStatemachine
+                    // InternalStatemachine.g:1025:5: (lv_statemachines_6_0= ruleStatemachine )
+                    // InternalStatemachine.g:1026:6: lv_statemachines_6_0= ruleStatemachine
                     {
 
                     						newCompositeNode(grammarAccess.getStateAccess().getStatemachinesStatemachineParserRuleCall_3_2_0());
@@ -2776,7 +2753,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalStatemachine.g:1059:4: ( (lv_statemachines_7_0= ruleStatemachine ) )*
+                    // InternalStatemachine.g:1043:4: ( (lv_statemachines_7_0= ruleStatemachine ) )*
                     loop23:
                     do {
                         int alt23=2;
@@ -2789,10 +2766,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                         switch (alt23) {
                     	case 1 :
-                    	    // InternalStatemachine.g:1060:5: (lv_statemachines_7_0= ruleStatemachine )
+                    	    // InternalStatemachine.g:1044:5: (lv_statemachines_7_0= ruleStatemachine )
                     	    {
-                    	    // InternalStatemachine.g:1060:5: (lv_statemachines_7_0= ruleStatemachine )
-                    	    // InternalStatemachine.g:1061:6: lv_statemachines_7_0= ruleStatemachine
+                    	    // InternalStatemachine.g:1044:5: (lv_statemachines_7_0= ruleStatemachine )
+                    	    // InternalStatemachine.g:1045:6: lv_statemachines_7_0= ruleStatemachine
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getStateAccess().getStatemachinesStatemachineParserRuleCall_3_3_0());
@@ -2835,7 +2812,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:1083:3: (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )?
+            // InternalStatemachine.g:1067:3: (otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+ )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -2844,13 +2821,13 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt26) {
                 case 1 :
-                    // InternalStatemachine.g:1084:4: otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+
+                    // InternalStatemachine.g:1068:4: otherlv_9= 'invariants' ( (lv_invariants_10_0= ruleInvariant ) )+
                     {
                     otherlv_9=(Token)match(input,38,FOLLOW_34); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getStateAccess().getInvariantsKeyword_4_0());
                     			
-                    // InternalStatemachine.g:1088:4: ( (lv_invariants_10_0= ruleInvariant ) )+
+                    // InternalStatemachine.g:1072:4: ( (lv_invariants_10_0= ruleInvariant ) )+
                     int cnt25=0;
                     loop25:
                     do {
@@ -2864,10 +2841,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                         switch (alt25) {
                     	case 1 :
-                    	    // InternalStatemachine.g:1089:5: (lv_invariants_10_0= ruleInvariant )
+                    	    // InternalStatemachine.g:1073:5: (lv_invariants_10_0= ruleInvariant )
                     	    {
-                    	    // InternalStatemachine.g:1089:5: (lv_invariants_10_0= ruleInvariant )
-                    	    // InternalStatemachine.g:1090:6: lv_invariants_10_0= ruleInvariant
+                    	    // InternalStatemachine.g:1073:5: (lv_invariants_10_0= ruleInvariant )
+                    	    // InternalStatemachine.g:1074:6: lv_invariants_10_0= ruleInvariant
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getStateAccess().getInvariantsInvariantParserRuleCall_4_1_0());
@@ -2910,7 +2887,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:1108:3: (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )?
+            // InternalStatemachine.g:1092:3: (otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+ )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -2919,13 +2896,13 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt28) {
                 case 1 :
-                    // InternalStatemachine.g:1109:4: otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+
+                    // InternalStatemachine.g:1093:4: otherlv_11= 'entryActions' ( (lv_entryActions_12_0= ruleAction ) )+
                     {
                     otherlv_11=(Token)match(input,39,FOLLOW_21); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getStateAccess().getEntryActionsKeyword_5_0());
                     			
-                    // InternalStatemachine.g:1113:4: ( (lv_entryActions_12_0= ruleAction ) )+
+                    // InternalStatemachine.g:1097:4: ( (lv_entryActions_12_0= ruleAction ) )+
                     int cnt27=0;
                     loop27:
                     do {
@@ -2939,10 +2916,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                         switch (alt27) {
                     	case 1 :
-                    	    // InternalStatemachine.g:1114:5: (lv_entryActions_12_0= ruleAction )
+                    	    // InternalStatemachine.g:1098:5: (lv_entryActions_12_0= ruleAction )
                     	    {
-                    	    // InternalStatemachine.g:1114:5: (lv_entryActions_12_0= ruleAction )
-                    	    // InternalStatemachine.g:1115:6: lv_entryActions_12_0= ruleAction
+                    	    // InternalStatemachine.g:1098:5: (lv_entryActions_12_0= ruleAction )
+                    	    // InternalStatemachine.g:1099:6: lv_entryActions_12_0= ruleAction
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getStateAccess().getEntryActionsActionParserRuleCall_5_1_0());
@@ -2985,7 +2962,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:1133:3: (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )?
+            // InternalStatemachine.g:1117:3: (otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+ )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -2994,13 +2971,13 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             }
             switch (alt30) {
                 case 1 :
-                    // InternalStatemachine.g:1134:4: otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+
+                    // InternalStatemachine.g:1118:4: otherlv_13= 'exitActions' ( (lv_exitActions_14_0= ruleAction ) )+
                     {
                     otherlv_13=(Token)match(input,40,FOLLOW_21); 
 
                     				newLeafNode(otherlv_13, grammarAccess.getStateAccess().getExitActionsKeyword_6_0());
                     			
-                    // InternalStatemachine.g:1138:4: ( (lv_exitActions_14_0= ruleAction ) )+
+                    // InternalStatemachine.g:1122:4: ( (lv_exitActions_14_0= ruleAction ) )+
                     int cnt29=0;
                     loop29:
                     do {
@@ -3014,10 +2991,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                         switch (alt29) {
                     	case 1 :
-                    	    // InternalStatemachine.g:1139:5: (lv_exitActions_14_0= ruleAction )
+                    	    // InternalStatemachine.g:1123:5: (lv_exitActions_14_0= ruleAction )
                     	    {
-                    	    // InternalStatemachine.g:1139:5: (lv_exitActions_14_0= ruleAction )
-                    	    // InternalStatemachine.g:1140:6: lv_exitActions_14_0= ruleAction
+                    	    // InternalStatemachine.g:1123:5: (lv_exitActions_14_0= ruleAction )
+                    	    // InternalStatemachine.g:1124:6: lv_exitActions_14_0= ruleAction
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getStateAccess().getExitActionsActionParserRuleCall_6_1_0());
@@ -3083,7 +3060,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInvariant"
-    // InternalStatemachine.g:1162:1: entryRuleInvariant returns [EObject current=null] : iv_ruleInvariant= ruleInvariant EOF ;
+    // InternalStatemachine.g:1146:1: entryRuleInvariant returns [EObject current=null] : iv_ruleInvariant= ruleInvariant EOF ;
     public final EObject entryRuleInvariant() throws RecognitionException {
         EObject current = null;
 
@@ -3091,8 +3068,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1162:50: (iv_ruleInvariant= ruleInvariant EOF )
-            // InternalStatemachine.g:1163:2: iv_ruleInvariant= ruleInvariant EOF
+            // InternalStatemachine.g:1146:50: (iv_ruleInvariant= ruleInvariant EOF )
+            // InternalStatemachine.g:1147:2: iv_ruleInvariant= ruleInvariant EOF
             {
              newCompositeNode(grammarAccess.getInvariantRule()); 
             pushFollow(FOLLOW_1);
@@ -3119,7 +3096,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInvariant"
-    // InternalStatemachine.g:1169:1: ruleInvariant returns [EObject current=null] : ( ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) ) ;
+    // InternalStatemachine.g:1153:1: ruleInvariant returns [EObject current=null] : ( ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) ) ;
     public final EObject ruleInvariant() throws RecognitionException {
         EObject current = null;
 
@@ -3132,17 +3109,17 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1175:2: ( ( ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) ) )
-            // InternalStatemachine.g:1176:2: ( ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) )
+            // InternalStatemachine.g:1159:2: ( ( ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) ) )
+            // InternalStatemachine.g:1160:2: ( ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) )
             {
-            // InternalStatemachine.g:1176:2: ( ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) )
-            // InternalStatemachine.g:1177:3: ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) )
+            // InternalStatemachine.g:1160:2: ( ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) ) )
+            // InternalStatemachine.g:1161:3: ( (lv_theorem_0_0= 'theorem' ) ) ( (lv_name_1_0= RULE_XLABEL ) ) ( (lv_predicate_2_0= ruleXFormula ) )
             {
-            // InternalStatemachine.g:1177:3: ( (lv_theorem_0_0= 'theorem' ) )
-            // InternalStatemachine.g:1178:4: (lv_theorem_0_0= 'theorem' )
+            // InternalStatemachine.g:1161:3: ( (lv_theorem_0_0= 'theorem' ) )
+            // InternalStatemachine.g:1162:4: (lv_theorem_0_0= 'theorem' )
             {
-            // InternalStatemachine.g:1178:4: (lv_theorem_0_0= 'theorem' )
-            // InternalStatemachine.g:1179:5: lv_theorem_0_0= 'theorem'
+            // InternalStatemachine.g:1162:4: (lv_theorem_0_0= 'theorem' )
+            // InternalStatemachine.g:1163:5: lv_theorem_0_0= 'theorem'
             {
             lv_theorem_0_0=(Token)match(input,34,FOLLOW_21); 
 
@@ -3160,11 +3137,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:1191:3: ( (lv_name_1_0= RULE_XLABEL ) )
-            // InternalStatemachine.g:1192:4: (lv_name_1_0= RULE_XLABEL )
+            // InternalStatemachine.g:1175:3: ( (lv_name_1_0= RULE_XLABEL ) )
+            // InternalStatemachine.g:1176:4: (lv_name_1_0= RULE_XLABEL )
             {
-            // InternalStatemachine.g:1192:4: (lv_name_1_0= RULE_XLABEL )
-            // InternalStatemachine.g:1193:5: lv_name_1_0= RULE_XLABEL
+            // InternalStatemachine.g:1176:4: (lv_name_1_0= RULE_XLABEL )
+            // InternalStatemachine.g:1177:5: lv_name_1_0= RULE_XLABEL
             {
             lv_name_1_0=(Token)match(input,RULE_XLABEL,FOLLOW_27); 
 
@@ -3186,11 +3163,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalStatemachine.g:1209:3: ( (lv_predicate_2_0= ruleXFormula ) )
-            // InternalStatemachine.g:1210:4: (lv_predicate_2_0= ruleXFormula )
+            // InternalStatemachine.g:1193:3: ( (lv_predicate_2_0= ruleXFormula ) )
+            // InternalStatemachine.g:1194:4: (lv_predicate_2_0= ruleXFormula )
             {
-            // InternalStatemachine.g:1210:4: (lv_predicate_2_0= ruleXFormula )
-            // InternalStatemachine.g:1211:5: lv_predicate_2_0= ruleXFormula
+            // InternalStatemachine.g:1194:4: (lv_predicate_2_0= ruleXFormula )
+            // InternalStatemachine.g:1195:5: lv_predicate_2_0= ruleXFormula
             {
 
             					newCompositeNode(grammarAccess.getInvariantAccess().getPredicateXFormulaParserRuleCall_2_0());
@@ -3240,7 +3217,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInitial"
-    // InternalStatemachine.g:1232:1: entryRuleInitial returns [EObject current=null] : iv_ruleInitial= ruleInitial EOF ;
+    // InternalStatemachine.g:1216:1: entryRuleInitial returns [EObject current=null] : iv_ruleInitial= ruleInitial EOF ;
     public final EObject entryRuleInitial() throws RecognitionException {
         EObject current = null;
 
@@ -3248,8 +3225,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1232:48: (iv_ruleInitial= ruleInitial EOF )
-            // InternalStatemachine.g:1233:2: iv_ruleInitial= ruleInitial EOF
+            // InternalStatemachine.g:1216:48: (iv_ruleInitial= ruleInitial EOF )
+            // InternalStatemachine.g:1217:2: iv_ruleInitial= ruleInitial EOF
             {
              newCompositeNode(grammarAccess.getInitialRule()); 
             pushFollow(FOLLOW_1);
@@ -3276,7 +3253,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInitial"
-    // InternalStatemachine.g:1239:1: ruleInitial returns [EObject current=null] : (otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalStatemachine.g:1223:1: ruleInitial returns [EObject current=null] : (otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleInitial() throws RecognitionException {
         EObject current = null;
 
@@ -3288,21 +3265,21 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1245:2: ( (otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalStatemachine.g:1246:2: (otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1229:2: ( (otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalStatemachine.g:1230:2: (otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalStatemachine.g:1246:2: (otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) ) )
-            // InternalStatemachine.g:1247:3: otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1230:2: (otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1231:3: otherlv_0= 'Initial' ( (lv_name_1_0= ruleEString ) )
             {
             otherlv_0=(Token)match(input,41,FOLLOW_8); 
 
             			newLeafNode(otherlv_0, grammarAccess.getInitialAccess().getInitialKeyword_0());
             		
-            // InternalStatemachine.g:1251:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalStatemachine.g:1252:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1235:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1236:4: (lv_name_1_0= ruleEString )
             {
-            // InternalStatemachine.g:1252:4: (lv_name_1_0= ruleEString )
-            // InternalStatemachine.g:1253:5: lv_name_1_0= ruleEString
+            // InternalStatemachine.g:1236:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1237:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getInitialAccess().getNameEStringParserRuleCall_1_0());
@@ -3352,7 +3329,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFinal"
-    // InternalStatemachine.g:1274:1: entryRuleFinal returns [EObject current=null] : iv_ruleFinal= ruleFinal EOF ;
+    // InternalStatemachine.g:1258:1: entryRuleFinal returns [EObject current=null] : iv_ruleFinal= ruleFinal EOF ;
     public final EObject entryRuleFinal() throws RecognitionException {
         EObject current = null;
 
@@ -3360,8 +3337,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1274:46: (iv_ruleFinal= ruleFinal EOF )
-            // InternalStatemachine.g:1275:2: iv_ruleFinal= ruleFinal EOF
+            // InternalStatemachine.g:1258:46: (iv_ruleFinal= ruleFinal EOF )
+            // InternalStatemachine.g:1259:2: iv_ruleFinal= ruleFinal EOF
             {
              newCompositeNode(grammarAccess.getFinalRule()); 
             pushFollow(FOLLOW_1);
@@ -3388,7 +3365,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFinal"
-    // InternalStatemachine.g:1281:1: ruleFinal returns [EObject current=null] : (otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalStatemachine.g:1265:1: ruleFinal returns [EObject current=null] : (otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleFinal() throws RecognitionException {
         EObject current = null;
 
@@ -3400,21 +3377,21 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1287:2: ( (otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalStatemachine.g:1288:2: (otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1271:2: ( (otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalStatemachine.g:1272:2: (otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalStatemachine.g:1288:2: (otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) ) )
-            // InternalStatemachine.g:1289:3: otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1272:2: (otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1273:3: otherlv_0= 'Final' ( (lv_name_1_0= ruleEString ) )
             {
             otherlv_0=(Token)match(input,42,FOLLOW_8); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFinalAccess().getFinalKeyword_0());
             		
-            // InternalStatemachine.g:1293:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalStatemachine.g:1294:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1277:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1278:4: (lv_name_1_0= ruleEString )
             {
-            // InternalStatemachine.g:1294:4: (lv_name_1_0= ruleEString )
-            // InternalStatemachine.g:1295:5: lv_name_1_0= ruleEString
+            // InternalStatemachine.g:1278:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1279:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getFinalAccess().getNameEStringParserRuleCall_1_0());
@@ -3464,7 +3441,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAny"
-    // InternalStatemachine.g:1316:1: entryRuleAny returns [EObject current=null] : iv_ruleAny= ruleAny EOF ;
+    // InternalStatemachine.g:1300:1: entryRuleAny returns [EObject current=null] : iv_ruleAny= ruleAny EOF ;
     public final EObject entryRuleAny() throws RecognitionException {
         EObject current = null;
 
@@ -3472,8 +3449,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1316:44: (iv_ruleAny= ruleAny EOF )
-            // InternalStatemachine.g:1317:2: iv_ruleAny= ruleAny EOF
+            // InternalStatemachine.g:1300:44: (iv_ruleAny= ruleAny EOF )
+            // InternalStatemachine.g:1301:2: iv_ruleAny= ruleAny EOF
             {
              newCompositeNode(grammarAccess.getAnyRule()); 
             pushFollow(FOLLOW_1);
@@ -3500,7 +3477,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAny"
-    // InternalStatemachine.g:1323:1: ruleAny returns [EObject current=null] : (otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalStatemachine.g:1307:1: ruleAny returns [EObject current=null] : (otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleAny() throws RecognitionException {
         EObject current = null;
 
@@ -3512,21 +3489,21 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1329:2: ( (otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalStatemachine.g:1330:2: (otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1313:2: ( (otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalStatemachine.g:1314:2: (otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalStatemachine.g:1330:2: (otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) ) )
-            // InternalStatemachine.g:1331:3: otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1314:2: (otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1315:3: otherlv_0= 'Any' ( (lv_name_1_0= ruleEString ) )
             {
             otherlv_0=(Token)match(input,43,FOLLOW_8); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAnyAccess().getAnyKeyword_0());
             		
-            // InternalStatemachine.g:1335:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalStatemachine.g:1336:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1319:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1320:4: (lv_name_1_0= ruleEString )
             {
-            // InternalStatemachine.g:1336:4: (lv_name_1_0= ruleEString )
-            // InternalStatemachine.g:1337:5: lv_name_1_0= ruleEString
+            // InternalStatemachine.g:1320:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1321:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAnyAccess().getNameEStringParserRuleCall_1_0());
@@ -3576,7 +3553,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJunction"
-    // InternalStatemachine.g:1358:1: entryRuleJunction returns [EObject current=null] : iv_ruleJunction= ruleJunction EOF ;
+    // InternalStatemachine.g:1342:1: entryRuleJunction returns [EObject current=null] : iv_ruleJunction= ruleJunction EOF ;
     public final EObject entryRuleJunction() throws RecognitionException {
         EObject current = null;
 
@@ -3584,8 +3561,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1358:49: (iv_ruleJunction= ruleJunction EOF )
-            // InternalStatemachine.g:1359:2: iv_ruleJunction= ruleJunction EOF
+            // InternalStatemachine.g:1342:49: (iv_ruleJunction= ruleJunction EOF )
+            // InternalStatemachine.g:1343:2: iv_ruleJunction= ruleJunction EOF
             {
              newCompositeNode(grammarAccess.getJunctionRule()); 
             pushFollow(FOLLOW_1);
@@ -3612,7 +3589,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJunction"
-    // InternalStatemachine.g:1365:1: ruleJunction returns [EObject current=null] : (otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalStatemachine.g:1349:1: ruleJunction returns [EObject current=null] : (otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleJunction() throws RecognitionException {
         EObject current = null;
 
@@ -3624,21 +3601,21 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1371:2: ( (otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalStatemachine.g:1372:2: (otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1355:2: ( (otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalStatemachine.g:1356:2: (otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalStatemachine.g:1372:2: (otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) ) )
-            // InternalStatemachine.g:1373:3: otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1356:2: (otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1357:3: otherlv_0= 'Junction' ( (lv_name_1_0= ruleEString ) )
             {
             otherlv_0=(Token)match(input,44,FOLLOW_8); 
 
             			newLeafNode(otherlv_0, grammarAccess.getJunctionAccess().getJunctionKeyword_0());
             		
-            // InternalStatemachine.g:1377:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalStatemachine.g:1378:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1361:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1362:4: (lv_name_1_0= ruleEString )
             {
-            // InternalStatemachine.g:1378:4: (lv_name_1_0= ruleEString )
-            // InternalStatemachine.g:1379:5: lv_name_1_0= ruleEString
+            // InternalStatemachine.g:1362:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1363:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getJunctionAccess().getNameEStringParserRuleCall_1_0());
@@ -3688,7 +3665,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFork"
-    // InternalStatemachine.g:1400:1: entryRuleFork returns [EObject current=null] : iv_ruleFork= ruleFork EOF ;
+    // InternalStatemachine.g:1384:1: entryRuleFork returns [EObject current=null] : iv_ruleFork= ruleFork EOF ;
     public final EObject entryRuleFork() throws RecognitionException {
         EObject current = null;
 
@@ -3696,8 +3673,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1400:45: (iv_ruleFork= ruleFork EOF )
-            // InternalStatemachine.g:1401:2: iv_ruleFork= ruleFork EOF
+            // InternalStatemachine.g:1384:45: (iv_ruleFork= ruleFork EOF )
+            // InternalStatemachine.g:1385:2: iv_ruleFork= ruleFork EOF
             {
              newCompositeNode(grammarAccess.getForkRule()); 
             pushFollow(FOLLOW_1);
@@ -3724,7 +3701,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFork"
-    // InternalStatemachine.g:1407:1: ruleFork returns [EObject current=null] : (otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalStatemachine.g:1391:1: ruleFork returns [EObject current=null] : (otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleFork() throws RecognitionException {
         EObject current = null;
 
@@ -3736,21 +3713,21 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1413:2: ( (otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalStatemachine.g:1414:2: (otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1397:2: ( (otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalStatemachine.g:1398:2: (otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalStatemachine.g:1414:2: (otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) ) )
-            // InternalStatemachine.g:1415:3: otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1398:2: (otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) ) )
+            // InternalStatemachine.g:1399:3: otherlv_0= 'Fork' ( (lv_name_1_0= ruleEString ) )
             {
             otherlv_0=(Token)match(input,45,FOLLOW_8); 
 
             			newLeafNode(otherlv_0, grammarAccess.getForkAccess().getForkKeyword_0());
             		
-            // InternalStatemachine.g:1419:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalStatemachine.g:1420:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1403:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalStatemachine.g:1404:4: (lv_name_1_0= ruleEString )
             {
-            // InternalStatemachine.g:1420:4: (lv_name_1_0= ruleEString )
-            // InternalStatemachine.g:1421:5: lv_name_1_0= ruleEString
+            // InternalStatemachine.g:1404:4: (lv_name_1_0= ruleEString )
+            // InternalStatemachine.g:1405:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getForkAccess().getNameEStringParserRuleCall_1_0());
@@ -3800,7 +3777,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXFormula"
-    // InternalStatemachine.g:1442:1: entryRuleXFormula returns [String current=null] : iv_ruleXFormula= ruleXFormula EOF ;
+    // InternalStatemachine.g:1426:1: entryRuleXFormula returns [String current=null] : iv_ruleXFormula= ruleXFormula EOF ;
     public final String entryRuleXFormula() throws RecognitionException {
         String current = null;
 
@@ -3808,8 +3785,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1442:48: (iv_ruleXFormula= ruleXFormula EOF )
-            // InternalStatemachine.g:1443:2: iv_ruleXFormula= ruleXFormula EOF
+            // InternalStatemachine.g:1426:48: (iv_ruleXFormula= ruleXFormula EOF )
+            // InternalStatemachine.g:1427:2: iv_ruleXFormula= ruleXFormula EOF
             {
              newCompositeNode(grammarAccess.getXFormulaRule()); 
             pushFollow(FOLLOW_1);
@@ -3836,7 +3813,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXFormula"
-    // InternalStatemachine.g:1449:1: ruleXFormula returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD | this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS | this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS | this_ID_3= RULE_ID | this_INT_4= RULE_INT )+ ;
+    // InternalStatemachine.g:1433:1: ruleXFormula returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD | this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS | this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS | this_ID_3= RULE_ID | this_INT_4= RULE_INT )+ ;
     public final AntlrDatatypeRuleToken ruleXFormula() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3853,10 +3830,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1455:2: ( (this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD | this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS | this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS | this_ID_3= RULE_ID | this_INT_4= RULE_INT )+ )
-            // InternalStatemachine.g:1456:2: (this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD | this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS | this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS | this_ID_3= RULE_ID | this_INT_4= RULE_INT )+
+            // InternalStatemachine.g:1439:2: ( (this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD | this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS | this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS | this_ID_3= RULE_ID | this_INT_4= RULE_INT )+ )
+            // InternalStatemachine.g:1440:2: (this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD | this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS | this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS | this_ID_3= RULE_ID | this_INT_4= RULE_INT )+
             {
-            // InternalStatemachine.g:1456:2: (this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD | this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS | this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS | this_ID_3= RULE_ID | this_INT_4= RULE_INT )+
+            // InternalStatemachine.g:1440:2: (this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD | this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS | this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS | this_ID_3= RULE_ID | this_INT_4= RULE_INT )+
             int cnt31=0;
             loop31:
             do {
@@ -3988,7 +3965,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
                 switch (alt31) {
             	case 1 :
-            	    // InternalStatemachine.g:1457:3: this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD
+            	    // InternalStatemachine.g:1441:3: this_EVENTB_IDENTIFIER_KEYWORD_0= ruleEVENTB_IDENTIFIER_KEYWORD
             	    {
 
             	    			newCompositeNode(grammarAccess.getXFormulaAccess().getEVENTB_IDENTIFIER_KEYWORDParserRuleCall_0());
@@ -4008,7 +3985,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalStatemachine.g:1468:3: this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS
+            	    // InternalStatemachine.g:1452:3: this_EVENTB_PREDICATE_SYMBOLS_1= ruleEVENTB_PREDICATE_SYMBOLS
             	    {
 
             	    			newCompositeNode(grammarAccess.getXFormulaAccess().getEVENTB_PREDICATE_SYMBOLSParserRuleCall_1());
@@ -4028,7 +4005,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalStatemachine.g:1479:3: this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS
+            	    // InternalStatemachine.g:1463:3: this_EVENTB_EXPRESSION_SYMBOLS_2= ruleEVENTB_EXPRESSION_SYMBOLS
             	    {
 
             	    			newCompositeNode(grammarAccess.getXFormulaAccess().getEVENTB_EXPRESSION_SYMBOLSParserRuleCall_2());
@@ -4048,7 +4025,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalStatemachine.g:1490:3: this_ID_3= RULE_ID
+            	    // InternalStatemachine.g:1474:3: this_ID_3= RULE_ID
             	    {
             	    this_ID_3=(Token)match(input,RULE_ID,FOLLOW_38); 
 
@@ -4061,7 +4038,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalStatemachine.g:1498:3: this_INT_4= RULE_INT
+            	    // InternalStatemachine.g:1482:3: this_INT_4= RULE_INT
             	    {
             	    this_INT_4=(Token)match(input,RULE_INT,FOLLOW_38); 
 
@@ -4103,7 +4080,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEVENTB_IDENTIFIER_KEYWORD"
-    // InternalStatemachine.g:1509:1: entryRuleEVENTB_IDENTIFIER_KEYWORD returns [String current=null] : iv_ruleEVENTB_IDENTIFIER_KEYWORD= ruleEVENTB_IDENTIFIER_KEYWORD EOF ;
+    // InternalStatemachine.g:1493:1: entryRuleEVENTB_IDENTIFIER_KEYWORD returns [String current=null] : iv_ruleEVENTB_IDENTIFIER_KEYWORD= ruleEVENTB_IDENTIFIER_KEYWORD EOF ;
     public final String entryRuleEVENTB_IDENTIFIER_KEYWORD() throws RecognitionException {
         String current = null;
 
@@ -4111,8 +4088,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1509:65: (iv_ruleEVENTB_IDENTIFIER_KEYWORD= ruleEVENTB_IDENTIFIER_KEYWORD EOF )
-            // InternalStatemachine.g:1510:2: iv_ruleEVENTB_IDENTIFIER_KEYWORD= ruleEVENTB_IDENTIFIER_KEYWORD EOF
+            // InternalStatemachine.g:1493:65: (iv_ruleEVENTB_IDENTIFIER_KEYWORD= ruleEVENTB_IDENTIFIER_KEYWORD EOF )
+            // InternalStatemachine.g:1494:2: iv_ruleEVENTB_IDENTIFIER_KEYWORD= ruleEVENTB_IDENTIFIER_KEYWORD EOF
             {
              newCompositeNode(grammarAccess.getEVENTB_IDENTIFIER_KEYWORDRule()); 
             pushFollow(FOLLOW_1);
@@ -4139,7 +4116,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEVENTB_IDENTIFIER_KEYWORD"
-    // InternalStatemachine.g:1516:1: ruleEVENTB_IDENTIFIER_KEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'BOOL' | kw= 'FALSE' | kw= 'TRUE' | kw= 'bool' | kw= 'card' | kw= 'dom' | kw= 'finite' | kw= 'id' | kw= 'inter' | kw= 'max' | kw= 'min' | kw= 'mod' | kw= 'pred' | kw= 'prj1' | kw= 'prj2' | kw= 'ran' | kw= 'succ' | kw= 'union' | kw= '\\u21151' | kw= '\\u2115' | kw= '\\u21191' | kw= '\\u2119' | kw= '\\u2124' ) ;
+    // InternalStatemachine.g:1500:1: ruleEVENTB_IDENTIFIER_KEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'BOOL' | kw= 'FALSE' | kw= 'TRUE' | kw= 'bool' | kw= 'card' | kw= 'dom' | kw= 'finite' | kw= 'id' | kw= 'inter' | kw= 'max' | kw= 'min' | kw= 'mod' | kw= 'pred' | kw= 'prj1' | kw= 'prj2' | kw= 'ran' | kw= 'succ' | kw= 'union' | kw= '\\u21151' | kw= '\\u2115' | kw= '\\u21191' | kw= '\\u2119' | kw= '\\u2124' ) ;
     public final AntlrDatatypeRuleToken ruleEVENTB_IDENTIFIER_KEYWORD() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4149,10 +4126,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1522:2: ( (kw= 'BOOL' | kw= 'FALSE' | kw= 'TRUE' | kw= 'bool' | kw= 'card' | kw= 'dom' | kw= 'finite' | kw= 'id' | kw= 'inter' | kw= 'max' | kw= 'min' | kw= 'mod' | kw= 'pred' | kw= 'prj1' | kw= 'prj2' | kw= 'ran' | kw= 'succ' | kw= 'union' | kw= '\\u21151' | kw= '\\u2115' | kw= '\\u21191' | kw= '\\u2119' | kw= '\\u2124' ) )
-            // InternalStatemachine.g:1523:2: (kw= 'BOOL' | kw= 'FALSE' | kw= 'TRUE' | kw= 'bool' | kw= 'card' | kw= 'dom' | kw= 'finite' | kw= 'id' | kw= 'inter' | kw= 'max' | kw= 'min' | kw= 'mod' | kw= 'pred' | kw= 'prj1' | kw= 'prj2' | kw= 'ran' | kw= 'succ' | kw= 'union' | kw= '\\u21151' | kw= '\\u2115' | kw= '\\u21191' | kw= '\\u2119' | kw= '\\u2124' )
+            // InternalStatemachine.g:1506:2: ( (kw= 'BOOL' | kw= 'FALSE' | kw= 'TRUE' | kw= 'bool' | kw= 'card' | kw= 'dom' | kw= 'finite' | kw= 'id' | kw= 'inter' | kw= 'max' | kw= 'min' | kw= 'mod' | kw= 'pred' | kw= 'prj1' | kw= 'prj2' | kw= 'ran' | kw= 'succ' | kw= 'union' | kw= '\\u21151' | kw= '\\u2115' | kw= '\\u21191' | kw= '\\u2119' | kw= '\\u2124' ) )
+            // InternalStatemachine.g:1507:2: (kw= 'BOOL' | kw= 'FALSE' | kw= 'TRUE' | kw= 'bool' | kw= 'card' | kw= 'dom' | kw= 'finite' | kw= 'id' | kw= 'inter' | kw= 'max' | kw= 'min' | kw= 'mod' | kw= 'pred' | kw= 'prj1' | kw= 'prj2' | kw= 'ran' | kw= 'succ' | kw= 'union' | kw= '\\u21151' | kw= '\\u2115' | kw= '\\u21191' | kw= '\\u2119' | kw= '\\u2124' )
             {
-            // InternalStatemachine.g:1523:2: (kw= 'BOOL' | kw= 'FALSE' | kw= 'TRUE' | kw= 'bool' | kw= 'card' | kw= 'dom' | kw= 'finite' | kw= 'id' | kw= 'inter' | kw= 'max' | kw= 'min' | kw= 'mod' | kw= 'pred' | kw= 'prj1' | kw= 'prj2' | kw= 'ran' | kw= 'succ' | kw= 'union' | kw= '\\u21151' | kw= '\\u2115' | kw= '\\u21191' | kw= '\\u2119' | kw= '\\u2124' )
+            // InternalStatemachine.g:1507:2: (kw= 'BOOL' | kw= 'FALSE' | kw= 'TRUE' | kw= 'bool' | kw= 'card' | kw= 'dom' | kw= 'finite' | kw= 'id' | kw= 'inter' | kw= 'max' | kw= 'min' | kw= 'mod' | kw= 'pred' | kw= 'prj1' | kw= 'prj2' | kw= 'ran' | kw= 'succ' | kw= 'union' | kw= '\\u21151' | kw= '\\u2115' | kw= '\\u21191' | kw= '\\u2119' | kw= '\\u2124' )
             int alt32=23;
             switch ( input.LA(1) ) {
             case 32:
@@ -4279,7 +4256,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             switch (alt32) {
                 case 1 :
-                    // InternalStatemachine.g:1524:3: kw= 'BOOL'
+                    // InternalStatemachine.g:1508:3: kw= 'BOOL'
                     {
                     kw=(Token)match(input,32,FOLLOW_2); 
 
@@ -4290,7 +4267,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalStatemachine.g:1530:3: kw= 'FALSE'
+                    // InternalStatemachine.g:1514:3: kw= 'FALSE'
                     {
                     kw=(Token)match(input,46,FOLLOW_2); 
 
@@ -4301,7 +4278,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalStatemachine.g:1536:3: kw= 'TRUE'
+                    // InternalStatemachine.g:1520:3: kw= 'TRUE'
                     {
                     kw=(Token)match(input,47,FOLLOW_2); 
 
@@ -4312,7 +4289,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalStatemachine.g:1542:3: kw= 'bool'
+                    // InternalStatemachine.g:1526:3: kw= 'bool'
                     {
                     kw=(Token)match(input,48,FOLLOW_2); 
 
@@ -4323,7 +4300,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalStatemachine.g:1548:3: kw= 'card'
+                    // InternalStatemachine.g:1532:3: kw= 'card'
                     {
                     kw=(Token)match(input,49,FOLLOW_2); 
 
@@ -4334,7 +4311,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalStatemachine.g:1554:3: kw= 'dom'
+                    // InternalStatemachine.g:1538:3: kw= 'dom'
                     {
                     kw=(Token)match(input,50,FOLLOW_2); 
 
@@ -4345,7 +4322,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalStatemachine.g:1560:3: kw= 'finite'
+                    // InternalStatemachine.g:1544:3: kw= 'finite'
                     {
                     kw=(Token)match(input,51,FOLLOW_2); 
 
@@ -4356,7 +4333,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalStatemachine.g:1566:3: kw= 'id'
+                    // InternalStatemachine.g:1550:3: kw= 'id'
                     {
                     kw=(Token)match(input,52,FOLLOW_2); 
 
@@ -4367,7 +4344,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalStatemachine.g:1572:3: kw= 'inter'
+                    // InternalStatemachine.g:1556:3: kw= 'inter'
                     {
                     kw=(Token)match(input,53,FOLLOW_2); 
 
@@ -4378,7 +4355,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalStatemachine.g:1578:3: kw= 'max'
+                    // InternalStatemachine.g:1562:3: kw= 'max'
                     {
                     kw=(Token)match(input,54,FOLLOW_2); 
 
@@ -4389,7 +4366,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalStatemachine.g:1584:3: kw= 'min'
+                    // InternalStatemachine.g:1568:3: kw= 'min'
                     {
                     kw=(Token)match(input,55,FOLLOW_2); 
 
@@ -4400,7 +4377,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalStatemachine.g:1590:3: kw= 'mod'
+                    // InternalStatemachine.g:1574:3: kw= 'mod'
                     {
                     kw=(Token)match(input,56,FOLLOW_2); 
 
@@ -4411,7 +4388,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalStatemachine.g:1596:3: kw= 'pred'
+                    // InternalStatemachine.g:1580:3: kw= 'pred'
                     {
                     kw=(Token)match(input,57,FOLLOW_2); 
 
@@ -4422,7 +4399,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalStatemachine.g:1602:3: kw= 'prj1'
+                    // InternalStatemachine.g:1586:3: kw= 'prj1'
                     {
                     kw=(Token)match(input,58,FOLLOW_2); 
 
@@ -4433,7 +4410,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalStatemachine.g:1608:3: kw= 'prj2'
+                    // InternalStatemachine.g:1592:3: kw= 'prj2'
                     {
                     kw=(Token)match(input,59,FOLLOW_2); 
 
@@ -4444,7 +4421,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalStatemachine.g:1614:3: kw= 'ran'
+                    // InternalStatemachine.g:1598:3: kw= 'ran'
                     {
                     kw=(Token)match(input,60,FOLLOW_2); 
 
@@ -4455,7 +4432,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalStatemachine.g:1620:3: kw= 'succ'
+                    // InternalStatemachine.g:1604:3: kw= 'succ'
                     {
                     kw=(Token)match(input,61,FOLLOW_2); 
 
@@ -4466,7 +4443,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalStatemachine.g:1626:3: kw= 'union'
+                    // InternalStatemachine.g:1610:3: kw= 'union'
                     {
                     kw=(Token)match(input,62,FOLLOW_2); 
 
@@ -4477,7 +4454,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalStatemachine.g:1632:3: kw= '\\u21151'
+                    // InternalStatemachine.g:1616:3: kw= '\\u21151'
                     {
                     kw=(Token)match(input,63,FOLLOW_2); 
 
@@ -4488,7 +4465,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalStatemachine.g:1638:3: kw= '\\u2115'
+                    // InternalStatemachine.g:1622:3: kw= '\\u2115'
                     {
                     kw=(Token)match(input,64,FOLLOW_2); 
 
@@ -4499,7 +4476,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // InternalStatemachine.g:1644:3: kw= '\\u21191'
+                    // InternalStatemachine.g:1628:3: kw= '\\u21191'
                     {
                     kw=(Token)match(input,65,FOLLOW_2); 
 
@@ -4510,7 +4487,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // InternalStatemachine.g:1650:3: kw= '\\u2119'
+                    // InternalStatemachine.g:1634:3: kw= '\\u2119'
                     {
                     kw=(Token)match(input,31,FOLLOW_2); 
 
@@ -4521,7 +4498,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // InternalStatemachine.g:1656:3: kw= '\\u2124'
+                    // InternalStatemachine.g:1640:3: kw= '\\u2124'
                     {
                     kw=(Token)match(input,33,FOLLOW_2); 
 
@@ -4554,7 +4531,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEVENTB_PREDICATE_SYMBOLS"
-    // InternalStatemachine.g:1665:1: entryRuleEVENTB_PREDICATE_SYMBOLS returns [String current=null] : iv_ruleEVENTB_PREDICATE_SYMBOLS= ruleEVENTB_PREDICATE_SYMBOLS EOF ;
+    // InternalStatemachine.g:1649:1: entryRuleEVENTB_PREDICATE_SYMBOLS returns [String current=null] : iv_ruleEVENTB_PREDICATE_SYMBOLS= ruleEVENTB_PREDICATE_SYMBOLS EOF ;
     public final String entryRuleEVENTB_PREDICATE_SYMBOLS() throws RecognitionException {
         String current = null;
 
@@ -4562,8 +4539,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1665:64: (iv_ruleEVENTB_PREDICATE_SYMBOLS= ruleEVENTB_PREDICATE_SYMBOLS EOF )
-            // InternalStatemachine.g:1666:2: iv_ruleEVENTB_PREDICATE_SYMBOLS= ruleEVENTB_PREDICATE_SYMBOLS EOF
+            // InternalStatemachine.g:1649:64: (iv_ruleEVENTB_PREDICATE_SYMBOLS= ruleEVENTB_PREDICATE_SYMBOLS EOF )
+            // InternalStatemachine.g:1650:2: iv_ruleEVENTB_PREDICATE_SYMBOLS= ruleEVENTB_PREDICATE_SYMBOLS EOF
             {
              newCompositeNode(grammarAccess.getEVENTB_PREDICATE_SYMBOLSRule()); 
             pushFollow(FOLLOW_1);
@@ -4590,7 +4567,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEVENTB_PREDICATE_SYMBOLS"
-    // InternalStatemachine.g:1672:1: ruleEVENTB_PREDICATE_SYMBOLS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '(' | kw= ')' | kw= '\\u21D4' | kw= '\\u21D2' | kw= '\\u2227' | kw= '&' | kw= '\\u2228' | kw= '\\u00AC' | kw= '\\u22A4' | kw= '\\u22A5' | kw= '\\u2200' | kw= '!' | kw= '\\u2203' | kw= '#' | kw= ',' | kw= '\\u00B7' | kw= '.' | kw= '=' | kw= '\\u2260' | kw= '\\u2264' | kw= '<' | kw= '\\u2265' | kw= '>' | kw= '\\u2208' | kw= ':' | kw= '\\u2209' | kw= '\\u2282' | kw= '\\u2284' | kw= '\\u2286' | kw= '\\u2288' | kw= 'partition' ) ;
+    // InternalStatemachine.g:1656:1: ruleEVENTB_PREDICATE_SYMBOLS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '(' | kw= ')' | kw= '\\u21D4' | kw= '\\u21D2' | kw= '\\u2227' | kw= '&' | kw= '\\u2228' | kw= '\\u00AC' | kw= '\\u22A4' | kw= '\\u22A5' | kw= '\\u2200' | kw= '!' | kw= '\\u2203' | kw= '#' | kw= ',' | kw= '\\u00B7' | kw= '.' | kw= '=' | kw= '\\u2260' | kw= '\\u2264' | kw= '<' | kw= '\\u2265' | kw= '>' | kw= '\\u2208' | kw= ':' | kw= '\\u2209' | kw= '\\u2282' | kw= '\\u2284' | kw= '\\u2286' | kw= '\\u2288' | kw= 'partition' ) ;
     public final AntlrDatatypeRuleToken ruleEVENTB_PREDICATE_SYMBOLS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4600,10 +4577,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1678:2: ( (kw= '(' | kw= ')' | kw= '\\u21D4' | kw= '\\u21D2' | kw= '\\u2227' | kw= '&' | kw= '\\u2228' | kw= '\\u00AC' | kw= '\\u22A4' | kw= '\\u22A5' | kw= '\\u2200' | kw= '!' | kw= '\\u2203' | kw= '#' | kw= ',' | kw= '\\u00B7' | kw= '.' | kw= '=' | kw= '\\u2260' | kw= '\\u2264' | kw= '<' | kw= '\\u2265' | kw= '>' | kw= '\\u2208' | kw= ':' | kw= '\\u2209' | kw= '\\u2282' | kw= '\\u2284' | kw= '\\u2286' | kw= '\\u2288' | kw= 'partition' ) )
-            // InternalStatemachine.g:1679:2: (kw= '(' | kw= ')' | kw= '\\u21D4' | kw= '\\u21D2' | kw= '\\u2227' | kw= '&' | kw= '\\u2228' | kw= '\\u00AC' | kw= '\\u22A4' | kw= '\\u22A5' | kw= '\\u2200' | kw= '!' | kw= '\\u2203' | kw= '#' | kw= ',' | kw= '\\u00B7' | kw= '.' | kw= '=' | kw= '\\u2260' | kw= '\\u2264' | kw= '<' | kw= '\\u2265' | kw= '>' | kw= '\\u2208' | kw= ':' | kw= '\\u2209' | kw= '\\u2282' | kw= '\\u2284' | kw= '\\u2286' | kw= '\\u2288' | kw= 'partition' )
+            // InternalStatemachine.g:1662:2: ( (kw= '(' | kw= ')' | kw= '\\u21D4' | kw= '\\u21D2' | kw= '\\u2227' | kw= '&' | kw= '\\u2228' | kw= '\\u00AC' | kw= '\\u22A4' | kw= '\\u22A5' | kw= '\\u2200' | kw= '!' | kw= '\\u2203' | kw= '#' | kw= ',' | kw= '\\u00B7' | kw= '.' | kw= '=' | kw= '\\u2260' | kw= '\\u2264' | kw= '<' | kw= '\\u2265' | kw= '>' | kw= '\\u2208' | kw= ':' | kw= '\\u2209' | kw= '\\u2282' | kw= '\\u2284' | kw= '\\u2286' | kw= '\\u2288' | kw= 'partition' ) )
+            // InternalStatemachine.g:1663:2: (kw= '(' | kw= ')' | kw= '\\u21D4' | kw= '\\u21D2' | kw= '\\u2227' | kw= '&' | kw= '\\u2228' | kw= '\\u00AC' | kw= '\\u22A4' | kw= '\\u22A5' | kw= '\\u2200' | kw= '!' | kw= '\\u2203' | kw= '#' | kw= ',' | kw= '\\u00B7' | kw= '.' | kw= '=' | kw= '\\u2260' | kw= '\\u2264' | kw= '<' | kw= '\\u2265' | kw= '>' | kw= '\\u2208' | kw= ':' | kw= '\\u2209' | kw= '\\u2282' | kw= '\\u2284' | kw= '\\u2286' | kw= '\\u2288' | kw= 'partition' )
             {
-            // InternalStatemachine.g:1679:2: (kw= '(' | kw= ')' | kw= '\\u21D4' | kw= '\\u21D2' | kw= '\\u2227' | kw= '&' | kw= '\\u2228' | kw= '\\u00AC' | kw= '\\u22A4' | kw= '\\u22A5' | kw= '\\u2200' | kw= '!' | kw= '\\u2203' | kw= '#' | kw= ',' | kw= '\\u00B7' | kw= '.' | kw= '=' | kw= '\\u2260' | kw= '\\u2264' | kw= '<' | kw= '\\u2265' | kw= '>' | kw= '\\u2208' | kw= ':' | kw= '\\u2209' | kw= '\\u2282' | kw= '\\u2284' | kw= '\\u2286' | kw= '\\u2288' | kw= 'partition' )
+            // InternalStatemachine.g:1663:2: (kw= '(' | kw= ')' | kw= '\\u21D4' | kw= '\\u21D2' | kw= '\\u2227' | kw= '&' | kw= '\\u2228' | kw= '\\u00AC' | kw= '\\u22A4' | kw= '\\u22A5' | kw= '\\u2200' | kw= '!' | kw= '\\u2203' | kw= '#' | kw= ',' | kw= '\\u00B7' | kw= '.' | kw= '=' | kw= '\\u2260' | kw= '\\u2264' | kw= '<' | kw= '\\u2265' | kw= '>' | kw= '\\u2208' | kw= ':' | kw= '\\u2209' | kw= '\\u2282' | kw= '\\u2284' | kw= '\\u2286' | kw= '\\u2288' | kw= 'partition' )
             int alt33=31;
             switch ( input.LA(1) ) {
             case 13:
@@ -4770,7 +4747,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             switch (alt33) {
                 case 1 :
-                    // InternalStatemachine.g:1680:3: kw= '('
+                    // InternalStatemachine.g:1664:3: kw= '('
                     {
                     kw=(Token)match(input,13,FOLLOW_2); 
 
@@ -4781,7 +4758,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalStatemachine.g:1686:3: kw= ')'
+                    // InternalStatemachine.g:1670:3: kw= ')'
                     {
                     kw=(Token)match(input,14,FOLLOW_2); 
 
@@ -4792,7 +4769,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalStatemachine.g:1692:3: kw= '\\u21D4'
+                    // InternalStatemachine.g:1676:3: kw= '\\u21D4'
                     {
                     kw=(Token)match(input,66,FOLLOW_2); 
 
@@ -4803,7 +4780,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalStatemachine.g:1698:3: kw= '\\u21D2'
+                    // InternalStatemachine.g:1682:3: kw= '\\u21D2'
                     {
                     kw=(Token)match(input,67,FOLLOW_2); 
 
@@ -4814,7 +4791,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalStatemachine.g:1704:3: kw= '\\u2227'
+                    // InternalStatemachine.g:1688:3: kw= '\\u2227'
                     {
                     kw=(Token)match(input,68,FOLLOW_2); 
 
@@ -4825,7 +4802,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalStatemachine.g:1710:3: kw= '&'
+                    // InternalStatemachine.g:1694:3: kw= '&'
                     {
                     kw=(Token)match(input,69,FOLLOW_2); 
 
@@ -4836,7 +4813,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalStatemachine.g:1716:3: kw= '\\u2228'
+                    // InternalStatemachine.g:1700:3: kw= '\\u2228'
                     {
                     kw=(Token)match(input,70,FOLLOW_2); 
 
@@ -4847,7 +4824,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalStatemachine.g:1722:3: kw= '\\u00AC'
+                    // InternalStatemachine.g:1706:3: kw= '\\u00AC'
                     {
                     kw=(Token)match(input,71,FOLLOW_2); 
 
@@ -4858,7 +4835,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalStatemachine.g:1728:3: kw= '\\u22A4'
+                    // InternalStatemachine.g:1712:3: kw= '\\u22A4'
                     {
                     kw=(Token)match(input,72,FOLLOW_2); 
 
@@ -4869,7 +4846,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalStatemachine.g:1734:3: kw= '\\u22A5'
+                    // InternalStatemachine.g:1718:3: kw= '\\u22A5'
                     {
                     kw=(Token)match(input,73,FOLLOW_2); 
 
@@ -4880,7 +4857,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalStatemachine.g:1740:3: kw= '\\u2200'
+                    // InternalStatemachine.g:1724:3: kw= '\\u2200'
                     {
                     kw=(Token)match(input,74,FOLLOW_2); 
 
@@ -4891,7 +4868,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalStatemachine.g:1746:3: kw= '!'
+                    // InternalStatemachine.g:1730:3: kw= '!'
                     {
                     kw=(Token)match(input,75,FOLLOW_2); 
 
@@ -4902,7 +4879,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalStatemachine.g:1752:3: kw= '\\u2203'
+                    // InternalStatemachine.g:1736:3: kw= '\\u2203'
                     {
                     kw=(Token)match(input,76,FOLLOW_2); 
 
@@ -4913,7 +4890,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalStatemachine.g:1758:3: kw= '#'
+                    // InternalStatemachine.g:1742:3: kw= '#'
                     {
                     kw=(Token)match(input,77,FOLLOW_2); 
 
@@ -4924,7 +4901,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalStatemachine.g:1764:3: kw= ','
+                    // InternalStatemachine.g:1748:3: kw= ','
                     {
                     kw=(Token)match(input,24,FOLLOW_2); 
 
@@ -4935,7 +4912,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalStatemachine.g:1770:3: kw= '\\u00B7'
+                    // InternalStatemachine.g:1754:3: kw= '\\u00B7'
                     {
                     kw=(Token)match(input,78,FOLLOW_2); 
 
@@ -4946,7 +4923,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalStatemachine.g:1776:3: kw= '.'
+                    // InternalStatemachine.g:1760:3: kw= '.'
                     {
                     kw=(Token)match(input,79,FOLLOW_2); 
 
@@ -4957,7 +4934,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalStatemachine.g:1782:3: kw= '='
+                    // InternalStatemachine.g:1766:3: kw= '='
                     {
                     kw=(Token)match(input,80,FOLLOW_2); 
 
@@ -4968,7 +4945,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalStatemachine.g:1788:3: kw= '\\u2260'
+                    // InternalStatemachine.g:1772:3: kw= '\\u2260'
                     {
                     kw=(Token)match(input,81,FOLLOW_2); 
 
@@ -4979,7 +4956,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalStatemachine.g:1794:3: kw= '\\u2264'
+                    // InternalStatemachine.g:1778:3: kw= '\\u2264'
                     {
                     kw=(Token)match(input,82,FOLLOW_2); 
 
@@ -4990,7 +4967,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // InternalStatemachine.g:1800:3: kw= '<'
+                    // InternalStatemachine.g:1784:3: kw= '<'
                     {
                     kw=(Token)match(input,83,FOLLOW_2); 
 
@@ -5001,7 +4978,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // InternalStatemachine.g:1806:3: kw= '\\u2265'
+                    // InternalStatemachine.g:1790:3: kw= '\\u2265'
                     {
                     kw=(Token)match(input,84,FOLLOW_2); 
 
@@ -5012,7 +4989,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // InternalStatemachine.g:1812:3: kw= '>'
+                    // InternalStatemachine.g:1796:3: kw= '>'
                     {
                     kw=(Token)match(input,85,FOLLOW_2); 
 
@@ -5023,7 +5000,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // InternalStatemachine.g:1818:3: kw= '\\u2208'
+                    // InternalStatemachine.g:1802:3: kw= '\\u2208'
                     {
                     kw=(Token)match(input,86,FOLLOW_2); 
 
@@ -5034,7 +5011,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // InternalStatemachine.g:1824:3: kw= ':'
+                    // InternalStatemachine.g:1808:3: kw= ':'
                     {
                     kw=(Token)match(input,29,FOLLOW_2); 
 
@@ -5045,7 +5022,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // InternalStatemachine.g:1830:3: kw= '\\u2209'
+                    // InternalStatemachine.g:1814:3: kw= '\\u2209'
                     {
                     kw=(Token)match(input,87,FOLLOW_2); 
 
@@ -5056,7 +5033,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // InternalStatemachine.g:1836:3: kw= '\\u2282'
+                    // InternalStatemachine.g:1820:3: kw= '\\u2282'
                     {
                     kw=(Token)match(input,88,FOLLOW_2); 
 
@@ -5067,7 +5044,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // InternalStatemachine.g:1842:3: kw= '\\u2284'
+                    // InternalStatemachine.g:1826:3: kw= '\\u2284'
                     {
                     kw=(Token)match(input,89,FOLLOW_2); 
 
@@ -5078,7 +5055,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // InternalStatemachine.g:1848:3: kw= '\\u2286'
+                    // InternalStatemachine.g:1832:3: kw= '\\u2286'
                     {
                     kw=(Token)match(input,90,FOLLOW_2); 
 
@@ -5089,7 +5066,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // InternalStatemachine.g:1854:3: kw= '\\u2288'
+                    // InternalStatemachine.g:1838:3: kw= '\\u2288'
                     {
                     kw=(Token)match(input,91,FOLLOW_2); 
 
@@ -5100,7 +5077,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // InternalStatemachine.g:1860:3: kw= 'partition'
+                    // InternalStatemachine.g:1844:3: kw= 'partition'
                     {
                     kw=(Token)match(input,92,FOLLOW_2); 
 
@@ -5133,7 +5110,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEVENTB_EXPRESSION_SYMBOLS"
-    // InternalStatemachine.g:1869:1: entryRuleEVENTB_EXPRESSION_SYMBOLS returns [String current=null] : iv_ruleEVENTB_EXPRESSION_SYMBOLS= ruleEVENTB_EXPRESSION_SYMBOLS EOF ;
+    // InternalStatemachine.g:1853:1: entryRuleEVENTB_EXPRESSION_SYMBOLS returns [String current=null] : iv_ruleEVENTB_EXPRESSION_SYMBOLS= ruleEVENTB_EXPRESSION_SYMBOLS EOF ;
     public final String entryRuleEVENTB_EXPRESSION_SYMBOLS() throws RecognitionException {
         String current = null;
 
@@ -5141,8 +5118,8 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalStatemachine.g:1869:65: (iv_ruleEVENTB_EXPRESSION_SYMBOLS= ruleEVENTB_EXPRESSION_SYMBOLS EOF )
-            // InternalStatemachine.g:1870:2: iv_ruleEVENTB_EXPRESSION_SYMBOLS= ruleEVENTB_EXPRESSION_SYMBOLS EOF
+            // InternalStatemachine.g:1853:65: (iv_ruleEVENTB_EXPRESSION_SYMBOLS= ruleEVENTB_EXPRESSION_SYMBOLS EOF )
+            // InternalStatemachine.g:1854:2: iv_ruleEVENTB_EXPRESSION_SYMBOLS= ruleEVENTB_EXPRESSION_SYMBOLS EOF
             {
              newCompositeNode(grammarAccess.getEVENTB_EXPRESSION_SYMBOLSRule()); 
             pushFollow(FOLLOW_1);
@@ -5169,7 +5146,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEVENTB_EXPRESSION_SYMBOLS"
-    // InternalStatemachine.g:1876:1: ruleEVENTB_EXPRESSION_SYMBOLS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '\\u2194' | kw= '\\uE100' | kw= '\\uE101' | kw= '\\uE102' | kw= '\\u21F8' | kw= '\\u2192' | kw= '\\u2914' | kw= '\\u21A3' | kw= '\\u2900' | kw= '\\u21A0' | kw= '\\u2916' | kw= '{' | kw= '}' | kw= '\\u21A6' | kw= '\\u2205' | kw= '\\u2229' | kw= '\\u222A' | kw= '\\u2216' | kw= '\\u00D7' | kw= '[' | kw= ']' | kw= '\\uE103' | kw= '\\u2218' | kw= ';' | kw= '\\u2297' | kw= '\\u2225' | kw= '\\u223C' | kw= '\\u25C1' | kw= '\\u2A64' | kw= '\\u25B7' | kw= '\\u2A65' | kw= '\\u03BB' | (kw= '%' kw= '\\u22C2' ) | kw= '\\u22C3' | kw= '\\u2223' | kw= '\\u2025' | kw= '+' | kw= '\\u2212' | kw= '-' | kw= '\\u2217' | kw= '*' | kw= '\\u00F7' | kw= '/' | kw= '^' | kw= '\\\\' ) ;
+    // InternalStatemachine.g:1860:1: ruleEVENTB_EXPRESSION_SYMBOLS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '\\u2194' | kw= '\\uE100' | kw= '\\uE101' | kw= '\\uE102' | kw= '\\u21F8' | kw= '\\u2192' | kw= '\\u2914' | kw= '\\u21A3' | kw= '\\u2900' | kw= '\\u21A0' | kw= '\\u2916' | kw= '{' | kw= '}' | kw= '\\u21A6' | kw= '\\u2205' | kw= '\\u2229' | kw= '\\u222A' | kw= '\\u2216' | kw= '\\u00D7' | kw= '[' | kw= ']' | kw= '\\uE103' | kw= '\\u2218' | kw= ';' | kw= '\\u2297' | kw= '\\u2225' | kw= '\\u223C' | kw= '\\u25C1' | kw= '\\u2A64' | kw= '\\u25B7' | kw= '\\u2A65' | kw= '\\u03BB' | (kw= '%' kw= '\\u22C2' ) | kw= '\\u22C3' | kw= '\\u2223' | kw= '\\u2025' | kw= '+' | kw= '\\u2212' | kw= '-' | kw= '\\u2217' | kw= '*' | kw= '\\u00F7' | kw= '/' | kw= '^' | kw= '\\\\' ) ;
     public final AntlrDatatypeRuleToken ruleEVENTB_EXPRESSION_SYMBOLS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5179,10 +5156,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:1882:2: ( (kw= '\\u2194' | kw= '\\uE100' | kw= '\\uE101' | kw= '\\uE102' | kw= '\\u21F8' | kw= '\\u2192' | kw= '\\u2914' | kw= '\\u21A3' | kw= '\\u2900' | kw= '\\u21A0' | kw= '\\u2916' | kw= '{' | kw= '}' | kw= '\\u21A6' | kw= '\\u2205' | kw= '\\u2229' | kw= '\\u222A' | kw= '\\u2216' | kw= '\\u00D7' | kw= '[' | kw= ']' | kw= '\\uE103' | kw= '\\u2218' | kw= ';' | kw= '\\u2297' | kw= '\\u2225' | kw= '\\u223C' | kw= '\\u25C1' | kw= '\\u2A64' | kw= '\\u25B7' | kw= '\\u2A65' | kw= '\\u03BB' | (kw= '%' kw= '\\u22C2' ) | kw= '\\u22C3' | kw= '\\u2223' | kw= '\\u2025' | kw= '+' | kw= '\\u2212' | kw= '-' | kw= '\\u2217' | kw= '*' | kw= '\\u00F7' | kw= '/' | kw= '^' | kw= '\\\\' ) )
-            // InternalStatemachine.g:1883:2: (kw= '\\u2194' | kw= '\\uE100' | kw= '\\uE101' | kw= '\\uE102' | kw= '\\u21F8' | kw= '\\u2192' | kw= '\\u2914' | kw= '\\u21A3' | kw= '\\u2900' | kw= '\\u21A0' | kw= '\\u2916' | kw= '{' | kw= '}' | kw= '\\u21A6' | kw= '\\u2205' | kw= '\\u2229' | kw= '\\u222A' | kw= '\\u2216' | kw= '\\u00D7' | kw= '[' | kw= ']' | kw= '\\uE103' | kw= '\\u2218' | kw= ';' | kw= '\\u2297' | kw= '\\u2225' | kw= '\\u223C' | kw= '\\u25C1' | kw= '\\u2A64' | kw= '\\u25B7' | kw= '\\u2A65' | kw= '\\u03BB' | (kw= '%' kw= '\\u22C2' ) | kw= '\\u22C3' | kw= '\\u2223' | kw= '\\u2025' | kw= '+' | kw= '\\u2212' | kw= '-' | kw= '\\u2217' | kw= '*' | kw= '\\u00F7' | kw= '/' | kw= '^' | kw= '\\\\' )
+            // InternalStatemachine.g:1866:2: ( (kw= '\\u2194' | kw= '\\uE100' | kw= '\\uE101' | kw= '\\uE102' | kw= '\\u21F8' | kw= '\\u2192' | kw= '\\u2914' | kw= '\\u21A3' | kw= '\\u2900' | kw= '\\u21A0' | kw= '\\u2916' | kw= '{' | kw= '}' | kw= '\\u21A6' | kw= '\\u2205' | kw= '\\u2229' | kw= '\\u222A' | kw= '\\u2216' | kw= '\\u00D7' | kw= '[' | kw= ']' | kw= '\\uE103' | kw= '\\u2218' | kw= ';' | kw= '\\u2297' | kw= '\\u2225' | kw= '\\u223C' | kw= '\\u25C1' | kw= '\\u2A64' | kw= '\\u25B7' | kw= '\\u2A65' | kw= '\\u03BB' | (kw= '%' kw= '\\u22C2' ) | kw= '\\u22C3' | kw= '\\u2223' | kw= '\\u2025' | kw= '+' | kw= '\\u2212' | kw= '-' | kw= '\\u2217' | kw= '*' | kw= '\\u00F7' | kw= '/' | kw= '^' | kw= '\\\\' ) )
+            // InternalStatemachine.g:1867:2: (kw= '\\u2194' | kw= '\\uE100' | kw= '\\uE101' | kw= '\\uE102' | kw= '\\u21F8' | kw= '\\u2192' | kw= '\\u2914' | kw= '\\u21A3' | kw= '\\u2900' | kw= '\\u21A0' | kw= '\\u2916' | kw= '{' | kw= '}' | kw= '\\u21A6' | kw= '\\u2205' | kw= '\\u2229' | kw= '\\u222A' | kw= '\\u2216' | kw= '\\u00D7' | kw= '[' | kw= ']' | kw= '\\uE103' | kw= '\\u2218' | kw= ';' | kw= '\\u2297' | kw= '\\u2225' | kw= '\\u223C' | kw= '\\u25C1' | kw= '\\u2A64' | kw= '\\u25B7' | kw= '\\u2A65' | kw= '\\u03BB' | (kw= '%' kw= '\\u22C2' ) | kw= '\\u22C3' | kw= '\\u2223' | kw= '\\u2025' | kw= '+' | kw= '\\u2212' | kw= '-' | kw= '\\u2217' | kw= '*' | kw= '\\u00F7' | kw= '/' | kw= '^' | kw= '\\\\' )
             {
-            // InternalStatemachine.g:1883:2: (kw= '\\u2194' | kw= '\\uE100' | kw= '\\uE101' | kw= '\\uE102' | kw= '\\u21F8' | kw= '\\u2192' | kw= '\\u2914' | kw= '\\u21A3' | kw= '\\u2900' | kw= '\\u21A0' | kw= '\\u2916' | kw= '{' | kw= '}' | kw= '\\u21A6' | kw= '\\u2205' | kw= '\\u2229' | kw= '\\u222A' | kw= '\\u2216' | kw= '\\u00D7' | kw= '[' | kw= ']' | kw= '\\uE103' | kw= '\\u2218' | kw= ';' | kw= '\\u2297' | kw= '\\u2225' | kw= '\\u223C' | kw= '\\u25C1' | kw= '\\u2A64' | kw= '\\u25B7' | kw= '\\u2A65' | kw= '\\u03BB' | (kw= '%' kw= '\\u22C2' ) | kw= '\\u22C3' | kw= '\\u2223' | kw= '\\u2025' | kw= '+' | kw= '\\u2212' | kw= '-' | kw= '\\u2217' | kw= '*' | kw= '\\u00F7' | kw= '/' | kw= '^' | kw= '\\\\' )
+            // InternalStatemachine.g:1867:2: (kw= '\\u2194' | kw= '\\uE100' | kw= '\\uE101' | kw= '\\uE102' | kw= '\\u21F8' | kw= '\\u2192' | kw= '\\u2914' | kw= '\\u21A3' | kw= '\\u2900' | kw= '\\u21A0' | kw= '\\u2916' | kw= '{' | kw= '}' | kw= '\\u21A6' | kw= '\\u2205' | kw= '\\u2229' | kw= '\\u222A' | kw= '\\u2216' | kw= '\\u00D7' | kw= '[' | kw= ']' | kw= '\\uE103' | kw= '\\u2218' | kw= ';' | kw= '\\u2297' | kw= '\\u2225' | kw= '\\u223C' | kw= '\\u25C1' | kw= '\\u2A64' | kw= '\\u25B7' | kw= '\\u2A65' | kw= '\\u03BB' | (kw= '%' kw= '\\u22C2' ) | kw= '\\u22C3' | kw= '\\u2223' | kw= '\\u2025' | kw= '+' | kw= '\\u2212' | kw= '-' | kw= '\\u2217' | kw= '*' | kw= '\\u00F7' | kw= '/' | kw= '^' | kw= '\\\\' )
             int alt34=45;
             switch ( input.LA(1) ) {
             case 93:
@@ -5419,7 +5396,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             switch (alt34) {
                 case 1 :
-                    // InternalStatemachine.g:1884:3: kw= '\\u2194'
+                    // InternalStatemachine.g:1868:3: kw= '\\u2194'
                     {
                     kw=(Token)match(input,93,FOLLOW_2); 
 
@@ -5430,7 +5407,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalStatemachine.g:1890:3: kw= '\\uE100'
+                    // InternalStatemachine.g:1874:3: kw= '\\uE100'
                     {
                     kw=(Token)match(input,94,FOLLOW_2); 
 
@@ -5441,7 +5418,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalStatemachine.g:1896:3: kw= '\\uE101'
+                    // InternalStatemachine.g:1880:3: kw= '\\uE101'
                     {
                     kw=(Token)match(input,95,FOLLOW_2); 
 
@@ -5452,7 +5429,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalStatemachine.g:1902:3: kw= '\\uE102'
+                    // InternalStatemachine.g:1886:3: kw= '\\uE102'
                     {
                     kw=(Token)match(input,96,FOLLOW_2); 
 
@@ -5463,7 +5440,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalStatemachine.g:1908:3: kw= '\\u21F8'
+                    // InternalStatemachine.g:1892:3: kw= '\\u21F8'
                     {
                     kw=(Token)match(input,97,FOLLOW_2); 
 
@@ -5474,7 +5451,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalStatemachine.g:1914:3: kw= '\\u2192'
+                    // InternalStatemachine.g:1898:3: kw= '\\u2192'
                     {
                     kw=(Token)match(input,98,FOLLOW_2); 
 
@@ -5485,7 +5462,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalStatemachine.g:1920:3: kw= '\\u2914'
+                    // InternalStatemachine.g:1904:3: kw= '\\u2914'
                     {
                     kw=(Token)match(input,99,FOLLOW_2); 
 
@@ -5496,7 +5473,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalStatemachine.g:1926:3: kw= '\\u21A3'
+                    // InternalStatemachine.g:1910:3: kw= '\\u21A3'
                     {
                     kw=(Token)match(input,100,FOLLOW_2); 
 
@@ -5507,7 +5484,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalStatemachine.g:1932:3: kw= '\\u2900'
+                    // InternalStatemachine.g:1916:3: kw= '\\u2900'
                     {
                     kw=(Token)match(input,101,FOLLOW_2); 
 
@@ -5518,7 +5495,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalStatemachine.g:1938:3: kw= '\\u21A0'
+                    // InternalStatemachine.g:1922:3: kw= '\\u21A0'
                     {
                     kw=(Token)match(input,102,FOLLOW_2); 
 
@@ -5529,7 +5506,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalStatemachine.g:1944:3: kw= '\\u2916'
+                    // InternalStatemachine.g:1928:3: kw= '\\u2916'
                     {
                     kw=(Token)match(input,103,FOLLOW_2); 
 
@@ -5540,7 +5517,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalStatemachine.g:1950:3: kw= '{'
+                    // InternalStatemachine.g:1934:3: kw= '{'
                     {
                     kw=(Token)match(input,104,FOLLOW_2); 
 
@@ -5551,7 +5528,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalStatemachine.g:1956:3: kw= '}'
+                    // InternalStatemachine.g:1940:3: kw= '}'
                     {
                     kw=(Token)match(input,105,FOLLOW_2); 
 
@@ -5562,7 +5539,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalStatemachine.g:1962:3: kw= '\\u21A6'
+                    // InternalStatemachine.g:1946:3: kw= '\\u21A6'
                     {
                     kw=(Token)match(input,106,FOLLOW_2); 
 
@@ -5573,7 +5550,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalStatemachine.g:1968:3: kw= '\\u2205'
+                    // InternalStatemachine.g:1952:3: kw= '\\u2205'
                     {
                     kw=(Token)match(input,107,FOLLOW_2); 
 
@@ -5584,7 +5561,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalStatemachine.g:1974:3: kw= '\\u2229'
+                    // InternalStatemachine.g:1958:3: kw= '\\u2229'
                     {
                     kw=(Token)match(input,108,FOLLOW_2); 
 
@@ -5595,7 +5572,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalStatemachine.g:1980:3: kw= '\\u222A'
+                    // InternalStatemachine.g:1964:3: kw= '\\u222A'
                     {
                     kw=(Token)match(input,109,FOLLOW_2); 
 
@@ -5606,7 +5583,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalStatemachine.g:1986:3: kw= '\\u2216'
+                    // InternalStatemachine.g:1970:3: kw= '\\u2216'
                     {
                     kw=(Token)match(input,110,FOLLOW_2); 
 
@@ -5617,7 +5594,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalStatemachine.g:1992:3: kw= '\\u00D7'
+                    // InternalStatemachine.g:1976:3: kw= '\\u00D7'
                     {
                     kw=(Token)match(input,30,FOLLOW_2); 
 
@@ -5628,7 +5605,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalStatemachine.g:1998:3: kw= '['
+                    // InternalStatemachine.g:1982:3: kw= '['
                     {
                     kw=(Token)match(input,111,FOLLOW_2); 
 
@@ -5639,7 +5616,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // InternalStatemachine.g:2004:3: kw= ']'
+                    // InternalStatemachine.g:1988:3: kw= ']'
                     {
                     kw=(Token)match(input,112,FOLLOW_2); 
 
@@ -5650,7 +5627,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // InternalStatemachine.g:2010:3: kw= '\\uE103'
+                    // InternalStatemachine.g:1994:3: kw= '\\uE103'
                     {
                     kw=(Token)match(input,113,FOLLOW_2); 
 
@@ -5661,7 +5638,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // InternalStatemachine.g:2016:3: kw= '\\u2218'
+                    // InternalStatemachine.g:2000:3: kw= '\\u2218'
                     {
                     kw=(Token)match(input,114,FOLLOW_2); 
 
@@ -5672,7 +5649,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // InternalStatemachine.g:2022:3: kw= ';'
+                    // InternalStatemachine.g:2006:3: kw= ';'
                     {
                     kw=(Token)match(input,115,FOLLOW_2); 
 
@@ -5683,7 +5660,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // InternalStatemachine.g:2028:3: kw= '\\u2297'
+                    // InternalStatemachine.g:2012:3: kw= '\\u2297'
                     {
                     kw=(Token)match(input,116,FOLLOW_2); 
 
@@ -5694,7 +5671,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // InternalStatemachine.g:2034:3: kw= '\\u2225'
+                    // InternalStatemachine.g:2018:3: kw= '\\u2225'
                     {
                     kw=(Token)match(input,117,FOLLOW_2); 
 
@@ -5705,7 +5682,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // InternalStatemachine.g:2040:3: kw= '\\u223C'
+                    // InternalStatemachine.g:2024:3: kw= '\\u223C'
                     {
                     kw=(Token)match(input,118,FOLLOW_2); 
 
@@ -5716,7 +5693,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // InternalStatemachine.g:2046:3: kw= '\\u25C1'
+                    // InternalStatemachine.g:2030:3: kw= '\\u25C1'
                     {
                     kw=(Token)match(input,119,FOLLOW_2); 
 
@@ -5727,7 +5704,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // InternalStatemachine.g:2052:3: kw= '\\u2A64'
+                    // InternalStatemachine.g:2036:3: kw= '\\u2A64'
                     {
                     kw=(Token)match(input,120,FOLLOW_2); 
 
@@ -5738,7 +5715,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // InternalStatemachine.g:2058:3: kw= '\\u25B7'
+                    // InternalStatemachine.g:2042:3: kw= '\\u25B7'
                     {
                     kw=(Token)match(input,121,FOLLOW_2); 
 
@@ -5749,7 +5726,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // InternalStatemachine.g:2064:3: kw= '\\u2A65'
+                    // InternalStatemachine.g:2048:3: kw= '\\u2A65'
                     {
                     kw=(Token)match(input,122,FOLLOW_2); 
 
@@ -5760,7 +5737,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // InternalStatemachine.g:2070:3: kw= '\\u03BB'
+                    // InternalStatemachine.g:2054:3: kw= '\\u03BB'
                     {
                     kw=(Token)match(input,123,FOLLOW_2); 
 
@@ -5771,10 +5748,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // InternalStatemachine.g:2076:3: (kw= '%' kw= '\\u22C2' )
+                    // InternalStatemachine.g:2060:3: (kw= '%' kw= '\\u22C2' )
                     {
-                    // InternalStatemachine.g:2076:3: (kw= '%' kw= '\\u22C2' )
-                    // InternalStatemachine.g:2077:4: kw= '%' kw= '\\u22C2'
+                    // InternalStatemachine.g:2060:3: (kw= '%' kw= '\\u22C2' )
+                    // InternalStatemachine.g:2061:4: kw= '%' kw= '\\u22C2'
                     {
                     kw=(Token)match(input,124,FOLLOW_39); 
 
@@ -5793,7 +5770,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // InternalStatemachine.g:2089:3: kw= '\\u22C3'
+                    // InternalStatemachine.g:2073:3: kw= '\\u22C3'
                     {
                     kw=(Token)match(input,126,FOLLOW_2); 
 
@@ -5804,7 +5781,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // InternalStatemachine.g:2095:3: kw= '\\u2223'
+                    // InternalStatemachine.g:2079:3: kw= '\\u2223'
                     {
                     kw=(Token)match(input,127,FOLLOW_2); 
 
@@ -5815,7 +5792,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // InternalStatemachine.g:2101:3: kw= '\\u2025'
+                    // InternalStatemachine.g:2085:3: kw= '\\u2025'
                     {
                     kw=(Token)match(input,128,FOLLOW_2); 
 
@@ -5826,7 +5803,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 37 :
-                    // InternalStatemachine.g:2107:3: kw= '+'
+                    // InternalStatemachine.g:2091:3: kw= '+'
                     {
                     kw=(Token)match(input,129,FOLLOW_2); 
 
@@ -5837,7 +5814,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 38 :
-                    // InternalStatemachine.g:2113:3: kw= '\\u2212'
+                    // InternalStatemachine.g:2097:3: kw= '\\u2212'
                     {
                     kw=(Token)match(input,130,FOLLOW_2); 
 
@@ -5848,7 +5825,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 39 :
-                    // InternalStatemachine.g:2119:3: kw= '-'
+                    // InternalStatemachine.g:2103:3: kw= '-'
                     {
                     kw=(Token)match(input,131,FOLLOW_2); 
 
@@ -5859,7 +5836,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 40 :
-                    // InternalStatemachine.g:2125:3: kw= '\\u2217'
+                    // InternalStatemachine.g:2109:3: kw= '\\u2217'
                     {
                     kw=(Token)match(input,132,FOLLOW_2); 
 
@@ -5870,7 +5847,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 41 :
-                    // InternalStatemachine.g:2131:3: kw= '*'
+                    // InternalStatemachine.g:2115:3: kw= '*'
                     {
                     kw=(Token)match(input,133,FOLLOW_2); 
 
@@ -5881,7 +5858,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 42 :
-                    // InternalStatemachine.g:2137:3: kw= '\\u00F7'
+                    // InternalStatemachine.g:2121:3: kw= '\\u00F7'
                     {
                     kw=(Token)match(input,134,FOLLOW_2); 
 
@@ -5892,7 +5869,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 43 :
-                    // InternalStatemachine.g:2143:3: kw= '/'
+                    // InternalStatemachine.g:2127:3: kw= '/'
                     {
                     kw=(Token)match(input,135,FOLLOW_2); 
 
@@ -5903,7 +5880,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 44 :
-                    // InternalStatemachine.g:2149:3: kw= '^'
+                    // InternalStatemachine.g:2133:3: kw= '^'
                     {
                     kw=(Token)match(input,136,FOLLOW_2); 
 
@@ -5914,7 +5891,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 45 :
-                    // InternalStatemachine.g:2155:3: kw= '\\\\'
+                    // InternalStatemachine.g:2139:3: kw= '\\\\'
                     {
                     kw=(Token)match(input,137,FOLLOW_2); 
 
@@ -5947,7 +5924,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTranslationKind"
-    // InternalStatemachine.g:2164:1: ruleTranslationKind returns [Enumerator current=null] : ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) ) ;
+    // InternalStatemachine.g:2148:1: ruleTranslationKind returns [Enumerator current=null] : ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) ) ;
     public final Enumerator ruleTranslationKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -5959,10 +5936,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:2170:2: ( ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) ) )
-            // InternalStatemachine.g:2171:2: ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) )
+            // InternalStatemachine.g:2154:2: ( ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) ) )
+            // InternalStatemachine.g:2155:2: ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) )
             {
-            // InternalStatemachine.g:2171:2: ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) )
+            // InternalStatemachine.g:2155:2: ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) )
             int alt35=3;
             switch ( input.LA(1) ) {
             case 138:
@@ -5989,10 +5966,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             switch (alt35) {
                 case 1 :
-                    // InternalStatemachine.g:2172:3: (enumLiteral_0= 'enumeration' )
+                    // InternalStatemachine.g:2156:3: (enumLiteral_0= 'enumeration' )
                     {
-                    // InternalStatemachine.g:2172:3: (enumLiteral_0= 'enumeration' )
-                    // InternalStatemachine.g:2173:4: enumLiteral_0= 'enumeration'
+                    // InternalStatemachine.g:2156:3: (enumLiteral_0= 'enumeration' )
+                    // InternalStatemachine.g:2157:4: enumLiteral_0= 'enumeration'
                     {
                     enumLiteral_0=(Token)match(input,138,FOLLOW_2); 
 
@@ -6006,10 +5983,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalStatemachine.g:2180:3: (enumLiteral_1= 'variables' )
+                    // InternalStatemachine.g:2164:3: (enumLiteral_1= 'variables' )
                     {
-                    // InternalStatemachine.g:2180:3: (enumLiteral_1= 'variables' )
-                    // InternalStatemachine.g:2181:4: enumLiteral_1= 'variables'
+                    // InternalStatemachine.g:2164:3: (enumLiteral_1= 'variables' )
+                    // InternalStatemachine.g:2165:4: enumLiteral_1= 'variables'
                     {
                     enumLiteral_1=(Token)match(input,139,FOLLOW_2); 
 
@@ -6023,10 +6000,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalStatemachine.g:2188:3: (enumLiteral_2= 'REFINEDVAR' )
+                    // InternalStatemachine.g:2172:3: (enumLiteral_2= 'REFINEDVAR' )
                     {
-                    // InternalStatemachine.g:2188:3: (enumLiteral_2= 'REFINEDVAR' )
-                    // InternalStatemachine.g:2189:4: enumLiteral_2= 'REFINEDVAR'
+                    // InternalStatemachine.g:2172:3: (enumLiteral_2= 'REFINEDVAR' )
+                    // InternalStatemachine.g:2173:4: enumLiteral_2= 'REFINEDVAR'
                     {
                     enumLiteral_2=(Token)match(input,140,FOLLOW_2); 
 
