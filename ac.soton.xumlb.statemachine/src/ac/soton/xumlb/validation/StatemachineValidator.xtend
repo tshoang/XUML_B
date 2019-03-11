@@ -17,7 +17,7 @@ class StatemachineValidator extends AbstractStatemachineValidator {
 
 	@Check
 	def checkGreetingStartsWithCapital(Statemachine stm) {
-		System.out.println("Here")
+		//System.out.println("Here")
 	}
 	
 }

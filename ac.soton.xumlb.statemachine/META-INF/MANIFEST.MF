@@ -16,7 +16,8 @@ Require-Bundle: ac.soton.eventb.statemachines,
  org.eclipse.xtend.lib;bundle-version="2.14.0",
  ac.soton.eventb.emf.core.extension,
  org.eventb.emf.core,
- ac.soton.eventb.emf.diagrams;bundle-version="4.1.0"
+ ac.soton.eventb.emf.diagrams;bundle-version="4.1.0",
+ ac.soton.xeventb.common;bundle-version="0.0.5"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ac.soton.xumlb,
  ac.soton.xumlb.parser.antlr.internal,
