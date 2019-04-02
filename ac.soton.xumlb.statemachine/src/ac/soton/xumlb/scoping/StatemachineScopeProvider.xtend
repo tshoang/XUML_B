@@ -3,6 +3,12 @@
  */
 package ac.soton.xumlb.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import java.util.ArrayList
+import org.eclipse.xtext.scoping.Scopes
+import ac.soton.eventb.statemachines.Statemachine
+import ac.soton.eventb.statemachines.StatemachinesPackage
 
 /**
  * This class contains custom scoping description.
@@ -11,5 +17,24 @@ package ac.soton.xumlb.scoping
  * on how and when to use it.
  */
 class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
+//	override getScope(EObject context, EReference reference) {
+//		
+//		// The scope for a context extension is the set of all contexts in the
+//		// current project containing the parent context. 
+//		if (context instanceof Statemachine && reference == StatemachinesPackage.Literals.annotations) {
+//			var emfRodinDB = new EMFRodinDB;
+//			var prjName = emfRodinDB.getProjectName(context as Context);
+//			var eBPrj = EventBUtils.getEventBProject(prjName)
+//			var rdPrj = eBPrj.getRodinProject()
+//			var ctxRoots = rdPrj.getRootElementsOfType(ContextRoot.ELEMENT_TYPE)
+//
+//			var ctxs = new ArrayList()
+//			for (ctxRoot : ctxRoots) {
+//				var ctx = emfRodinDB.loadEventBComponent(ctxRoot)
+//				ctxs.add(ctx)
+//			}
+//			return Scopes.scopeFor(ctxs);
+//		}
+//	}
 
 }

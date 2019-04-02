@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalStatemachineParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_XLABEL", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'statemachine'", "'('", "')'", "'refines'", "'instances'", "'selfName'", "'transition'", "'elaborates'", "'extended'", "'target'", "'source'", "'any'", "','", "'where'", "'then'", "'with'", "'end'", "':'", "'\\u00D7'", "'\\u2119'", "'BOOL'", "'\\u2124'", "'theorem'", "'State'", "'statemachines'", "'begin'", "'invariants'", "'entryActions'", "'exitActions'", "'Initial'", "'Final'", "'Any'", "'Junction'", "'Fork'", "'FALSE'", "'TRUE'", "'bool'", "'card'", "'dom'", "'finite'", "'id'", "'inter'", "'max'", "'min'", "'mod'", "'pred'", "'prj1'", "'prj2'", "'ran'", "'succ'", "'union'", "'\\u21151'", "'\\u2115'", "'\\u21191'", "'\\u21D4'", "'\\u21D2'", "'\\u2227'", "'&'", "'\\u2228'", "'\\u00AC'", "'\\u22A4'", "'\\u22A5'", "'\\u2200'", "'!'", "'\\u2203'", "'#'", "'\\u00B7'", "'.'", "'='", "'\\u2260'", "'\\u2264'", "'<'", "'\\u2265'", "'>'", "'\\u2208'", "'\\u2209'", "'\\u2282'", "'\\u2284'", "'\\u2286'", "'\\u2288'", "'partition'", "'\\u2194'", "'\\uE100'", "'\\uE101'", "'\\uE102'", "'\\u21F8'", "'\\u2192'", "'\\u2914'", "'\\u21A3'", "'\\u2900'", "'\\u21A0'", "'\\u2916'", "'{'", "'}'", "'\\u21A6'", "'\\u2205'", "'\\u2229'", "'\\u222A'", "'\\u2216'", "'['", "']'", "'\\uE103'", "'\\u2218'", "';'", "'\\u2297'", "'\\u2225'", "'\\u223C'", "'\\u25C1'", "'\\u2A64'", "'\\u25B7'", "'\\u2A65'", "'\\u03BB'", "'%'", "'\\u22C2'", "'\\u22C3'", "'\\u2223'", "'\\u2025'", "'+'", "'\\u2212'", "'-'", "'\\u2217'", "'*'", "'\\u00F7'", "'/'", "'^'", "'\\\\'", "'enumeration'", "'variables'", "'REFINEDVAR'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_XLABEL", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'statemachine'", "'('", "')'", "'refines'", "'instances'", "'selfName'", "'transition'", "'elaborates'", "'extended'", "'source'", "'target'", "'any'", "','", "'where'", "'then'", "'with'", "'end'", "':'", "'\\u00D7'", "'\\u2119'", "'BOOL'", "'\\u2124'", "'theorem'", "'State'", "'statemachines'", "'begin'", "'invariants'", "'entryActions'", "'exitActions'", "'Initial'", "'Final'", "'Any'", "'Junction'", "'Fork'", "'FALSE'", "'TRUE'", "'bool'", "'card'", "'dom'", "'finite'", "'id'", "'inter'", "'max'", "'min'", "'mod'", "'pred'", "'prj1'", "'prj2'", "'ran'", "'succ'", "'union'", "'\\u21151'", "'\\u2115'", "'\\u21191'", "'\\u21D4'", "'\\u21D2'", "'\\u2227'", "'&'", "'\\u2228'", "'\\u00AC'", "'\\u22A4'", "'\\u22A5'", "'\\u2200'", "'!'", "'\\u2203'", "'#'", "'\\u00B7'", "'.'", "'='", "'\\u2260'", "'\\u2264'", "'<'", "'\\u2265'", "'>'", "'\\u2208'", "'\\u2209'", "'\\u2282'", "'\\u2284'", "'\\u2286'", "'\\u2288'", "'partition'", "'\\u2194'", "'\\uE100'", "'\\uE101'", "'\\uE102'", "'\\u21F8'", "'\\u2192'", "'\\u2914'", "'\\u21A3'", "'\\u2900'", "'\\u21A0'", "'\\u2916'", "'{'", "'}'", "'\\u21A6'", "'\\u2205'", "'\\u2229'", "'\\u222A'", "'\\u2216'", "'['", "']'", "'\\uE103'", "'\\u2218'", "';'", "'\\u2297'", "'\\u2225'", "'\\u223C'", "'\\u25C1'", "'\\u2A64'", "'\\u25B7'", "'\\u2A65'", "'\\u03BB'", "'%'", "'\\u22C2'", "'\\u22C3'", "'\\u2223'", "'\\u2025'", "'+'", "'\\u2212'", "'-'", "'\\u2217'", "'*'", "'\\u00F7'", "'/'", "'^'", "'\\\\'", "'variables'", "'enumeration'", "'REFINEDVAR'"
     };
     public static final int T__50=50;
     public static final int T__140=140;
@@ -976,7 +976,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // InternalStatemachine.g:351:1: ruleTransition returns [EObject current=null] : (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' ) ;
+    // InternalStatemachine.g:351:1: ruleTransition returns [EObject current=null] : (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'source' ( ( ruleEString ) ) otherlv_6= 'target' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -1006,11 +1006,11 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:357:2: ( (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' ) )
-            // InternalStatemachine.g:358:2: (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' )
+            // InternalStatemachine.g:357:2: ( (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'source' ( ( ruleEString ) ) otherlv_6= 'target' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' ) )
+            // InternalStatemachine.g:358:2: (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'source' ( ( ruleEString ) ) otherlv_6= 'target' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' )
             {
-            // InternalStatemachine.g:358:2: (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' )
-            // InternalStatemachine.g:359:3: otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'target' ( ( ruleEString ) ) otherlv_6= 'source' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end'
+            // InternalStatemachine.g:358:2: (otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'source' ( ( ruleEString ) ) otherlv_6= 'target' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end' )
+            // InternalStatemachine.g:359:3: otherlv_0= 'transition' (otherlv_1= 'elaborates' ( ( ruleEString ) )+ )? ( (lv_extended_3_0= 'extended' ) )? otherlv_4= 'source' ( ( ruleEString ) ) otherlv_6= 'target' ( ( ruleEString ) ) (otherlv_8= 'any' ( (lv_parameters_9_0= ruleTypedParameter ) ) (otherlv_10= ',' ( (lv_parameters_11_0= ruleTypedParameter ) ) )* )? (otherlv_12= 'where' ( (lv_guards_13_0= ruleGuard ) )+ )? (otherlv_14= 'then' ( (lv_actions_15_0= ruleAction ) )+ )? (otherlv_16= 'with' ( (lv_witnesses_17_0= ruleWitness ) )+ )? otherlv_18= 'end'
             {
             otherlv_0=(Token)match(input,18,FOLLOW_13); 
 
@@ -1123,7 +1123,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             otherlv_4=(Token)match(input,21,FOLLOW_8); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getTransitionAccess().getTargetKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getTransitionAccess().getSourceKeyword_3());
             		
             // InternalStatemachine.g:403:3: ( ( ruleEString ) )
             // InternalStatemachine.g:404:4: ( ruleEString )
@@ -1137,7 +1137,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getTransitionAccess().getTargetAbstractNodeCrossReference_4_0());
+            					newCompositeNode(grammarAccess.getTransitionAccess().getSourceAbstractNodeCrossReference_4_0());
             				
             pushFollow(FOLLOW_16);
             ruleEString();
@@ -1155,7 +1155,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             otherlv_6=(Token)match(input,22,FOLLOW_8); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getSourceKeyword_5());
+            			newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getTargetKeyword_5());
             		
             // InternalStatemachine.g:423:3: ( ( ruleEString ) )
             // InternalStatemachine.g:424:4: ( ruleEString )
@@ -1169,7 +1169,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getTransitionAccess().getSourceAbstractNodeCrossReference_6_0());
+            					newCompositeNode(grammarAccess.getTransitionAccess().getTargetAbstractNodeCrossReference_6_0());
             				
             pushFollow(FOLLOW_17);
             ruleEString();
@@ -5924,7 +5924,7 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTranslationKind"
-    // InternalStatemachine.g:2148:1: ruleTranslationKind returns [Enumerator current=null] : ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) ) ;
+    // InternalStatemachine.g:2148:1: ruleTranslationKind returns [Enumerator current=null] : ( (enumLiteral_0= 'variables' ) | (enumLiteral_1= 'enumeration' ) | (enumLiteral_2= 'REFINEDVAR' ) ) ;
     public final Enumerator ruleTranslationKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -5936,10 +5936,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalStatemachine.g:2154:2: ( ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) ) )
-            // InternalStatemachine.g:2155:2: ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) )
+            // InternalStatemachine.g:2154:2: ( ( (enumLiteral_0= 'variables' ) | (enumLiteral_1= 'enumeration' ) | (enumLiteral_2= 'REFINEDVAR' ) ) )
+            // InternalStatemachine.g:2155:2: ( (enumLiteral_0= 'variables' ) | (enumLiteral_1= 'enumeration' ) | (enumLiteral_2= 'REFINEDVAR' ) )
             {
-            // InternalStatemachine.g:2155:2: ( (enumLiteral_0= 'enumeration' ) | (enumLiteral_1= 'variables' ) | (enumLiteral_2= 'REFINEDVAR' ) )
+            // InternalStatemachine.g:2155:2: ( (enumLiteral_0= 'variables' ) | (enumLiteral_1= 'enumeration' ) | (enumLiteral_2= 'REFINEDVAR' ) )
             int alt35=3;
             switch ( input.LA(1) ) {
             case 138:
@@ -5966,10 +5966,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
 
             switch (alt35) {
                 case 1 :
-                    // InternalStatemachine.g:2156:3: (enumLiteral_0= 'enumeration' )
+                    // InternalStatemachine.g:2156:3: (enumLiteral_0= 'variables' )
                     {
-                    // InternalStatemachine.g:2156:3: (enumLiteral_0= 'enumeration' )
-                    // InternalStatemachine.g:2157:4: enumLiteral_0= 'enumeration'
+                    // InternalStatemachine.g:2156:3: (enumLiteral_0= 'variables' )
+                    // InternalStatemachine.g:2157:4: enumLiteral_0= 'variables'
                     {
                     enumLiteral_0=(Token)match(input,138,FOLLOW_2); 
 
@@ -5983,10 +5983,10 @@ public class InternalStatemachineParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalStatemachine.g:2164:3: (enumLiteral_1= 'variables' )
+                    // InternalStatemachine.g:2164:3: (enumLiteral_1= 'enumeration' )
                     {
-                    // InternalStatemachine.g:2164:3: (enumLiteral_1= 'variables' )
-                    // InternalStatemachine.g:2165:4: enumLiteral_1= 'variables'
+                    // InternalStatemachine.g:2164:3: (enumLiteral_1= 'enumeration' )
+                    // InternalStatemachine.g:2165:4: enumLiteral_1= 'enumeration'
                     {
                     enumLiteral_1=(Token)match(input,139,FOLLOW_2); 
 

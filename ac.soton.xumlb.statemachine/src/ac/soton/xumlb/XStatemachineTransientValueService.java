@@ -93,38 +93,39 @@ public class XStatemachineTransientValueService  extends DefaultTransientValueSe
 //				return true;//return false;
 			return true;
 		}
+
 		
-		// For invariant, serialise only "name"
+		// For final, serialise only "name"
 		if (owner instanceof Final) {
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
 				return false;
 			return true;
 		}
 		
-		// For invariant, serialise only "name"
+		// For any, serialise only "name"
 		if (owner instanceof Any) {
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
 				return false;
 			return true;
 		}
 		
-		// For invariant, serialise only "name"
+		// For junction, serialise only "name"
 		if (owner instanceof Junction) {
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
 				return false;
 			return true;
 		}
 		
-		// For invariant, serialise only "name"
+		// For fork, serialise only "name"
 		if (owner instanceof Fork) {
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
 				return false;
 			return true;
 		}
 
-		// For event, serialise only "name", "comment", "event refinement",
-		// "extended", "convergence", "parameters", "guards", "witnesses" and
-		// "actions"
+		// For state, serialise only "name", "refines",
+		// "invariants", "entry actions", "exit actions" and
+		// "statemachine owner"
 		//Dana: Updated to include Event Synchronisation
 		if (owner instanceof State) {
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
@@ -145,8 +146,8 @@ public class XStatemachineTransientValueService  extends DefaultTransientValueSe
 			return true;
 		}
 		
-		// For event, serialise only "name", "comment", "event refinement",
-		// "extended", "convergence", "parameters", "guards", "witnesses" and
+		// For transition, serialise only "name", "operations", "source", "target
+		// "extended", "elaborate event", "refines", "parameters", "guards", "witnesses" and
 		// "actions"
 		//Dana: Updated to include Event Synchronisation
 		if (owner instanceof Transition) {
@@ -158,8 +159,7 @@ public class XStatemachineTransientValueService  extends DefaultTransientValueSe
 				return false;
 			if (feature.equals(StatemachinesPackage.Literals.TRANSITION__SOURCE))
 				return false;
-			if (feature.equals(StatemachinesPackage.Literals.TRANSITION__SOURCE))
-				return false;
+
 			if (feature.equals(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__EXTENDED))
 				return false;
 			if (feature.equals(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES))
@@ -177,7 +177,7 @@ public class XStatemachineTransientValueService  extends DefaultTransientValueSe
 
 			return true;
 		}
-		// For invariant, serialise only "name", "predicate", "comment" and
+		// For invariant, serialise only "name", "predicate",  and
 		// "theorem".
 		if (owner instanceof Invariant) {
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
@@ -190,7 +190,7 @@ public class XStatemachineTransientValueService  extends DefaultTransientValueSe
 			return true;
 		}
 	
-		// For Typed parameter, serialise only "name" and "comment"
+		// For Typed parameter, serialise only "name" and "type"
 		if (owner instanceof TypedParameter) {
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
 				return false;
@@ -200,7 +200,7 @@ public class XStatemachineTransientValueService  extends DefaultTransientValueSe
 		}
 		
 
-		// For guard, serialise only "name", "comment", "predicate" and
+		// For guard, serialise only "name",  "predicate" and
 		// "theorem".
 		if (owner instanceof Guard) {
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
@@ -213,7 +213,7 @@ public class XStatemachineTransientValueService  extends DefaultTransientValueSe
 			return true;
 		}
 
-		// For witness, serialise only "name", "predicate" and "comment".
+		// For witness, serialise only "name" and "predicate" 
 		if (owner instanceof Witness) {
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
 				return false;
