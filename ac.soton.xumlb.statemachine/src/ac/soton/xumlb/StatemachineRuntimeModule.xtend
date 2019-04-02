@@ -10,10 +10,14 @@
  *******************************************************************************/
 package ac.soton.xumlb
 
-import org.eclipse.xtext.parsetree.reconstr.ITransientValueService;
-import ac.soton.xeventb.common.EventBValueConverter;
-import org.eclipse.xtext.conversion.IValueConverterService;
-
+import ac.soton.xeventb.common.EventBValueConverter
+import org.eclipse.xtext.conversion.IValueConverterService
+import org.eclipse.xtext.parsetree.reconstr.ITransientValueService
+import org.eclipse.xtext.resource.IDerivedStateComputer
+import org.eclipse.xtext.resource.DerivedStateAwareResourceDescriptionManager
+import org.eclipse.xtext.resource.DerivedStateAwareResource
+import org.eclipse.xtext.resource.XtextResource
+import org.eclipse.xtext.resource.IResourceDescription.Manager
 
 /**
  * <p>
@@ -48,4 +52,25 @@ class StatemachineRuntimeModule extends AbstractStatemachineRuntimeModule {
 		return typeof(EventBValueConverter);
 	}
 	
+	/**
+	 * Bind the derived state computer for XStatemachine
+	 * The derived state: are the EOpposite: incoming and outgoing 
+	 * for abstract nodes which are derived from the source and 
+	 * target of transitions.
+	 * 
+	 * Also requires bindIResourceDescription$Manager & bindXtextResource
+	 * 
+	 * @see XStatemachineDerivedStateComputer
+	 */
+    def Class<? extends IDerivedStateComputer> bindIDerivedStateComputer() {
+		XStatemachineDerivedStateComputer
+	}
+	
+	def Class<? extends Manager> bindIResourceDescription$Manager() {
+		DerivedStateAwareResourceDescriptionManager
+	}
+	
+	override Class<? extends XtextResource> bindXtextResource() {
+		DerivedStateAwareResource
+	}
 }
