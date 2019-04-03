@@ -13,13 +13,19 @@ package ac.soton.xumlb;
 
 import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.resource.IDerivedStateComputer;
+
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import ac.soton.eventb.statemachines.AbstractNode;
 import ac.soton.eventb.statemachines.Statemachine;
 import ac.soton.eventb.statemachines.Transition;
+import ac.soton.eventb.statemachines.impl.TransitionImpl;
 import ac.soton.eventb.statemachines.StatemachinesPackage;
+
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <p>
@@ -43,20 +49,28 @@ public class XStatemachineDerivedStateComputer implements IDerivedStateComputer{
 	public void installDerivedState(DerivedStateAwareResource resource, boolean preLinkingPhase) {
 		if (!resource.getContents().isEmpty() ) {//&& preLinkingPhase
 			Statemachine sm = (Statemachine) resource.getContents().get(0);
-
-			for(Transition trans : sm.getTransitions()) {
-				final EObject proxy = EcoreUtil.create(StatemachinesPackage.Literals.TRANSITION);
-				((InternalEObject) proxy).eSetProxyURI(EcoreUtil.getURI(trans));
-				AbstractNode source = trans.getSource();
-				if(source != null) 
-					source.getOutgoing().add((Transition) proxy);
+             
+			//allTransitions include all transitions even in the sub-statemachines, however it includes some null values.
+			 EList<EObject> allTransitions = sm.getAllContained(StatemachinesPackage.Literals.TRANSITION, true);
+			for(EObject o: allTransitions) {
 				
+				if(o != null) {
+					TransitionImpl trans = (TransitionImpl) o;
+					final EObject proxy = EcoreUtil.create(StatemachinesPackage.Literals.TRANSITION);
+					((InternalEObject) proxy).eSetProxyURI(EcoreUtil.getURI(trans));
+					AbstractNode source = trans.getSource();
+					if(source != null) 
+						source.getOutgoing().add((Transition) proxy);
 					
-				AbstractNode target = trans.getTarget();
-				if(target != null) 
-					target.getIncoming().add((Transition) proxy);
+						
+					AbstractNode target = trans.getTarget();
+					if(target != null) 
+						target.getIncoming().add((Transition) proxy);
 				
+				}
+					
 			}
+			
 		}
 		
 	}
