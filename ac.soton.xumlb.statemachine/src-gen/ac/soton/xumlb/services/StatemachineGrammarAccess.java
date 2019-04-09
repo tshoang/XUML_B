@@ -37,35 +37,39 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTranslationTranslationKindEnumRuleCall_3_0 = (RuleCall)cTranslationAssignment_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cRefinesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cRefinesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cRefinesStatemachineCrossReference_5_1_0 = (CrossReference)cRefinesAssignment_5_1.eContents().get(0);
-		private final RuleCall cRefinesStatemachineEStringParserRuleCall_5_1_0_1 = (RuleCall)cRefinesStatemachineCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cAnnotatesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cCommentAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cCommentEStringParserRuleCall_5_1_0 = (RuleCall)cCommentAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cInstancesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cInstancesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cInstancesEventBNamedCommentedElementCrossReference_6_1_0 = (CrossReference)cInstancesAssignment_6_1.eContents().get(0);
-		private final RuleCall cInstancesEventBNamedCommentedElementEStringParserRuleCall_6_1_0_1 = (RuleCall)cInstancesEventBNamedCommentedElementCrossReference_6_1_0.eContents().get(1);
-		private final Keyword cSelfNameKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
-		private final Assignment cSelfNameAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
-		private final RuleCall cSelfNameEStringParserRuleCall_6_3_0 = (RuleCall)cSelfNameAssignment_6_3.eContents().get(0);
-		private final Assignment cNodesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cNodesAbstractNodeParserRuleCall_7_0 = (RuleCall)cNodesAssignment_7.eContents().get(0);
-		private final Assignment cTransitionsAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cTransitionsTransitionParserRuleCall_8_0 = (RuleCall)cTransitionsAssignment_8.eContents().get(0);
+		private final Keyword cRefinesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cRefinesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final CrossReference cRefinesStatemachineCrossReference_6_1_0 = (CrossReference)cRefinesAssignment_6_1.eContents().get(0);
+		private final RuleCall cRefinesStatemachineQualifiedNameParserRuleCall_6_1_0_1 = (RuleCall)cRefinesStatemachineCrossReference_6_1_0.eContents().get(1);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cInstancesKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cInstancesAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final CrossReference cInstancesEventBNamedCommentedElementCrossReference_7_1_0 = (CrossReference)cInstancesAssignment_7_1.eContents().get(0);
+		private final RuleCall cInstancesEventBNamedCommentedElementQualifiedNameParserRuleCall_7_1_0_1 = (RuleCall)cInstancesEventBNamedCommentedElementCrossReference_7_1_0.eContents().get(1);
+		private final Keyword cSelfNameKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
+		private final Assignment cSelfNameAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
+		private final RuleCall cSelfNameEStringParserRuleCall_7_3_0 = (RuleCall)cSelfNameAssignment_7_3.eContents().get(0);
+		private final Assignment cNodesAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cNodesAbstractNodeParserRuleCall_8_0 = (RuleCall)cNodesAssignment_8.eContents().get(0);
+		private final Assignment cTransitionsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cTransitionsTransitionParserRuleCall_9_0 = (RuleCall)cTransitionsAssignment_9.eContents().get(0);
 		
 		//Statemachine:
 		//	'statemachine'
-		//	name=ID '(' translation=TranslationKind ')' ('refines' refines=[Statemachine|EString])? ('instances'
-		//	instances=[eventbcore::EventBNamedCommentedElement|EString]
+		//	name=ID '(' translation=TranslationKind ')' ('annotates' comment=EString)? ('refines'
+		//	refines=[Statemachine|QualifiedName])? ('instances' instances=[eventbcore::EventBNamedCommentedElement|QualifiedName]
 		//	'selfName' selfName=EString)?
 		//	nodes+=AbstractNode*
 		//	transitions+=Transition*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'statemachine' name=ID '(' translation=TranslationKind ')' ('refines' refines=[Statemachine|EString])? ('instances'
-		//instances=[eventbcore::EventBNamedCommentedElement|EString] 'selfName' selfName=EString)? nodes+=AbstractNode*
-		//transitions+=Transition*
+		//'statemachine' name=ID '(' translation=TranslationKind ')' ('annotates' comment=EString)? ('refines'
+		//refines=[Statemachine|QualifiedName])? ('instances' instances=[eventbcore::EventBNamedCommentedElement|QualifiedName]
+		//'selfName' selfName=EString)? nodes+=AbstractNode* transitions+=Transition*
 		public Group getGroup() { return cGroup; }
 		
 		//'statemachine'
@@ -89,56 +93,68 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 		
-		//('refines' refines=[Statemachine|EString])?
+		//('annotates' comment=EString)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'refines'
-		public Keyword getRefinesKeyword_5_0() { return cRefinesKeyword_5_0; }
+		//'annotates'
+		public Keyword getAnnotatesKeyword_5_0() { return cAnnotatesKeyword_5_0; }
 		
-		//refines=[Statemachine|EString]
-		public Assignment getRefinesAssignment_5_1() { return cRefinesAssignment_5_1; }
-		
-		//[Statemachine|EString]
-		public CrossReference getRefinesStatemachineCrossReference_5_1_0() { return cRefinesStatemachineCrossReference_5_1_0; }
+		//comment=EString
+		public Assignment getCommentAssignment_5_1() { return cCommentAssignment_5_1; }
 		
 		//EString
-		public RuleCall getRefinesStatemachineEStringParserRuleCall_5_1_0_1() { return cRefinesStatemachineEStringParserRuleCall_5_1_0_1; }
+		public RuleCall getCommentEStringParserRuleCall_5_1_0() { return cCommentEStringParserRuleCall_5_1_0; }
 		
-		//('instances' instances=[eventbcore::EventBNamedCommentedElement|EString] 'selfName' selfName=EString)?
+		//('refines' refines=[Statemachine|QualifiedName])?
 		public Group getGroup_6() { return cGroup_6; }
 		
+		//'refines'
+		public Keyword getRefinesKeyword_6_0() { return cRefinesKeyword_6_0; }
+		
+		//refines=[Statemachine|QualifiedName]
+		public Assignment getRefinesAssignment_6_1() { return cRefinesAssignment_6_1; }
+		
+		//[Statemachine|QualifiedName]
+		public CrossReference getRefinesStatemachineCrossReference_6_1_0() { return cRefinesStatemachineCrossReference_6_1_0; }
+		
+		//QualifiedName
+		public RuleCall getRefinesStatemachineQualifiedNameParserRuleCall_6_1_0_1() { return cRefinesStatemachineQualifiedNameParserRuleCall_6_1_0_1; }
+		
+		//('instances' instances=[eventbcore::EventBNamedCommentedElement|QualifiedName] 'selfName' selfName=EString)?
+		public Group getGroup_7() { return cGroup_7; }
+		
 		//'instances'
-		public Keyword getInstancesKeyword_6_0() { return cInstancesKeyword_6_0; }
+		public Keyword getInstancesKeyword_7_0() { return cInstancesKeyword_7_0; }
 		
-		//instances=[eventbcore::EventBNamedCommentedElement|EString]
-		public Assignment getInstancesAssignment_6_1() { return cInstancesAssignment_6_1; }
+		//instances=[eventbcore::EventBNamedCommentedElement|QualifiedName]
+		public Assignment getInstancesAssignment_7_1() { return cInstancesAssignment_7_1; }
 		
-		//[eventbcore::EventBNamedCommentedElement|EString]
-		public CrossReference getInstancesEventBNamedCommentedElementCrossReference_6_1_0() { return cInstancesEventBNamedCommentedElementCrossReference_6_1_0; }
+		//[eventbcore::EventBNamedCommentedElement|QualifiedName]
+		public CrossReference getInstancesEventBNamedCommentedElementCrossReference_7_1_0() { return cInstancesEventBNamedCommentedElementCrossReference_7_1_0; }
 		
-		//EString
-		public RuleCall getInstancesEventBNamedCommentedElementEStringParserRuleCall_6_1_0_1() { return cInstancesEventBNamedCommentedElementEStringParserRuleCall_6_1_0_1; }
+		//QualifiedName
+		public RuleCall getInstancesEventBNamedCommentedElementQualifiedNameParserRuleCall_7_1_0_1() { return cInstancesEventBNamedCommentedElementQualifiedNameParserRuleCall_7_1_0_1; }
 		
 		//'selfName'
-		public Keyword getSelfNameKeyword_6_2() { return cSelfNameKeyword_6_2; }
+		public Keyword getSelfNameKeyword_7_2() { return cSelfNameKeyword_7_2; }
 		
 		//selfName=EString
-		public Assignment getSelfNameAssignment_6_3() { return cSelfNameAssignment_6_3; }
+		public Assignment getSelfNameAssignment_7_3() { return cSelfNameAssignment_7_3; }
 		
 		//EString
-		public RuleCall getSelfNameEStringParserRuleCall_6_3_0() { return cSelfNameEStringParserRuleCall_6_3_0; }
+		public RuleCall getSelfNameEStringParserRuleCall_7_3_0() { return cSelfNameEStringParserRuleCall_7_3_0; }
 		
 		//nodes+=AbstractNode*
-		public Assignment getNodesAssignment_7() { return cNodesAssignment_7; }
+		public Assignment getNodesAssignment_8() { return cNodesAssignment_8; }
 		
 		//AbstractNode
-		public RuleCall getNodesAbstractNodeParserRuleCall_7_0() { return cNodesAbstractNodeParserRuleCall_7_0; }
+		public RuleCall getNodesAbstractNodeParserRuleCall_8_0() { return cNodesAbstractNodeParserRuleCall_8_0; }
 		
 		//transitions+=Transition*
-		public Assignment getTransitionsAssignment_8() { return cTransitionsAssignment_8; }
+		public Assignment getTransitionsAssignment_9() { return cTransitionsAssignment_9; }
 		
 		//Transition
-		public RuleCall getTransitionsTransitionParserRuleCall_8_0() { return cTransitionsTransitionParserRuleCall_8_0; }
+		public RuleCall getTransitionsTransitionParserRuleCall_9_0() { return cTransitionsTransitionParserRuleCall_9_0; }
 	}
 	public class AbstractNodeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ac.soton.xumlb.Statemachine.AbstractNode");
@@ -154,13 +170,14 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 		////Annotation returns eventbcore::Annotation:
 		////	{eventbcore::Annotation}
 		//////	'references' references += [eventbcore::EventBObject|EString]
-		//////	'references' references += [ecore::EObject]
+		////	'references' references += [ecore::EObject]
+		////
 		////
 		//////	'source'  source = 'ac.soton.diagrams.translationTarget'
-		////     'source'  source = Xsource
+		//// //    'source'  source = Xsource
 		////;	
 		////Xsource returns ecore::EString:
-		////	  ID
+		////	  STRING
 		////;
 		//AbstractNode:
 		//	State | Initial | Final | Any | Junction | Fork;
@@ -247,11 +264,11 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSourceKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cSourceAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cSourceAbstractNodeCrossReference_4_0 = (CrossReference)cSourceAssignment_4.eContents().get(0);
-		private final RuleCall cSourceAbstractNodeEStringParserRuleCall_4_0_1 = (RuleCall)cSourceAbstractNodeCrossReference_4_0.eContents().get(1);
+		private final RuleCall cSourceAbstractNodeQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cSourceAbstractNodeCrossReference_4_0.eContents().get(1);
 		private final Keyword cTargetKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cTargetAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final CrossReference cTargetAbstractNodeCrossReference_6_0 = (CrossReference)cTargetAssignment_6.eContents().get(0);
-		private final RuleCall cTargetAbstractNodeEStringParserRuleCall_6_0_1 = (RuleCall)cTargetAbstractNodeCrossReference_6_0.eContents().get(1);
+		private final RuleCall cTargetAbstractNodeQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cTargetAbstractNodeCrossReference_6_0.eContents().get(1);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cAnyKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Assignment cParametersAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
@@ -278,15 +295,16 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 		//	'transition' ('elaborates' elaborates+=[emachine::Event|EString]+)?
 		//	extended?='extended'?
 		//	//		('refines' refines=[coreextension::EventBEventGroup|EString])?
-		//	'source' source=[AbstractNode|EString]
-		//	'target' target=[AbstractNode|EString] ('any' parameters+=TypedParameter (',' parameters+=TypedParameter)*)? ('where'
-		//	guards+=Guard+)? ('then' actions+=Action+)? ('with' witnesses+=Witness+)?
+		//	'source' source=[AbstractNode|QualifiedName]
+		//	'target' target=[AbstractNode|QualifiedName] ('any' parameters+=TypedParameter (',' parameters+=TypedParameter)*)?
+		//	('where' guards+=Guard+)? ('then' actions+=Action+)? ('with' witnesses+=Witness+)?
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'transition' ('elaborates' elaborates+=[emachine::Event|EString]+)? extended?='extended'? //		('refines' refines=[coreextension::EventBEventGroup|EString])?
-		//'source' source=[AbstractNode|EString] 'target' target=[AbstractNode|EString] ('any' parameters+=TypedParameter (','
-		//parameters+=TypedParameter)*)? ('where' guards+=Guard+)? ('then' actions+=Action+)? ('with' witnesses+=Witness+)? 'end'
+		//'source' source=[AbstractNode|QualifiedName] 'target' target=[AbstractNode|QualifiedName] ('any'
+		//parameters+=TypedParameter (',' parameters+=TypedParameter)*)? ('where' guards+=Guard+)? ('then' actions+=Action+)?
+		//('with' witnesses+=Witness+)? 'end'
 		public Group getGroup() { return cGroup; }
 		
 		//'transition'
@@ -317,26 +335,26 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 		//'source'
 		public Keyword getSourceKeyword_3() { return cSourceKeyword_3; }
 		
-		//source=[AbstractNode|EString]
+		//source=[AbstractNode|QualifiedName]
 		public Assignment getSourceAssignment_4() { return cSourceAssignment_4; }
 		
-		//[AbstractNode|EString]
+		//[AbstractNode|QualifiedName]
 		public CrossReference getSourceAbstractNodeCrossReference_4_0() { return cSourceAbstractNodeCrossReference_4_0; }
 		
-		//EString
-		public RuleCall getSourceAbstractNodeEStringParserRuleCall_4_0_1() { return cSourceAbstractNodeEStringParserRuleCall_4_0_1; }
+		//QualifiedName
+		public RuleCall getSourceAbstractNodeQualifiedNameParserRuleCall_4_0_1() { return cSourceAbstractNodeQualifiedNameParserRuleCall_4_0_1; }
 		
 		//'target'
 		public Keyword getTargetKeyword_5() { return cTargetKeyword_5; }
 		
-		//target=[AbstractNode|EString]
+		//target=[AbstractNode|QualifiedName]
 		public Assignment getTargetAssignment_6() { return cTargetAssignment_6; }
 		
-		//[AbstractNode|EString]
+		//[AbstractNode|QualifiedName]
 		public CrossReference getTargetAbstractNodeCrossReference_6_0() { return cTargetAbstractNodeCrossReference_6_0; }
 		
-		//EString
-		public RuleCall getTargetAbstractNodeEStringParserRuleCall_6_0_1() { return cTargetAbstractNodeEStringParserRuleCall_6_0_1; }
+		//QualifiedName
+		public RuleCall getTargetAbstractNodeQualifiedNameParserRuleCall_6_0_1() { return cTargetAbstractNodeQualifiedNameParserRuleCall_6_0_1; }
 		
 		//('any' parameters+=TypedParameter (',' parameters+=TypedParameter)*)?
 		public Group getGroup_7() { return cGroup_7; }
@@ -617,7 +635,7 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRefinesKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cRefinesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final CrossReference cRefinesStateCrossReference_2_1_0 = (CrossReference)cRefinesAssignment_2_1.eContents().get(0);
-		private final RuleCall cRefinesStateEStringParserRuleCall_2_1_0_1 = (RuleCall)cRefinesStateCrossReference_2_1_0.eContents().get(1);
+		private final RuleCall cRefinesStateQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cRefinesStateCrossReference_2_1_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cStatemachinesKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Keyword cBeginKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
@@ -641,12 +659,12 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//State:
 		//	'State'
-		//	name=EString ('refines' refines=[State|EString])? ('statemachines' 'begin' statemachines+=Statemachine
+		//	name=EString ('refines' refines=[State|QualifiedName])? ('statemachines' 'begin' statemachines+=Statemachine
 		//	statemachines+=Statemachine* 'end')? ('invariants' invariants+=Invariant+)? ('entryActions' entryActions+=Action+)?
 		//	('exitActions' exitActions+=Action+)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'State' name=EString ('refines' refines=[State|EString])? ('statemachines' 'begin' statemachines+=Statemachine
+		//'State' name=EString ('refines' refines=[State|QualifiedName])? ('statemachines' 'begin' statemachines+=Statemachine
 		//statemachines+=Statemachine* 'end')? ('invariants' invariants+=Invariant+)? ('entryActions' entryActions+=Action+)?
 		//('exitActions' exitActions+=Action+)?
 		public Group getGroup() { return cGroup; }
@@ -660,20 +678,20 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 		
-		//('refines' refines=[State|EString])?
+		//('refines' refines=[State|QualifiedName])?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'refines'
 		public Keyword getRefinesKeyword_2_0() { return cRefinesKeyword_2_0; }
 		
-		//refines=[State|EString]
+		//refines=[State|QualifiedName]
 		public Assignment getRefinesAssignment_2_1() { return cRefinesAssignment_2_1; }
 		
-		//[State|EString]
+		//[State|QualifiedName]
 		public CrossReference getRefinesStateCrossReference_2_1_0() { return cRefinesStateCrossReference_2_1_0; }
 		
-		//EString
-		public RuleCall getRefinesStateEStringParserRuleCall_2_1_0_1() { return cRefinesStateEStringParserRuleCall_2_1_0_1; }
+		//QualifiedName
+		public RuleCall getRefinesStateQualifiedNameParserRuleCall_2_1_0_1() { return cRefinesStateQualifiedNameParserRuleCall_2_1_0_1; }
 		
 		//('statemachines' 'begin' statemachines+=Statemachine statemachines+=Statemachine* 'end')?
 		public Group getGroup_3() { return cGroup_3; }
@@ -1591,8 +1609,8 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Statemachine:
 	//	'statemachine'
-	//	name=ID '(' translation=TranslationKind ')' ('refines' refines=[Statemachine|EString])? ('instances'
-	//	instances=[eventbcore::EventBNamedCommentedElement|EString]
+	//	name=ID '(' translation=TranslationKind ')' ('annotates' comment=EString)? ('refines'
+	//	refines=[Statemachine|QualifiedName])? ('instances' instances=[eventbcore::EventBNamedCommentedElement|QualifiedName]
 	//	'selfName' selfName=EString)?
 	//	nodes+=AbstractNode*
 	//	transitions+=Transition*;
@@ -1608,13 +1626,14 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 	////Annotation returns eventbcore::Annotation:
 	////	{eventbcore::Annotation}
 	//////	'references' references += [eventbcore::EventBObject|EString]
-	//////	'references' references += [ecore::EObject]
+	////	'references' references += [ecore::EObject]
+	////
 	////
 	//////	'source'  source = 'ac.soton.diagrams.translationTarget'
-	////     'source'  source = Xsource
+	//// //    'source'  source = Xsource
 	////;	
 	////Xsource returns ecore::EString:
-	////	  ID
+	////	  STRING
 	////;
 	//AbstractNode:
 	//	State | Initial | Final | Any | Junction | Fork;
@@ -1650,9 +1669,9 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 	//	'transition' ('elaborates' elaborates+=[emachine::Event|EString]+)?
 	//	extended?='extended'?
 	//	//		('refines' refines=[coreextension::EventBEventGroup|EString])?
-	//	'source' source=[AbstractNode|EString]
-	//	'target' target=[AbstractNode|EString] ('any' parameters+=TypedParameter (',' parameters+=TypedParameter)*)? ('where'
-	//	guards+=Guard+)? ('then' actions+=Action+)? ('with' witnesses+=Witness+)?
+	//	'source' source=[AbstractNode|QualifiedName]
+	//	'target' target=[AbstractNode|QualifiedName] ('any' parameters+=TypedParameter (',' parameters+=TypedParameter)*)?
+	//	('where' guards+=Guard+)? ('then' actions+=Action+)? ('with' witnesses+=Witness+)?
 	//	'end';
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
@@ -1745,7 +1764,7 @@ public class StatemachineGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//State:
 	//	'State'
-	//	name=EString ('refines' refines=[State|EString])? ('statemachines' 'begin' statemachines+=Statemachine
+	//	name=EString ('refines' refines=[State|QualifiedName])? ('statemachines' 'begin' statemachines+=Statemachine
 	//	statemachines+=Statemachine* 'end')? ('invariants' invariants+=Invariant+)? ('entryActions' entryActions+=Action+)?
 	//	('exitActions' exitActions+=Action+)?;
 	public StateElements getStateAccess() {

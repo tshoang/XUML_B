@@ -127,9 +127,34 @@ ruleStatemachine returns [EObject current=null]
 			newLeafNode(otherlv_4, grammarAccess.getStatemachineAccess().getRightParenthesisKeyword_4());
 		}
 		(
-			otherlv_5='refines'
+			otherlv_5='annotates'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getStatemachineAccess().getRefinesKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getStatemachineAccess().getAnnotatesKeyword_5_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getStatemachineAccess().getCommentEStringParserRuleCall_5_1_0());
+					}
+					lv_comment_6_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getStatemachineRule());
+						}
+						set(
+							$current,
+							"comment",
+							lv_comment_6_0,
+							"ac.soton.xumlb.Statemachine.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_7='refines'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getStatemachineAccess().getRefinesKeyword_6_0());
 			}
 			(
 				(
@@ -139,9 +164,9 @@ ruleStatemachine returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getStatemachineAccess().getRefinesStatemachineCrossReference_5_1_0());
+						newCompositeNode(grammarAccess.getStatemachineAccess().getRefinesStatemachineCrossReference_6_1_0());
 					}
-					ruleEString
+					ruleQualifiedName
 					{
 						afterParserOrEnumRuleCall();
 					}
@@ -149,9 +174,9 @@ ruleStatemachine returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_7='instances'
+			otherlv_9='instances'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getStatemachineAccess().getInstancesKeyword_6_0());
+				newLeafNode(otherlv_9, grammarAccess.getStatemachineAccess().getInstancesKeyword_7_0());
 			}
 			(
 				(
@@ -161,24 +186,24 @@ ruleStatemachine returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getStatemachineAccess().getInstancesEventBNamedCommentedElementCrossReference_6_1_0());
+						newCompositeNode(grammarAccess.getStatemachineAccess().getInstancesEventBNamedCommentedElementCrossReference_7_1_0());
 					}
-					ruleEString
+					ruleQualifiedName
 					{
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_9='selfName'
+			otherlv_11='selfName'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getStatemachineAccess().getSelfNameKeyword_6_2());
+				newLeafNode(otherlv_11, grammarAccess.getStatemachineAccess().getSelfNameKeyword_7_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getStatemachineAccess().getSelfNameEStringParserRuleCall_6_3_0());
+						newCompositeNode(grammarAccess.getStatemachineAccess().getSelfNameEStringParserRuleCall_7_3_0());
 					}
-					lv_selfName_10_0=ruleEString
+					lv_selfName_12_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getStatemachineRule());
@@ -186,7 +211,7 @@ ruleStatemachine returns [EObject current=null]
 						set(
 							$current,
 							"selfName",
-							lv_selfName_10_0,
+							lv_selfName_12_0,
 							"ac.soton.xumlb.Statemachine.EString");
 						afterParserOrEnumRuleCall();
 					}
@@ -196,9 +221,9 @@ ruleStatemachine returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStatemachineAccess().getNodesAbstractNodeParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getStatemachineAccess().getNodesAbstractNodeParserRuleCall_8_0());
 				}
-				lv_nodes_11_0=ruleAbstractNode
+				lv_nodes_13_0=ruleAbstractNode
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStatemachineRule());
@@ -206,7 +231,7 @@ ruleStatemachine returns [EObject current=null]
 					add(
 						$current,
 						"nodes",
-						lv_nodes_11_0,
+						lv_nodes_13_0,
 						"ac.soton.xumlb.Statemachine.AbstractNode");
 					afterParserOrEnumRuleCall();
 				}
@@ -215,9 +240,9 @@ ruleStatemachine returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStatemachineAccess().getTransitionsTransitionParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getStatemachineAccess().getTransitionsTransitionParserRuleCall_9_0());
 				}
-				lv_transitions_12_0=ruleTransition
+				lv_transitions_14_0=ruleTransition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStatemachineRule());
@@ -225,7 +250,7 @@ ruleStatemachine returns [EObject current=null]
 					add(
 						$current,
 						"transitions",
-						lv_transitions_12_0,
+						lv_transitions_14_0,
 						"ac.soton.xumlb.Statemachine.Transition");
 					afterParserOrEnumRuleCall();
 				}
@@ -340,6 +365,46 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 	)
 ;
 
+// Entry rule entryRuleQualifiedName
+entryRuleQualifiedName returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getQualifiedNameRule()); }
+	iv_ruleQualifiedName=ruleQualifiedName
+	{ $current=$iv_ruleQualifiedName.current.getText(); }
+	EOF;
+
+// Rule QualifiedName
+ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
+		}
+		(
+			kw='.'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
+			}
+			this_ID_2=RULE_ID
+			{
+				$current.merge(this_ID_2);
+			}
+			{
+				newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1());
+			}
+		)?
+	)
+;
+
 // Entry rule entryRuleTransition
 entryRuleTransition returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getTransitionRule()); }
@@ -410,7 +475,7 @@ ruleTransition returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getTransitionAccess().getSourceAbstractNodeCrossReference_4_0());
 				}
-				ruleEString
+				ruleQualifiedName
 				{
 					afterParserOrEnumRuleCall();
 				}
@@ -430,7 +495,7 @@ ruleTransition returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getTransitionAccess().getTargetAbstractNodeCrossReference_6_0());
 				}
-				ruleEString
+				ruleQualifiedName
 				{
 					afterParserOrEnumRuleCall();
 				}
@@ -1005,7 +1070,7 @@ ruleState returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getStateAccess().getRefinesStateCrossReference_2_1_0());
 					}
-					ruleEString
+					ruleQualifiedName
 					{
 						afterParserOrEnumRuleCall();
 					}

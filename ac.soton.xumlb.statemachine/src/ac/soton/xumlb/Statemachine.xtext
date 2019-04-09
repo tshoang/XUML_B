@@ -5,8 +5,10 @@ grammar ac.soton.xumlb.Statemachine  with org.eclipse.xtext.common.Terminals hid
 import "http://soton.ac.uk/models/eventb/statemachines/2014" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://soton.ac.uk/models/eventb/coreextension/2014" as coreextension
+//import "platform:/resource/org.eventb.emf.core/model/eventbcore.ecore#/" as eventbcore
 //import "platform:/resource/org.eventb.emf.core/model/eventbcore.ecore" as eventbcore
 import "http://emf.eventb.org/models/core/2014" as eventbcore
+//import "http://emf.eventb.org/models/core/machine/2014" as emachine
 import "platform:/resource/org.eventb.emf.core/model/eventbcore.ecore#//machine"as emachine
 
 
@@ -17,9 +19,10 @@ Statemachine returns Statemachine:
 //    ('annotations' annotations+=Annotation+)?
 //      annotations+=XAnnotation* 
 //    ('elaborates' elaborates=[emachine::Machine|EString])?
-	('refines' refines=[Statemachine|EString])?
+    ('annotates' comment = EString)?
+	('refines' refines=[Statemachine|QualifiedName])?
 	(
-	   'instances' instances=[eventbcore::EventBNamedCommentedElement|EString]
+	   'instances' instances=[eventbcore::EventBNamedCommentedElement|QualifiedName]
 	   'selfName' selfName=EString
 	)?
 	nodes += AbstractNode*
@@ -29,13 +32,17 @@ Statemachine returns Statemachine:
 //Annotation returns eventbcore::Annotation:
 //	{eventbcore::Annotation}
 ////	'references' references += [eventbcore::EventBObject|EString]
-////	'references' references += [ecore::EObject]
+//	'references' references += [ecore::EObject]
+//
 //
 ////	'source'  source = 'ac.soton.diagrams.translationTarget'
-//     'source'  source = Xsource
+// //    'source'  source = Xsource
 //;	
+
+
+
 //Xsource returns ecore::EString:
-//	  ID
+//	  STRING
 //;
 
 AbstractNode returns AbstractNode:
@@ -54,8 +61,8 @@ Transition returns Transition:
 		('elaborates' elaborates+=[emachine::Event|EString]+)?
 		(extended?='extended')?
 //		('refines' refines=[coreextension::EventBEventGroup|EString])?
-        'source' source=[AbstractNode|EString]
-		'target' target=[AbstractNode|EString]
+        'source' source=[AbstractNode|QualifiedName]
+		'target' target=[AbstractNode|QualifiedName]
 		('any' parameters+=TypedParameter ( ',' parameters+=TypedParameter)* )?
 		('where' guards+=Guard+)?
 		('then' actions+=Action+)?
@@ -99,7 +106,7 @@ Witness returns emachine::Witness:
 State returns State:
 	'State'
 	name=EString
-	('refines' refines=[State|EString])?
+	('refines' refines=[State|QualifiedName])?
 	('statemachines' 'begin' statemachines+=Statemachine ( statemachines+=Statemachine)* 'end' )?
 	('invariants' invariants+=Invariant+ )?
 	('entryActions' entryActions+=Action+ )?

@@ -256,7 +256,7 @@ public class StatemachineSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         refines=[State|EString]? 
+	 *         refines=[State|QualifiedName]? 
 	 *         (statemachines+=Statemachine statemachines+=Statemachine*)? 
 	 *         invariants+=Invariant* 
 	 *         entryActions+=Action* 
@@ -276,8 +276,9 @@ public class StatemachineSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     (
 	 *         name=ID 
 	 *         translation=TranslationKind 
-	 *         refines=[Statemachine|EString]? 
-	 *         (instances=[EventBNamedCommentedElement|EString] selfName=EString)? 
+	 *         comment=EString? 
+	 *         refines=[Statemachine|QualifiedName]? 
+	 *         (instances=[EventBNamedCommentedElement|QualifiedName] selfName=EString)? 
 	 *         nodes+=AbstractNode* 
 	 *         transitions+=Transition*
 	 *     )
@@ -295,8 +296,8 @@ public class StatemachineSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     (
 	 *         elaborates+=[Event|EString]* 
 	 *         extended?='extended'? 
-	 *         source=[AbstractNode|EString] 
-	 *         target=[AbstractNode|EString] 
+	 *         source=[AbstractNode|QualifiedName] 
+	 *         target=[AbstractNode|QualifiedName] 
 	 *         (parameters+=TypedParameter parameters+=TypedParameter*)? 
 	 *         guards+=Guard* 
 	 *         actions+=Action* 

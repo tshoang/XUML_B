@@ -13,10 +13,16 @@ package ac.soton.xumlb;
 
 import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.resource.IDerivedStateComputer;
-
-
+import org.eventb.emf.core.Annotation;
+import org.eventb.emf.core.CorePackage;
+import org.eventb.emf.core.EventBObject;
+import org.eventb.emf.core.machine.Machine;
+import org.eventb.emf.core.machine.MachinePackage;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import ac.soton.eventb.statemachines.AbstractNode;
 import ac.soton.eventb.statemachines.Statemachine;
@@ -25,6 +31,7 @@ import ac.soton.eventb.statemachines.impl.TransitionImpl;
 import ac.soton.eventb.statemachines.StatemachinesPackage;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 
 
 /**
@@ -70,9 +77,12 @@ public class XStatemachineDerivedStateComputer implements IDerivedStateComputer{
 				}
 					
 			}
+			//test
+			setAnnotation(sm);
+			
 			
 		}
-		
+			
 	}
 
 	@Override
@@ -80,5 +90,19 @@ public class XStatemachineDerivedStateComputer implements IDerivedStateComputer{
 		// TODO Auto-generated method stub
 		
 	}
+   
+	
+	private void setAnnotation(Statemachine sm) {
+		String comment = sm.getComment();
+        
+		URI mchURI = sm.eResource().getURI().trimFragment().trimSegments(1).appendSegment(comment+".bum");
+		
+		Annotation annot = (Annotation) EcoreUtil.create(CorePackage.Literals.ANNOTATION);
+        ResourceSet rs=new ResourceSetImpl();
+		Resource mchRes=rs.getResource(mchURI,true);
+		annot.setSource("ac.soton.diagrams.translationTarget");
+        annot.getReferences().add(mchRes.getContents().get(0));
+		sm.getAnnotations().add(annot);
 
+	}
 }
