@@ -18,7 +18,9 @@ import org.eclipse.xtext.resource.DerivedStateAwareResourceDescriptionManager
 import org.eclipse.xtext.resource.DerivedStateAwareResource
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.resource.IResourceDescription.Manager
-
+//import ac.soton.xeventb.common.EventBQualifiedNameProvider;
+import org.eclipse.xtext.scoping.IScopeProvider;
+import ac.soton.xumlb.scoping.StatemachineScopeProvider;
 /**
  * <p>
  * Use this class to register components for XMachine to be used at runtime /
@@ -73,4 +75,25 @@ class StatemachineRuntimeModule extends AbstractStatemachineRuntimeModule {
 	override Class<? extends XtextResource> bindXtextResource() {
 		DerivedStateAwareResource
 	}
+	
+		
+    /**
+	* Bind the scope provider, use for references for context seeing, machine
+	* refinement, event refinement, etc.
+	* 
+	* @see XStatemachineScopeProvider
+    */
+    override Class<? extends IScopeProvider> bindIScopeProvider() {
+		return typeof(StatemachineScopeProvider);
+	}	
+	
+		/**
+		 * Bind the qualified Name provider service for machine qualified name.
+		 * The qualified name of a machine is projName.machineName
+		 * 
+		 * @see EventBQualifiedNameProvider
+		 */
+//		override Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+//			return typeof(StatemachineQualifiedNameProvider);
+//		}
 }

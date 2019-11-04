@@ -9,6 +9,22 @@ import java.util.ArrayList
 import org.eclipse.xtext.scoping.Scopes
 import ac.soton.eventb.statemachines.Statemachine
 import ac.soton.eventb.statemachines.StatemachinesPackage
+import ac.soton.eventb.emf.core.^extension.coreextension.CoreextensionPackage
+import ac.soton.eventb.statemachines.Transition
+import org.eclipse.xtext.EcoreUtil2
+import org.eventb.emf.core.machine.Machine
+import org.eventb.emf.persistence.EMFRodinDB
+import ch.ethz.eventb.utils.EventBUtils
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.emf.ecore.resource.Resource
+import org.eventb.emf.core.Annotation
+import org.eventb.emf.core.CorePackage
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eventb.emf.core.machine.Event
+import ac.soton.eventb.statemachines.impl.TransitionImpl
 
 /**
  * This class contains custom scoping description.
@@ -17,24 +33,56 @@ import ac.soton.eventb.statemachines.StatemachinesPackage
  * on how and when to use it.
  */
 class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
-//	override getScope(EObject context, EReference reference) {
-//		
-//		// The scope for a context extension is the set of all contexts in the
-//		// current project containing the parent context. 
-//		if (context instanceof Statemachine && reference == StatemachinesPackage.Literals.annotations) {
-//			var emfRodinDB = new EMFRodinDB;
-//			var prjName = emfRodinDB.getProjectName(context as Context);
-//			var eBPrj = EventBUtils.getEventBProject(prjName)
-//			var rdPrj = eBPrj.getRodinProject()
-//			var ctxRoots = rdPrj.getRootElementsOfType(ContextRoot.ELEMENT_TYPE)
-//
-//			var ctxs = new ArrayList()
-//			for (ctxRoot : ctxRoots) {
-//				var ctx = emfRodinDB.loadEventBComponent(ctxRoot)
-//				ctxs.add(ctx)
-//			}
-//			return Scopes.scopeFor(ctxs);
-//		}
-//	}
+	override getScope(EObject context, EReference reference) {
 
+		if (context instanceof Transition && reference == CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES) {
+//        if (context instanceof Statemachine && reference == CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES) {
+			System.out.println("----im in transition scoping")
+			
+		    val sm = EcoreUtil2.getRootContainer(context, true) as Statemachine
+		    
+//		    val annot = sm.annotations.get(0)
+            val mchName = sm.comment
+//            var emfRodinDB = new EMFRodinDB;
+//			val prjName = getProjectName(sm);
+//			System.out.println("----project name: " + prjName)
+//            var eBPrj = EventBUtils.getEventBProject(prjName)
+//			var rdPrj = eBPrj.getRodinProject()
+//             emfRodinDB.loadEventBComponent(mchName)
+        val mchURI = sm.eResource().getURI().trimFragment().trimSegments(1).appendSegment(mchName+".bum");
+		
+		
+        var rs=new ResourceSetImpl();
+		val mchRes=rs.getResource(mchURI,true);
+//		val evts = EcoreUtil2.getAllContentsOfType(mchRes.getEObject(mchName), Event)
+       if(mchRes.contents.get(0) instanceof Machine){
+       	val mch = mchRes.contents.get(0) as Machine
+       	val evts = mch.events
+       	return Scopes.scopeFor(evts);
+       }
+       else
+        return IScope.NULLSCOPE
+       	
+       
+	//	val mch = mchRes as Machine
+//		mch.events
+//		    var ctxs = new ArrayList()
+		
+//		   if(annot.references.get(0) instanceof Machine){
+////		   	 val mch = annot.references.get(0) as Machine
+//		   	 ctxs.addAll(mch.events)
+		   	
+//		   }
+		//	return Scopes.scopeFor(evts);
+    
+		}
+	}
+def String getProjectName(Statemachine sm)  {
+		
+		val eventBelementUri = sm.eResource().getURI();
+		val projectUri = eventBelementUri.trimFragment().trimSegments(1);
+
+		return projectUri.lastSegment();
+
+	}
 }
