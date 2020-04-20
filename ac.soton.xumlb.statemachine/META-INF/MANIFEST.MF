@@ -16,7 +16,9 @@ Require-Bundle: ac.soton.eventb.statemachines,
  org.eclipse.xtend.lib;bundle-version="2.14.0",
  ac.soton.eventb.emf.core.extension,
  org.eventb.emf.core,
- ac.soton.eventb.emf.diagrams;bundle-version="4.1.0"
+ ac.soton.eventb.emf.diagrams;bundle-version="4.1.0",
+ ac.soton.xeventb.common;bundle-version="0.0.5",
+ org.eclipse.emf.ecore
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ac.soton.xumlb,
  ac.soton.xumlb.parser.antlr.internal,
@@ -27,4 +29,5 @@ Export-Package: ac.soton.xumlb,
  ac.soton.xumlb.generator,
  ac.soton.xumlb.scoping,
  ac.soton.xumlb.serializer
-Import-Package: org.apache.log4j
+Import-Package: org.apache.log4j,
+ org.rodinp.internal.core.util.sort

@@ -7,6 +7,11 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+//import ac.soton.eventb.statemachines.Statemachine
+//import org.eclipse.emf.common.util.URI
+//import org.eventb.emf.persistence.EMFRodinDB
+
+//import ac.soton.eventb.statemachines.persistence.StatemachinesPersistencePlugin
 
 /**
  * Generates code from your model files on save.
@@ -21,5 +26,13 @@ class StatemachineGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
+
+//		var stmx = resource.contents.get(0) as Statemachine
+//		var emfRodinDB = new EMFRodinDB //StatemachinesPersistencePlugin//
+//		var uriString = resource.URI.toString
+//		uriString = uriString.substring(0, uriString.lastIndexOf('stmx'))
+//		uriString = uriString + "stm"
+//		var uri = URI.createURI(uriString)
+//		emfRodinDB.saveResource(uri, stmx)
 	}
 }

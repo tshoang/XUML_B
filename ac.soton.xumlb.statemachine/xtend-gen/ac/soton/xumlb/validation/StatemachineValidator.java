@@ -14,10 +14,10 @@ import org.eclipse.xtext.validation.Check;
  */
 @SuppressWarnings("all")
 public class StatemachineValidator extends AbstractStatemachineValidator {
-  public static final String INVALID_NAME = "invalidName";
+  public final static String INVALID_NAME = "invalidName";
   
   @Check
-  public void checkGreetingStartsWithCapital(final Statemachine stm) {
-    System.out.println("Here");
+  public Object checkGreetingStartsWithCapital(final Statemachine stm) {
+    return null;
   }
 }
