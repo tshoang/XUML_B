@@ -114,7 +114,7 @@ State returns State:
 ;
 
 Invariant returns emachine::Invariant:
-	theorem?='theorem' name=XLABEL predicate=XFormula
+	(theorem?='theorem')? name=XLABEL predicate=XFormula
 ;
 
 Initial returns Initial:
