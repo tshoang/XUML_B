@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eventb.emf.core.machine.Event
 import ac.soton.eventb.statemachines.impl.TransitionImpl
+import org.eventb.core.basis.MachineRoot
 
 /**
  * This class contains custom scoping description.
@@ -35,7 +36,7 @@ import ac.soton.eventb.statemachines.impl.TransitionImpl
 class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
 	override getScope(EObject context, EReference reference) {
 
-		if (context instanceof Transition && reference == CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES) {
+ 		if (context instanceof Transition && reference == CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES) {
 //        if (context instanceof Statemachine && reference == CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES) {
 			System.out.println("----im in transition scoping")
 			
@@ -49,21 +50,19 @@ class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
 //            var eBPrj = EventBUtils.getEventBProject(prjName)
 //			var rdPrj = eBPrj.getRodinProject()
 //             emfRodinDB.loadEventBComponent(mchName)
-        val mchURI = sm.eResource().getURI().trimFragment().trimSegments(1).appendSegment(mchName+".bum");
-		
-		
-        var rs=new ResourceSetImpl();
-		val mchRes=rs.getResource(mchURI,true);
-//		val evts = EcoreUtil2.getAllContentsOfType(mchRes.getEObject(mchName), Event)
-       if(mchRes.contents.get(0) instanceof Machine){
-       	val mch = mchRes.contents.get(0) as Machine
-       	val evts = mch.events
-       	return Scopes.scopeFor(evts);
-       }
-       else
-        return IScope.NULLSCOPE
-       	
-       
+//        val mchURI = sm.eResource().getURI().trimFragment().trimSegments(1).appendSegment(mchName+".bum");
+//		
+//		var rs=new ResourceSetImpl();
+//		val mchRes=rs.getResource(mchURI,true);
+////		val evts = EcoreUtil2.getAllContentsOfType(mchRes.getEObject(mchName), Event)
+//		if(mchRes.contents.get(0) instanceof Machine){
+//			val mch = mchRes.contents.get(0) as Machine
+//			val evts = mch.events
+//			return Scopes.scopeFor(evts);
+//		 }
+//		 else
+//		 	return IScope.NULLSCOPE
+		  	
 	//	val mch = mchRes as Machine
 //		mch.events
 //		    var ctxs = new ArrayList()
@@ -74,8 +73,44 @@ class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
 		   	
 //		   }
 		//	return Scopes.scopeFor(evts);
+		
+		//----- NEW
+//		var ctxs = new ArrayList()
+		//testing giving all events in all machines in the project
+		  var emfRodinDB = new EMFRodinDB;
+			var prjName = emfRodinDB.getProjectName(sm);
+			var eBPrj = EventBUtils.getEventBProject(prjName)
+			var rdPrj = eBPrj.getRodinProject()
+			var mchRoots = rdPrj.getRootElementsOfType(MachineRoot.ELEMENT_TYPE)
+			
+			for (mchRoot : mchRoots) {
+				var mch = emfRodinDB.loadEventBComponent(mchRoot)
+				if ((mch as Machine).name == mchName){
+					val evts = (mch as Machine).events
+					return Scopes.scopeFor(evts);
+//                    ctxs.addAll((mch as Machine).events)
+				}
+//				return Scopes.scopeFor(ctxs);
+			}
     
 		}
+		
+		//New: scope for source abstract nodes
+		// This needs to be rechecked for refined statemachines
+//		if (context instanceof Transition && reference == StatemachinesPackage.Literals.TRANSITION__SOURCE) {
+//		    val sm = EcoreUtil2.getRootContainer(context, true) as Statemachine
+//		  	val nodes = sm.nodes
+//			return Scopes.scopeFor(nodes);
+//       }
+       
+       	//New: scope for target abstract nodes
+       	// This needs to be rechecked for refined statemachines
+//		if (context instanceof Transition && reference == StatemachinesPackage.Literals.TRANSITION__TARGET) {
+//		    val sm = EcoreUtil2.getRootContainer(context, true) as Statemachine
+//		  	val nodes = sm.nodes
+//			return Scopes.scopeFor(nodes);
+//       }
+        return super.getScope(context, reference);
 	}
 def String getProjectName(Statemachine sm)  {
 		
