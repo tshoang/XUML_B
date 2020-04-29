@@ -7,7 +7,7 @@
 			class="ac.soton.xumlb.ui.StatemachineExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="stmx"
+			extensions="stm"
 			id="ac.soton.xumlb.Statemachine"
 			name="Statemachine Editor">
 		</editor>
@@ -26,11 +26,11 @@
 		<handler
 			class="ac.soton.xumlb.ui.StatemachineExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
 			commandId="ac.soton.xumlb.Statemachine.validate">
-		<activeWhen>
-			<reference
+			<activeWhen>
+				<reference
 					definitionId="ac.soton.xumlb.Statemachine.Editor.opened">
-			</reference>
-		</activeWhen>
+				</reference>
+			</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
@@ -119,38 +119,38 @@
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
-	<command
+		<command
 			description="Trigger expensive validation"
 			id="ac.soton.xumlb.Statemachine.validate"
 			name="Validate">
-	</command>
-	<!-- copy qualified name -->
-	<command
+		</command>
+		<!-- copy qualified name -->
+		<command
 			id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 			categoryId="org.eclipse.ui.category.edit"
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
-	</command>
-	<command
+		</command>
+		<command
 			id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
 			categoryId="org.eclipse.ui.category.edit"
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
-	</command>
+		</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
-			 <command
-				 commandId="ac.soton.xumlb.Statemachine.validate"
-				 style="push"
-				 tooltip="Trigger expensive validation">
-			<visibleWhen checkEnabled="false">
-				<reference
-					definitionId="ac.soton.xumlb.Statemachine.Editor.opened">
-				</reference>
-			</visibleWhen>
-		</command>
+			<command
+				commandId="ac.soton.xumlb.Statemachine.validate"
+				style="push"
+				tooltip="Trigger expensive validation">
+				<visibleWhen checkEnabled="false">
+					<reference
+						definitionId="ac.soton.xumlb.Statemachine.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
 		</menuContribution>
 		<!-- copy qualified name -->
 		<menuContribution locationURI="popup:#TextEditorContext?after=copy">
@@ -207,7 +207,7 @@
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		<content-type
 			base-type="org.eclipse.core.runtime.text"
-			file-extensions="stmx"
+			file-extensions="stm"
 			id="ac.soton.xumlb.Statemachine.contenttype"
 			name="Statemachine File"
 			priority="normal">
@@ -218,13 +218,13 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="ac.soton.xumlb.ui.StatemachineExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="stmx">
+			type="stm">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
 			class="ac.soton.xumlb.ui.StatemachineExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-			uriExtension="stmx">
+			uriExtension="stm">
 		</resourceServiceProvider>
 	</extension>
 	<!-- marker definitions for ac.soton.xumlb.Statemachine -->
@@ -261,7 +261,7 @@
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
 			class="ac.soton.xumlb.ui.StatemachineExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-			fileExtensions="stmx"/>
+			fileExtensions="stm"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
@@ -404,7 +404,7 @@
 	<extension point="org.eclipse.compare.contentViewers">
 		<viewer id="ac.soton.xumlb.Statemachine.compare.contentViewers"
 			class="ac.soton.xumlb.ui.StatemachineExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="stmx">
+			extensions="stm">
 		</viewer>
 		<contentTypeBinding
 			contentTypeId="ac.soton.xumlb.Statemachine.contenttype"
@@ -413,7 +413,7 @@
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="ac.soton.xumlb.Statemachine.compare.contentMergeViewers"
 			class="ac.soton.xumlb.ui.StatemachineExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="stmx" label="Statemachine Compare">
+			extensions="stm" label="Statemachine Compare">
 		</viewer>
 		<contentTypeBinding
 			contentTypeId="ac.soton.xumlb.Statemachine.contenttype"
@@ -422,12 +422,12 @@
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="ac.soton.xumlb.Statemachine.editors.documentProviders"
 			class="ac.soton.xumlb.ui.StatemachineExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-			extensions="stmx">
+			extensions="stm">
 		</provider>
 	</extension>
 	<extension point="org.eclipse.team.core.fileTypes">
 		<fileTypes
-			extension="stmx"
+			extension="stm"
 			type="text">
 		</fileTypes>
 	</extension>
