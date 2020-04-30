@@ -36,6 +36,8 @@ import org.eventb.core.basis.MachineRoot
 import org.eventb.emf.core.EventBNamedCommentedComponentElement
 import java.util.List
 import org.eventb.emf.core.context.Context
+import org.eventb.emf.core.EventBCommentedElement
+import ac.soton.eventb.statemachines.AbstractNode
 
 /**
  * <p>
@@ -76,30 +78,32 @@ class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
 					
 					for (l : list)
 						instances.add(l as EObject)
-//				   		instances.addAll(EcoreUtil2.getAllContentsOfType(l as EObject, EventBNamedCommentedComponentElement));
 			  
 					return Scopes.scopeFor(instances);
 				}
 			}
 			
 		}
-		//New: scope for source abstract nodes
-		// This needs to be rechecked for refined statemachines
-//		if (context instanceof Transition && reference == StatemachinesPackage.Literals.TRANSITION__SOURCE) {
-//		    val sm = EcoreUtil2.getRootContainer(context, true) as Statemachine
-//		  	val nodes = sm.nodes
-//			return Scopes.scopeFor(nodes);
-//       }
+		
+		//scope for source abstract nodes
+		if (context instanceof Transition && reference == StatemachinesPackage.Literals.TRANSITION__SOURCE) {
+		    val sm = EcoreUtil2.getRootContainer(context, true) as Statemachine
+		    var nodes = new ArrayList()
+			nodes.addAll(EcoreUtil2.getAllContentsOfType(sm, AbstractNode))
+			nodes.addAll(EcoreUtil2.getContainerOfType(sm, AbstractNode))
+
+			return Scopes.scopeFor(nodes);
+       }
 
        
-       	//New: scope for target abstract nodes
-       	// This needs to be rechecked for refined statemachines
-//		if (context instanceof Transition && reference == StatemachinesPackage.Literals.TRANSITION__TARGET) {
-//		    val sm = EcoreUtil2.getRootContainer(context, true) as Statemachine
-//		  	val nodes = sm.nodes
-//			return Scopes.scopeFor(nodes);
-//       }
-
+       	//scope for target abstract nodes
+		if (context instanceof Transition && reference == StatemachinesPackage.Literals.TRANSITION__TARGET) {
+		    val sm = EcoreUtil2.getRootContainer(context, true) as Statemachine
+		  	var nodes = new ArrayList()
+			nodes.addAll(EcoreUtil2.getAllContentsOfType(sm, AbstractNode))
+			nodes.addAll(EcoreUtil2.getContainerOfType(sm, AbstractNode))
+			return Scopes.scopeFor(nodes);
+       }
 
 
 
@@ -152,6 +156,8 @@ class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
 			}
 		}
 	}
+
+
 	//original machine 
 	//            var emfRodinDB = new EMFRodinDB;
 //			val prjName = getProjectName(sm);
