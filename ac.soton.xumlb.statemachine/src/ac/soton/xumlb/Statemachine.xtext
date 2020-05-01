@@ -57,8 +57,8 @@ QualifiedName:
 
 Transition returns Transition:
 	'transition'
-//		('elaborates' elaborates+=[emachine::Event|QualifiedName]+)?
-		('elaborates' elaborates+=[emachine::Event|EString]+)?
+		('elaborates' elaborates+=[emachine::Event|QualifiedName]+)?
+//		('elaborates' elaborates+=[emachine::Event|EString]+)?
 		(extended?='extended')?
 //		('refines' refines=[coreextension::EventBEventGroup|EString])?
         'source' source=[AbstractNode|QualifiedName]
@@ -78,7 +78,8 @@ TypedParameter returns coreextension::TypedParameter:
 ;
 
 XType returns ecore::EString:
-	XComplexType ('×' XType)*
+//	XComplexType ('×' XType)*
+	XComplexType ('×' XComplexType)*
 ;
 
 XComplexType:
