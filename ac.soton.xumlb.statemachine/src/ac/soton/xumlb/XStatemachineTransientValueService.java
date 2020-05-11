@@ -68,7 +68,9 @@ public class XStatemachineTransientValueService  extends DefaultTransientValueSe
 			if (feature.equals(CorePackage.Literals.EVENT_BNAMED__NAME))
 				return false;
 //			if (feature.equals(CorePackage.Literals.EVENT_BCOMMENTED__COMMENT))
-//				return true;//return false;
+//				return true;//return false; 
+			if (feature.equals(CorePackage.Literals.EVENT_BCOMMENTED__COMMENT))
+			return false; 
 			if (feature.equals(StatemachinesPackage.Literals.STATEMACHINE__TRANSLATION))
 				return false;
 			if (feature.equals(StatemachinesPackage.Literals.STATEMACHINE__REFINES))

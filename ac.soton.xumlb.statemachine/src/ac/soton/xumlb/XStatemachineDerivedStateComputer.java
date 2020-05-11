@@ -15,6 +15,7 @@ import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.resource.IDerivedStateComputer;
 import org.eventb.emf.core.Annotation;
 import org.eventb.emf.core.CorePackage;
+import org.eventb.emf.core.EventBElement;
 import org.eventb.emf.core.EventBObject;
 import org.eventb.emf.core.machine.Machine;
 import org.eventb.emf.core.machine.MachinePackage;
@@ -33,6 +34,14 @@ import ac.soton.eventb.statemachines.StatemachinesPackage;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 
+import org.eventb.emf.persistence.EMFRodinDB;
+import org.rodinp.core.IRodinProject;
+import org.rodinp.core.RodinDBException;
+
+import ch.ethz.eventb.utils.EventBUtils;
+import org.eventb.core.IEventBProject;
+import org.eventb.core.IMachineRoot;
+import org.eventb.core.basis.MachineRoot;
 
 /**
  * <p>
@@ -77,9 +86,8 @@ public class XStatemachineDerivedStateComputer implements IDerivedStateComputer{
 				}
 					
 			}
-			//test
-			setAnnotation(sm);
-			
+
+			setAnnotation(sm); // changed the way we get the machine
 			
 		}
 			
@@ -90,19 +98,37 @@ public class XStatemachineDerivedStateComputer implements IDerivedStateComputer{
 		// TODO Auto-generated method stub
 		
 	}
-   
 	
+	/* This event sets the annotation source and reference to the annotated machine 
+	 * to be used in statemachine translation
+	*/
+   
 	private void setAnnotation(Statemachine sm) {
-		String comment = sm.getComment();
-        
-		URI mchURI = sm.eResource().getURI().trimFragment().trimSegments(1).appendSegment(comment+".bum");
-		
 		Annotation annot = (Annotation) EcoreUtil.create(CorePackage.Literals.ANNOTATION);
-        ResourceSet rs=new ResourceSetImpl();
-		Resource mchRes=rs.getResource(mchURI,true);
-		annot.setSource("ac.soton.diagrams.translationTarget");
-        annot.getReferences().add(mchRes.getContents().get(0));
-		sm.getAnnotations().add(annot);
+		String comment = sm.getComment();
+		EMFRodinDB emfRodinDB = new EMFRodinDB();
+		String prjName = emfRodinDB.getProjectName(sm);
+		IEventBProject eBPrj = EventBUtils.getEventBProject(prjName);
+		IRodinProject rdPrj = eBPrj.getRodinProject();
+		IMachineRoot[] mchRoots;
+		try {
+			mchRoots = rdPrj.getRootElementsOfType(MachineRoot.ELEMENT_TYPE);
+			for (IMachineRoot  mchRoot: mchRoots) {
+				EventBElement elem = emfRodinDB.loadEventBComponent(mchRoot);
+				Machine mch = (Machine) elem;
+				String mchName = mch.getName();
+			
+				if (mchName.equals(comment) ){
+					annot.setSource("ac.soton.diagrams.translationTarget");
+			        annot.getReferences().add(mch);
+					sm.getAnnotations().add(annot);
+					break;
+				}
+			}
+		} catch (RodinDBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 }
