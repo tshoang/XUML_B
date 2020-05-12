@@ -14,6 +14,7 @@ import ac.soton.xeventb.common.EventBValueConverter;
 import ac.soton.xumlb.AbstractStatemachineRuntimeModule;
 import ac.soton.xumlb.XStatemachineDerivedStateComputer;
 import ac.soton.xumlb.XStatemachineTransientValueService;
+import ac.soton.xumlb.scoping.StatemachineScopeProvider;
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.parsetree.reconstr.ITransientValueService;
 import org.eclipse.xtext.resource.DerivedStateAwareResource;
@@ -21,6 +22,7 @@ import org.eclipse.xtext.resource.DerivedStateAwareResourceDescriptionManager;
 import org.eclipse.xtext.resource.IDerivedStateComputer;
 import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.scoping.IScopeProvider;
 
 /**
  * <p>
@@ -78,5 +80,16 @@ public class StatemachineRuntimeModule extends AbstractStatemachineRuntimeModule
   @Override
   public Class<? extends XtextResource> bindXtextResource() {
     return DerivedStateAwareResource.class;
+  }
+  
+  /**
+   * Bind the scope provider, use for references for context seeing, machine
+   * refinement, event refinement, etc.
+   * 
+   * @see XStatemachineScopeProvider
+   */
+  @Override
+  public Class<? extends IScopeProvider> bindIScopeProvider() {
+    return StatemachineScopeProvider.class;
   }
 }
