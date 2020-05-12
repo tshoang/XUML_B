@@ -7813,7 +7813,7 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
             // InternalStatemachine.g:2373:1: ( rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1 )
             // InternalStatemachine.g:2374:2: rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_4);
             rule__Transition__Group_1__0__Impl();
 
             state._fsp--;
@@ -7953,7 +7953,7 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
                 int alt23=2;
                 int LA23_0 = input.LA(1);
 
-                if ( ((LA23_0>=RULE_STRING && LA23_0<=RULE_ID)) ) {
+                if ( (LA23_0==RULE_ID) ) {
                     alt23=1;
                 }
 
@@ -9534,25 +9534,25 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__XType__Group_1__1__Impl"
-    // InternalStatemachine.g:2921:1: rule__XType__Group_1__1__Impl : ( ruleXType ) ;
+    // InternalStatemachine.g:2921:1: rule__XType__Group_1__1__Impl : ( ruleXComplexType ) ;
     public final void rule__XType__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalStatemachine.g:2925:1: ( ( ruleXType ) )
-            // InternalStatemachine.g:2926:1: ( ruleXType )
+            // InternalStatemachine.g:2925:1: ( ( ruleXComplexType ) )
+            // InternalStatemachine.g:2926:1: ( ruleXComplexType )
             {
-            // InternalStatemachine.g:2926:1: ( ruleXType )
-            // InternalStatemachine.g:2927:2: ruleXType
+            // InternalStatemachine.g:2926:1: ( ruleXComplexType )
+            // InternalStatemachine.g:2927:2: ruleXComplexType
             {
-             before(grammarAccess.getXTypeAccess().getXTypeParserRuleCall_1_1()); 
+             before(grammarAccess.getXTypeAccess().getXComplexTypeParserRuleCall_1_1()); 
             pushFollow(FOLLOW_2);
-            ruleXType();
+            ruleXComplexType();
 
             state._fsp--;
 
-             after(grammarAccess.getXTypeAccess().getXTypeParserRuleCall_1_1()); 
+             after(grammarAccess.getXTypeAccess().getXComplexTypeParserRuleCall_1_1()); 
 
             }
 
@@ -11672,7 +11672,7 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
             // InternalStatemachine.g:3616:1: ( rule__State__Group_4__0__Impl rule__State__Group_4__1 )
             // InternalStatemachine.g:3617:2: rule__State__Group_4__0__Impl rule__State__Group_4__1
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_20);
             rule__State__Group_4__0__Impl();
 
             state._fsp--;
@@ -11790,7 +11790,7 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
             // InternalStatemachine.g:3658:3: ( rule__State__InvariantsAssignment_4_1 )
             // InternalStatemachine.g:3658:4: rule__State__InvariantsAssignment_4_1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_21);
             rule__State__InvariantsAssignment_4_1();
 
             state._fsp--;
@@ -11812,7 +11812,7 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
                 int alt36=2;
                 int LA36_0 = input.LA(1);
 
-                if ( (LA36_0==141) ) {
+                if ( (LA36_0==RULE_XLABEL||LA36_0==141) ) {
                     alt36=1;
                 }
 
@@ -11821,7 +11821,7 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
             	case 1 :
             	    // InternalStatemachine.g:3663:4: rule__State__InvariantsAssignment_4_1
             	    {
-            	    pushFollow(FOLLOW_35);
+            	    pushFollow(FOLLOW_21);
             	    rule__State__InvariantsAssignment_4_1();
 
             	    state._fsp--;
@@ -12266,7 +12266,7 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
             // InternalStatemachine.g:3799:1: ( rule__Invariant__Group__0__Impl rule__Invariant__Group__1 )
             // InternalStatemachine.g:3800:2: rule__Invariant__Group__0__Impl rule__Invariant__Group__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_20);
             rule__Invariant__Group__0__Impl();
 
             state._fsp--;
@@ -12295,27 +12295,38 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Invariant__Group__0__Impl"
-    // InternalStatemachine.g:3807:1: rule__Invariant__Group__0__Impl : ( ( rule__Invariant__TheoremAssignment_0 ) ) ;
+    // InternalStatemachine.g:3807:1: rule__Invariant__Group__0__Impl : ( ( rule__Invariant__TheoremAssignment_0 )? ) ;
     public final void rule__Invariant__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalStatemachine.g:3811:1: ( ( ( rule__Invariant__TheoremAssignment_0 ) ) )
-            // InternalStatemachine.g:3812:1: ( ( rule__Invariant__TheoremAssignment_0 ) )
+            // InternalStatemachine.g:3811:1: ( ( ( rule__Invariant__TheoremAssignment_0 )? ) )
+            // InternalStatemachine.g:3812:1: ( ( rule__Invariant__TheoremAssignment_0 )? )
             {
-            // InternalStatemachine.g:3812:1: ( ( rule__Invariant__TheoremAssignment_0 ) )
-            // InternalStatemachine.g:3813:2: ( rule__Invariant__TheoremAssignment_0 )
+            // InternalStatemachine.g:3812:1: ( ( rule__Invariant__TheoremAssignment_0 )? )
+            // InternalStatemachine.g:3813:2: ( rule__Invariant__TheoremAssignment_0 )?
             {
              before(grammarAccess.getInvariantAccess().getTheoremAssignment_0()); 
-            // InternalStatemachine.g:3814:2: ( rule__Invariant__TheoremAssignment_0 )
-            // InternalStatemachine.g:3814:3: rule__Invariant__TheoremAssignment_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Invariant__TheoremAssignment_0();
+            // InternalStatemachine.g:3814:2: ( rule__Invariant__TheoremAssignment_0 )?
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA39_0==141) ) {
+                alt39=1;
+            }
+            switch (alt39) {
+                case 1 :
+                    // InternalStatemachine.g:3814:3: rule__Invariant__TheoremAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Invariant__TheoremAssignment_0();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -13291,7 +13302,7 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
             // InternalStatemachine.g:4150:1: ( rule__EVENTB_EXPRESSION_SYMBOLS__Group_32__0__Impl rule__EVENTB_EXPRESSION_SYMBOLS__Group_32__1 )
             // InternalStatemachine.g:4151:2: rule__EVENTB_EXPRESSION_SYMBOLS__Group_32__0__Impl rule__EVENTB_EXPRESSION_SYMBOLS__Group_32__1
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_34);
             rule__EVENTB_EXPRESSION_SYMBOLS__Group_32__0__Impl();
 
             state._fsp--;
@@ -13767,29 +13778,29 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Transition__ElaboratesAssignment_1_1"
-    // InternalStatemachine.g:4328:1: rule__Transition__ElaboratesAssignment_1_1 : ( ( ruleEString ) ) ;
+    // InternalStatemachine.g:4328:1: rule__Transition__ElaboratesAssignment_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Transition__ElaboratesAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalStatemachine.g:4332:1: ( ( ( ruleEString ) ) )
-            // InternalStatemachine.g:4333:2: ( ( ruleEString ) )
+            // InternalStatemachine.g:4332:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalStatemachine.g:4333:2: ( ( ruleQualifiedName ) )
             {
-            // InternalStatemachine.g:4333:2: ( ( ruleEString ) )
-            // InternalStatemachine.g:4334:3: ( ruleEString )
+            // InternalStatemachine.g:4333:2: ( ( ruleQualifiedName ) )
+            // InternalStatemachine.g:4334:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getTransitionAccess().getElaboratesEventCrossReference_1_1_0()); 
-            // InternalStatemachine.g:4335:3: ( ruleEString )
-            // InternalStatemachine.g:4336:4: ruleEString
+            // InternalStatemachine.g:4335:3: ( ruleQualifiedName )
+            // InternalStatemachine.g:4336:4: ruleQualifiedName
             {
-             before(grammarAccess.getTransitionAccess().getElaboratesEventEStringParserRuleCall_1_1_0_1()); 
+             before(grammarAccess.getTransitionAccess().getElaboratesEventQualifiedNameParserRuleCall_1_1_0_1()); 
             pushFollow(FOLLOW_2);
-            ruleEString();
+            ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getElaboratesEventEStringParserRuleCall_1_1_0_1()); 
+             after(grammarAccess.getTransitionAccess().getElaboratesEventQualifiedNameParserRuleCall_1_1_0_1()); 
 
             }
 
@@ -15163,7 +15174,7 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000000L,0x0480000000000000L,0x0000000000001000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000000L,0x7A00000000000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000022L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0002000000000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0002000000000002L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000080L,0x0000000000000000L,0x0000000000002000L});
@@ -15180,8 +15191,6 @@ public class InternalStatemachineParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000000L,0x0202000000000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000002L,0x0002000000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
 
 }

@@ -21,6 +21,8 @@ import org.eclipse.xtext.resource.IResourceDescription.Manager
 //import ac.soton.xeventb.common.EventBQualifiedNameProvider;
 import org.eclipse.xtext.scoping.IScopeProvider;
 import ac.soton.xumlb.scoping.StatemachineScopeProvider;
+//import org.eclipse.xtext.linking.ILinker
+
 /**
  * <p>
  * Use this class to register components for XMachine to be used at runtime /
@@ -96,4 +98,9 @@ class StatemachineRuntimeModule extends AbstractStatemachineRuntimeModule {
 //		override Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
 //			return typeof(StatemachineQualifiedNameProvider);
 //		}
+//
+//override Class<? extends ILinker> bindILinker() {
+//		return typeof(XStatemachineLazyLinker);
+//	}
+
 }

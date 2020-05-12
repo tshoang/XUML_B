@@ -22,22 +22,13 @@ import org.eclipse.xtext.EcoreUtil2
 import org.eventb.emf.core.machine.Machine
 import org.eventb.emf.persistence.EMFRodinDB
 import ch.ethz.eventb.utils.EventBUtils
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.xtext.scoping.IScope
-import org.eclipse.emf.ecore.util.EcoreUtil
-import org.eclipse.emf.ecore.resource.Resource
-import org.eventb.emf.core.Annotation
-import org.eventb.emf.core.CorePackage
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
-import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eventb.emf.core.machine.Event
-import ac.soton.eventb.statemachines.impl.TransitionImpl
 import org.eventb.core.basis.MachineRoot
 import org.eventb.emf.core.EventBNamedCommentedComponentElement
-import java.util.List
 import org.eventb.emf.core.context.Context
-import org.eventb.emf.core.EventBCommentedElement
 import ac.soton.eventb.statemachines.AbstractNode
+
+//import ac.soton.eventb.emf.core.^extension.coreextension.EventBLabeled
+
 
 /**
  * <p>
@@ -104,22 +95,31 @@ class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
 			nodes.addAll(EcoreUtil2.getContainerOfType(sm, AbstractNode))
 			return Scopes.scopeFor(nodes);
        }
-
-
+       
+       
+//       // scope for statemachine refinement
+//
+// 		if (context instanceof Statemachine && reference == StatemachinesPackage.Literals.STATEMACHINE__REFINES ) {
+//			val smachine = context as Statemachine
+//			val x = getStatemachines(smachine)
+//		
+////			val cont = sm.eResource
+////			var emfRodinDB = new EMFRodinDB;
+////			System.out.println("state machine name: " + sm.name) 
+////			var prjName = emfRodinDB.getProjectName(sm);
+////			var eBPrj = EventBUtils.getEventBProject(prjName)
+////			var rdPrj = eBPrj.getRodinProject()
+////			var sms = rdPrj.children.filter(Statemachine)
+////			return Scopes.scopeFor(sms);	 
+//
+//		}
 
         return super.getScope(context, reference);
 	}
-	def String getProjectName(Statemachine sm)  {
-			
-			val eventBelementUri = sm.eResource().getURI();
-			val projectUri = eventBelementUri.trimFragment().trimSegments(1);
-	
-			return projectUri.lastSegment();
-	
-		}
-	
+
+
 	/* This method helps to get the scope of instances which is the constants and sets in all accessible contexts
-	* Get avaialable elements based on get AvaialbleDataElements from ac.soton.eventb.statemachines.diagram.sheet.custom.InstancesPropertySection  
+	* Get avaialable elements based on get AvaialbleDataElements from ac.soton.eventb.statemachines.diagram.sheet.custom InstancesPropertySection  
 	* In this method the variables are removed as their translation is not yet supported, but can be added once support is available*/
 
 	
@@ -156,25 +156,4 @@ class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
 			}
 		}
 	}
-
-
-	//original machine 
-	//            var emfRodinDB = new EMFRodinDB;
-//			val prjName = getProjectName(sm);
-//			System.out.println("----project name: " + prjName)
-//            var eBPrj = EventBUtils.getEventBProject(prjName)
-//			var rdPrj = eBPrj.getRodinProject()
-//             emfRodinDB.loadEventBComponent(mchName)
-//        val mchURI = sm.eResource().getURI().trimFragment().trimSegments(1).appendSegment(mchName+".bum");
-//		
-//		var rs=new ResourceSetImpl();
-//		val mchRes=rs.getResource(mchURI,true);
-////		val evts = EcoreUtil2.getAllContentsOfType(mchRes.getEObject(mchName), Event)
-//		if(mchRes.contents.get(0) instanceof Machine){
-//			val mch = mchRes.contents.get(0) as Machine
-//			val evts = mch.events
-//			return Scopes.scopeFor(evts);
-//		 }
-//		 else
-//		 	return IScope.NULLSCOPE
 }
