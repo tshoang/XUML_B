@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="ac.soton.xeventb.xmachine.containment">
+      <component
+            class="ac.soton.eventb.statemachines.Statemachine"
+            generator="ac.soton.xumlb.generator.StatemachineContainmentGenerator"
+            id="ac.soton.xumlb.statemachine.containment"
+            name="Statemachine Containment">
+      </component>
+   </extension>
+
+</plugin>
