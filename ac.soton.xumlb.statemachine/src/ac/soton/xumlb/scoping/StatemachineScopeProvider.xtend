@@ -10,22 +10,23 @@
  *******************************************************************************/
 package ac.soton.xumlb.scoping
 
-import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.ecore.EReference
-import java.util.ArrayList
-import org.eclipse.xtext.scoping.Scopes
+import ac.soton.eventb.emf.core.^extension.coreextension.CoreextensionPackage
+import ac.soton.eventb.statemachines.AbstractNode
 import ac.soton.eventb.statemachines.Statemachine
 import ac.soton.eventb.statemachines.StatemachinesPackage
-import ac.soton.eventb.emf.core.^extension.coreextension.CoreextensionPackage
 import ac.soton.eventb.statemachines.Transition
-import org.eclipse.xtext.EcoreUtil2
-import org.eventb.emf.core.machine.Machine
-import org.eventb.emf.persistence.EMFRodinDB
 import ch.ethz.eventb.utils.EventBUtils
+import java.util.ArrayList
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.scoping.Scopes
 import org.eventb.core.basis.MachineRoot
 import org.eventb.emf.core.EventBNamedCommentedComponentElement
+import org.eventb.emf.core.EventBObject
 import org.eventb.emf.core.context.Context
-import ac.soton.eventb.statemachines.AbstractNode
+import org.eventb.emf.core.machine.Machine
+import org.eventb.emf.persistence.EMFRodinDB
 
 //import ac.soton.eventb.emf.core.^extension.coreextension.EventBLabeled
 
@@ -158,8 +159,17 @@ class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
 	}
 	
 	def getAnnotatedMachine(Statemachine sm){
+		val annotation = sm.getAnnotation("ac.soton.diagrams.translationTarget");
+		if (annotation !== null) {
+			val references = annotation.getReferences();
+			if (!references.isEmpty() && references.get(0) instanceof Machine) {
+				val container = references.get(0) as Machine;
+				return container
+			}
+		}
 		val mchName = sm.comment
-		var emfRodinDB = new EMFRodinDB;
+		// Use the same resource set
+		var emfRodinDB = new EMFRodinDB(sm.eResource.resourceSet);
 		var prjName = emfRodinDB.getProjectName(sm);
 		var eBPrj = EventBUtils.getEventBProject(prjName)
 		var rdPrj = eBPrj.getRodinProject()

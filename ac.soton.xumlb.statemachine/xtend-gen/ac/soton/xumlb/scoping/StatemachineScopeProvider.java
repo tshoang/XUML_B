@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
@@ -30,6 +31,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eventb.core.IEventBProject;
 import org.eventb.core.IMachineRoot;
 import org.eventb.core.basis.MachineRoot;
+import org.eventb.emf.core.Annotation;
 import org.eventb.emf.core.EventBElement;
 import org.eventb.emf.core.EventBNamedCommentedComponentElement;
 import org.eventb.emf.core.context.Context;
@@ -139,8 +141,18 @@ public class StatemachineScopeProvider extends AbstractStatemachineScopeProvider
   
   public Machine getAnnotatedMachine(final Statemachine sm) {
     try {
+      final Annotation annotation = sm.getAnnotation("ac.soton.diagrams.translationTarget");
+      if ((annotation != null)) {
+        final EList<EObject> references = annotation.getReferences();
+        if (((!references.isEmpty()) && (references.get(0) instanceof Machine))) {
+          EObject _get = references.get(0);
+          final Machine container = ((Machine) _get);
+          return container;
+        }
+      }
       final String mchName = sm.getComment();
-      EMFRodinDB emfRodinDB = new EMFRodinDB();
+      ResourceSet _resourceSet = sm.eResource().getResourceSet();
+      EMFRodinDB emfRodinDB = new EMFRodinDB(_resourceSet);
       String prjName = emfRodinDB.getProjectName(sm);
       IEventBProject eBPrj = EventBUtils.getEventBProject(prjName);
       IRodinProject rdPrj = eBPrj.getRodinProject();
