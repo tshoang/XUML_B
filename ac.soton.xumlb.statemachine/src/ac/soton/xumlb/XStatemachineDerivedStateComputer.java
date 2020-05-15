@@ -11,37 +11,32 @@
 
 package ac.soton.xumlb;
 
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.resource.IDerivedStateComputer;
+import org.eventb.core.IEventBProject;
+import org.eventb.core.IMachineRoot;
+import org.eventb.core.basis.MachineRoot;
 import org.eventb.emf.core.Annotation;
 import org.eventb.emf.core.CorePackage;
 import org.eventb.emf.core.EventBElement;
-import org.eventb.emf.core.EventBObject;
 import org.eventb.emf.core.machine.Machine;
-import org.eventb.emf.core.machine.MachinePackage;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import ac.soton.eventb.statemachines.AbstractNode;
-import ac.soton.eventb.statemachines.Statemachine;
-import ac.soton.eventb.statemachines.Transition;
-import ac.soton.eventb.statemachines.impl.TransitionImpl;
-import ac.soton.eventb.statemachines.StatemachinesPackage;
-
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
-
 import org.eventb.emf.persistence.EMFRodinDB;
 import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinDBException;
 
+import ac.soton.eventb.statemachines.AbstractNode;
+import ac.soton.eventb.statemachines.Statemachine;
+import ac.soton.eventb.statemachines.StatemachinesPackage;
+import ac.soton.eventb.statemachines.Transition;
+import ac.soton.eventb.statemachines.impl.TransitionImpl;
 import ch.ethz.eventb.utils.EventBUtils;
-import org.eventb.core.IEventBProject;
-import org.eventb.core.IMachineRoot;
-import org.eventb.core.basis.MachineRoot;
 
 /**
  * <p>
@@ -106,6 +101,10 @@ public class XStatemachineDerivedStateComputer implements IDerivedStateComputer{
 	private void setAnnotation(Statemachine sm) {
 		Annotation annot = (Annotation) EcoreUtil.create(CorePackage.Literals.ANNOTATION);
 		String comment = sm.getComment();
+		// @htson IMPORTANT Do not reuse the resourceset as this will cause problem for 
+		// the Reconciler (modified without write transaction). Maybe a bug in the
+		// reconciler???
+		// EMFRodinDB emfRodinDB = new EMFRodinDB(sm.eResource().getResourceSet());
 		EMFRodinDB emfRodinDB = new EMFRodinDB();
 		String prjName = emfRodinDB.getProjectName(sm);
 		IEventBProject eBPrj = EventBUtils.getEventBProject(prjName);
@@ -121,7 +120,18 @@ public class XStatemachineDerivedStateComputer implements IDerivedStateComputer{
 				if (mchName.equals(comment) ){
 					annot.setSource("ac.soton.diagrams.translationTarget");
 			        annot.getReferences().add(mch);
-					sm.getAnnotations().add(annot);
+					EList<Annotation> annotations = sm.getAnnotations();
+					// @htson use RecordingCommand for write transaction.
+			        TransactionalEditingDomain editingDomain = emfRodinDB.getEditingDomain();
+					Command command = new RecordingCommand(editingDomain, "Add Annotation") {
+						protected void doExecute() {
+							annotations.clear();
+					        annotations.add(annot);							
+						}
+					};
+					if (command.canExecute()){
+						editingDomain.getCommandStack().execute(command);
+					}
 					break;
 				}
 			}
