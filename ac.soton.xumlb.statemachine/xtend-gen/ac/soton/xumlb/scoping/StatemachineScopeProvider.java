@@ -53,9 +53,8 @@ import org.rodinp.core.IRodinProject;
 public class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if (((context instanceof Transition) && Objects.equal(reference, CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES))) {
-      EObject _rootContainer = EcoreUtil2.getRootContainer(context, true);
-      final Statemachine sm = ((Statemachine) _rootContainer);
+    if (((context instanceof Statemachine) && Objects.equal(reference, CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES))) {
+      final Statemachine sm = ((Statemachine) context);
       final String mchName = sm.getComment();
       if ((mchName != "")) {
         final Machine mch = this.getAnnotatedMachine(sm);
@@ -65,13 +64,25 @@ public class StatemachineScopeProvider extends AbstractStatemachineScopeProvider
         }
       }
     }
-    if (((context instanceof Statemachine) && Objects.equal(reference, StatemachinesPackage.Literals.STATEMACHINE__INSTANCES))) {
-      final Statemachine sm_1 = ((Statemachine) context);
+    if (((context instanceof Transition) && Objects.equal(reference, CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES))) {
+      EObject _rootContainer = EcoreUtil2.getRootContainer(context, true);
+      final Statemachine sm_1 = ((Statemachine) _rootContainer);
       final String mchName_1 = sm_1.getComment();
       if ((mchName_1 != "")) {
         final Machine mch_1 = this.getAnnotatedMachine(sm_1);
         if ((mch_1 != null)) {
-          ArrayList<Object> list = this.getAvailableDataElements(mch_1);
+          final EList<Event> evts_1 = mch_1.getEvents();
+          return Scopes.scopeFor(evts_1);
+        }
+      }
+    }
+    if (((context instanceof Statemachine) && Objects.equal(reference, StatemachinesPackage.Literals.STATEMACHINE__INSTANCES))) {
+      final Statemachine sm_2 = ((Statemachine) context);
+      final String mchName_2 = sm_2.getComment();
+      if ((mchName_2 != "")) {
+        final Machine mch_2 = this.getAnnotatedMachine(sm_2);
+        if ((mch_2 != null)) {
+          ArrayList<Object> list = this.getAvailableDataElements(mch_2);
           ArrayList<EObject> instances = new ArrayList<EObject>();
           for (final Object l : list) {
             instances.add(((EObject) l));
@@ -82,18 +93,18 @@ public class StatemachineScopeProvider extends AbstractStatemachineScopeProvider
     }
     if (((context instanceof Transition) && Objects.equal(reference, StatemachinesPackage.Literals.TRANSITION__SOURCE))) {
       EObject _rootContainer_1 = EcoreUtil2.getRootContainer(context, true);
-      final Statemachine sm_2 = ((Statemachine) _rootContainer_1);
+      final Statemachine sm_3 = ((Statemachine) _rootContainer_1);
       ArrayList<AbstractNode> nodes = new ArrayList<AbstractNode>();
-      nodes.addAll(EcoreUtil2.<AbstractNode>getAllContentsOfType(sm_2, AbstractNode.class));
-      CollectionExtensions.<AbstractNode>addAll(nodes, EcoreUtil2.<AbstractNode>getContainerOfType(sm_2, AbstractNode.class));
+      nodes.addAll(EcoreUtil2.<AbstractNode>getAllContentsOfType(sm_3, AbstractNode.class));
+      CollectionExtensions.<AbstractNode>addAll(nodes, EcoreUtil2.<AbstractNode>getContainerOfType(sm_3, AbstractNode.class));
       return Scopes.scopeFor(nodes);
     }
     if (((context instanceof Transition) && Objects.equal(reference, StatemachinesPackage.Literals.TRANSITION__TARGET))) {
       EObject _rootContainer_2 = EcoreUtil2.getRootContainer(context, true);
-      final Statemachine sm_3 = ((Statemachine) _rootContainer_2);
+      final Statemachine sm_4 = ((Statemachine) _rootContainer_2);
       ArrayList<AbstractNode> nodes_1 = new ArrayList<AbstractNode>();
-      nodes_1.addAll(EcoreUtil2.<AbstractNode>getAllContentsOfType(sm_3, AbstractNode.class));
-      CollectionExtensions.<AbstractNode>addAll(nodes_1, EcoreUtil2.<AbstractNode>getContainerOfType(sm_3, AbstractNode.class));
+      nodes_1.addAll(EcoreUtil2.<AbstractNode>getAllContentsOfType(sm_4, AbstractNode.class));
+      CollectionExtensions.<AbstractNode>addAll(nodes_1, EcoreUtil2.<AbstractNode>getContainerOfType(sm_4, AbstractNode.class));
       return Scopes.scopeFor(nodes_1);
     }
     return super.getScope(context, reference);

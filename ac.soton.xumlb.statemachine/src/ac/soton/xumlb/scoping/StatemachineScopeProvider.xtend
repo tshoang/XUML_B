@@ -44,9 +44,25 @@ import ac.soton.eventb.statemachines.AbstractNode
 class StatemachineScopeProvider extends AbstractStatemachineScopeProvider {
 	override getScope(EObject context, EReference reference) {
 
- 		if (context instanceof Transition && reference == CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES) {
+        // I have to repeat the event elaboration scoping of the transition to the statemachine to fix the content assist problem
+        // which only works after I type something
+        
+ 		if (context instanceof Statemachine && reference == CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES) {	
+//		    val sm = EcoreUtil2.getRootContainer(context, true) as Statemachine
+			val sm = context as Statemachine
+			val mchName = sm.comment
+			if (mchName !== ""){
+				val mch = getAnnotatedMachine(sm)
+				if (mch !== null){
+					val evts = mch.events
+					return Scopes.scopeFor(evts);
+				}
+			}
+		}
+		 if (context instanceof Transition && reference == CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES) {
 			
 		    val sm = EcoreUtil2.getRootContainer(context, true) as Statemachine
+//			val sm = context as Statemachine
 			val mchName = sm.comment
 			if (mchName !== ""){
 				val mch = getAnnotatedMachine(sm)

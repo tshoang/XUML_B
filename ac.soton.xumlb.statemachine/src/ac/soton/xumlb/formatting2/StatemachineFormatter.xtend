@@ -46,26 +46,27 @@ class StatemachineFormatter extends AbstractFormatter2 {
 			statemachine.allRegionsFor.ruleCallTo(ML_COMMENTRule).append[newLine]
 		}
 		for (transition : statemachine.transitions) {
-			// append 2 lines after transition
-			transition.format.append[newLines=2];
+			// add new line before transition
+			//transition.format.append[newLines=2];
+			transition.format.prepend[newLine];
 			
 			// add new line after multi line comment
 			statemachine.allRegionsFor.ruleCallTo(ML_COMMENTRule).append[newLine]
 		}
 		
 		// indent the nodes
-		if (!statemachine.nodes.empty){
-			val firstNode = statemachine.nodes.head
-			val lastNode = statemachine.nodes.last
-			set(firstNode.regionForEObject.previousHiddenRegion, lastNode.regionForEObject.nextHiddenRegion) [indent]	
-		}
+//		if (!statemachine.nodes.empty){
+//			val firstNode = statemachine.nodes.head
+//			val lastNode = statemachine.nodes.last
+//			set(firstNode.regionForEObject.previousHiddenRegion, lastNode.regionForEObject.nextHiddenRegion) [indent]	
+//		}
 		
 		// indent the transitions
-		if (!statemachine.transitions.empty){
-			val firstTransition = statemachine.transitions.head
-			val lastTransition = statemachine.transitions.last
-			set(firstTransition.regionForEObject.previousHiddenRegion, lastTransition.regionForEObject.nextHiddenRegion) [indent]	
-		}
+//		if (!statemachine.transitions.empty){
+//			val firstTransition = statemachine.transitions.head
+//			val lastTransition = statemachine.transitions.last
+//			set(firstTransition.regionForEObject.previousHiddenRegion, lastTransition.regionForEObject.nextHiddenRegion) [indent]	
+//		}
 		
 	}
 
@@ -112,7 +113,11 @@ class StatemachineFormatter extends AbstractFormatter2 {
 			action.allRegionsFor.ruleCallTo(ML_COMMENTRule).append[newLine]
 		}
 		
-			
+		//indent contents of transition
+		val first = transition.regionFor.keyword("transition")
+		val last = transition.regionFor.keyword("end")
+		set(first.nextHiddenRegion, last.previousHiddenRegion) [indent]
+		
 	
 		// indent the parameters
 		if (!transition.parameters.empty){
@@ -157,7 +162,7 @@ class StatemachineFormatter extends AbstractFormatter2 {
 		
 		// add new lines before some state keywords
         state.regionFor.keyword("refines").prepend[newLine]; // This depends if we keep refinement
-        state.regionFor.keyword("statemachines").prepend[newLine];
+//        state.regionFor.keyword("statemachines").prepend[newLine];
         state.regionFor.keyword("invariants").prepend[newLine];
         state.regionFor.keyword("entryActions").prepend[newLine];
         state.regionFor.keyword("exitActions").prepend[newLine];
@@ -213,6 +218,13 @@ class StatemachineFormatter extends AbstractFormatter2 {
 			val firstExit = state.statemachines.head
 			val lastExit = state.statemachines.last
 			set(firstExit.regionForEObject.previousHiddenRegion, lastExit.regionForEObject.nextHiddenRegion) [indent]	
+		}
+        
+             // indent state invariants
+		if (!state.invariants.empty){
+			val first = state.invariants.head
+			val last = state.invariants.last
+			set(first.regionForEObject.previousHiddenRegion, last.regionForEObject.nextHiddenRegion) [indent]	
 		}
         
         // add new line after multi line comment
